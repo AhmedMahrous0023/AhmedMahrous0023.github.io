@@ -7,18 +7,15 @@
 <meta name="description" content="Ahmed Mahrous is a Flutter Developer & Digital Product Builder helping startups build scalable products from idea to launch.">
 <meta name="author" content="Ahmed Mahrous">
 
-<!-- ================= STYLE ================= -->
 <style>
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-body{
-  background:radial-gradient(circle at top,#111827,#020617);
-  color:#e5e7eb;
-  line-height:1.7;
-  scroll-behavior:smooth;
-  overflow-x:hidden;
-}
+body{background:radial-gradient(circle at top,#111827,#020617);color:#e5e7eb;line-height:1.7;scroll-behavior:smooth;overflow-x:hidden;}
 a{text-decoration:none;color:inherit}
 .container{width:90%;max-width:1200px;margin:auto;}
+.rtl{direction:rtl;text-align:right;}
+.ltr{direction:ltr;text-align:left;}
+.hide{display:none;}
 
 /* ================= NAV ================= */
 nav{
@@ -28,175 +25,73 @@ nav{
   border-bottom:1px solid rgba(255,255,255,.05);
   z-index:999;
 }
-.nav-inner{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 0;
-}
-.logo{font-weight:800;font-size:1.2rem;color:#38bdf8;letter-spacing:1px}
-nav ul{display:flex;gap:25px;list-style:none}
-nav a{transition:.3s}
-nav a:hover{color:#38bdf8}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
+.logo{font-weight:800;font-size:1.2rem;color:#38bdf8;letter-spacing:1px;}
+nav ul{display:flex;gap:25px;list-style:none;}
+nav a{transition:.3s;}
+nav a:hover{color:#38bdf8;}
+.lang-toggle{cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid #38bdf8;color:#38bdf8;transition:.3s;}
+.lang-toggle:hover{background:#38bdf8;color:#020617;}
 
 /* ================= HERO ================= */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding-top:120px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:60px;
-}
-.hero h1{
-  font-size:3.4rem;
-  line-height:1.15;
-  opacity:0;
-  transform:translateY(30px);
-  transition:.8s ease-out;
-}
-.hero span{color:#38bdf8}
-.hero p{
-  margin:20px 0;color:#cbd5f5;font-size:1.15rem;
-  opacity:0;
-  transform:translateY(30px);
-  transition:.8s ease-out .3s;
-}
-.buttons{display:flex;gap:15px;margin-top:25px;opacity:0;transform:translateY(30px);transition:.8s ease-out .6s}
-.btn{
-  padding:14px 28px;
-  border-radius:14px;
-  font-weight:600;
-  cursor:pointer;
-}
-.primary{background:#38bdf8;color:#020617;transition:.3s}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;}
+.hero h1{font-size:3.4rem;opacity:0;transform:translateY(30px);transition:.8s ease-out;}
+.hero span{color:#38bdf8;}
+.hero p{margin:20px 0;color:#cbd5f5;font-size:1.15rem;opacity:0;transform:translateY(30px);transition:.8s ease-out .3s;}
+.buttons{display:flex;gap:15px;margin-top:25px;opacity:0;transform:translateY(30px);transition:.8s ease-out .6s;}
+.btn{padding:14px 28px;border-radius:14px;font-weight:600;cursor:pointer;}
+.primary{background:#38bdf8;color:#020617;transition:.3s;}
 .primary:hover{background:#0ea5e9;box-shadow:0 8px 25px rgba(56,189,248,.35);}
-.secondary{
-  border:1px solid rgba(255,255,255,.3);
-  transition:.3s;
-}
-.secondary:hover{
-  background:rgba(56,189,248,.1);
-  transform:translateY(-3px);
-}
+.secondary{border:1px solid rgba(255,255,255,.3);transition:.3s;}
+.secondary:hover{background:rgba(56,189,248,.1);transform:translateY(-3px);}
 
 /* PROFILE */
-.profile{
-  animation:float 6s ease-in-out infinite;
-  opacity:0;
-  transform:translateY(30px);
-  transition:.8s ease-out .9s;
-}
-.profile img{
-  width:100%;
-  border-radius:28px;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 30px 80px rgba(56,189,248,.25);
-}
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-}
+.profile{animation:float 6s ease-in-out infinite;opacity:0;transform:translateY(30px);transition:.8s ease-out .9s;}
+.profile img{width:100%;border-radius:28px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(56,189,248,.25);}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
 
 /* ================= SECTIONS ================= */
 section{padding:110px 0;opacity:0;transform:translateY(40px);transition:.8s ease-out;}
-.section-title{
-  font-size:2.4rem;
-  margin-bottom:40px;
-}
-
-/* ABOUT */
+.section-title{font-size:2.4rem;margin-bottom:40px;}
 .about p{max-width:800px;color:#cbd5f5;}
-
-/* DOMAINS */
-.categories{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.cat{
-  background:#020617;
-  border:1px solid rgba(255,255,255,.08);
-  padding:28px;
-  border-radius:20px;
-  transition:.4s;
-}
-.cat:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(56,189,248,.25);
-}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.cat{background:#020617;border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:20px;transition:.4s;}
+.cat:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(56,189,248,.25);}
 .cat h3{color:#38bdf8;margin-bottom:10px;}
-
-/* PROCESS */
-.process{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:20px;
-}
-.step{
-  padding:25px;
-  border-radius:18px;
-  background:#020617;
-  border:1px solid rgba(255,255,255,.08);
-  text-align:center;
-  transition:.4s;
-}
-.step:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 40px rgba(56,189,248,.2);
-}
-
-/* PROJECTS */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
-.project{
-  background:#020617;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
-  transition:.4s;
-}
-.project:hover{
-  transform:translateY(-12px);
-  box-shadow:0 30px 80px rgba(56,189,248,.3);
-}
-.project img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-.project-content{padding:25px}
-.project h3{color:#38bdf8;margin-bottom:8px}
-.project small{color:#94a3b8}
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
+.step{padding:25px;border-radius:18px;background:#020617;border:1px solid rgba(255,255,255,.08);text-align:center;transition:.4s;}
+.step:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(56,189,248,.2);}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.project{background:#020617;border-radius:22px;border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:.4s;}
+.project:hover{transform:translateY(-12px);box-shadow:0 30px 80px rgba(56,189,248,.3);}
+.project img{width:100%;height:200px;object-fit:cover;}
+.project-content{padding:25px;}
+.project h3{color:#38bdf8;margin-bottom:8px;}
+.project small{color:#94a3b8;}
+.project-count{color:#38bdf8;font-size:1.2rem;margin-bottom:20px;text-align:center;}
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:70px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-  color:#94a3b8;
-}
+footer{text-align:center;padding:70px 0;border-top:1px solid rgba(255,255,255,.08);color:#94a3b8;}
 
-/* ================= ANIMATION CLASS ================= */
+/* ANIMATION CLASS */
 .visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
-<body>
+<body class="ltr">
 
 <!-- NAV -->
 <nav>
   <div class="container nav-inner">
     <div class="logo">Mahrous Studio</div>
     <ul>
-      <li><a href="#about">Vision</a></li>
-      <li><a href="#domains">Domains</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#contact">Hire Me</a></li>
+      <li><a href="#about" class="lang" data-en="Vision" data-ar="الرؤية">Vision</a></li>
+      <li><a href="#domains" class="lang" data-en="Domains" data-ar="المجالات">Domains</a></li>
+      <li><a href="#process" class="lang" data-en="Process" data-ar="العمل">Process</a></li>
+      <li><a href="#projects" class="lang" data-en="Work" data-ar="المشاريع">Work</a></li>
+      <li><a href="#contact" class="btn primary lang" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a></li>
     </ul>
+    <div class="lang-toggle" id="langToggle">عربي</div>
   </div>
 </nav>
 
@@ -204,15 +99,13 @@ footer{
 <header class="hero container">
   <div class="hero-grid">
     <div>
-      <h1 class="animate">Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
-      <p class="animate">
-        I help startups and companies transform ideas into scalable,
-        production-ready digital products using Flutter, clean architecture,
-        and business-focused thinking.
+      <h1 class="animate lang" data-en="Building Digital Products,<br><span>Not Just Flutter Apps</span>" data-ar="بناء المنتجات الرقمية,<br><span>ليس تطبيقات فلاتر فقط</span>">Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
+      <p class="animate lang" data-en="I help startups and companies transform ideas into scalable, production-ready digital products using Flutter, clean architecture, and business-focused thinking." data-ar="أساعد الشركات الناشئة والمؤسسات على تحويل الأفكار إلى منتجات رقمية جاهزة للتشغيل باستخدام فلاتر والهندسة النظيفة والتركيز على الأعمال.">
+        I help startups and companies transform ideas into scalable, production-ready digital products using Flutter, clean architecture, and business-focused thinking.
       </p>
       <div class="buttons animate">
-        <a class="btn primary" href="#contact">Hire Me</a>
-        <a class="btn secondary" href="#projects">View Work</a>
+        <a class="btn primary lang" href="#contact" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a>
+        <a class="btn secondary lang" href="#projects" data-en="View Work" data-ar="عرض المشاريع">View Work</a>
       </div>
     </div>
     <div class="profile animate">
@@ -224,14 +117,9 @@ footer{
 <!-- ABOUT -->
 <section id="about" class="about">
   <div class="container">
-    <h2 class="section-title">Vision & Mindset</h2>
-    <p>
-      I work as a digital product builder, not a task-based developer.
-      My process starts with understanding business problems,
-      defining system logic, and designing scalable solutions before coding.
-      <br><br>
-      With 3+ years of Flutter experience, I’ve delivered applications
-      across mobile, web, and desktop platforms.
+    <h2 class="section-title lang" data-en="Vision & Mindset" data-ar="الرؤية والطريقة">Vision & Mindset</h2>
+    <p class="lang" data-en="I work as a digital product builder, not a task-based developer. My process starts with understanding business problems, defining system logic, and designing scalable solutions before coding. With 3+ years of Flutter experience, I’ve delivered applications across mobile, web, and desktop platforms." data-ar="أعمل كباني منتجات رقمية، وليس مطور مهام فقط. تبدأ عمليتي بفهم مشاكل الأعمال، وتحديد منطق النظام، وتصميم حلول قابلة للتوسع قبل كتابة الكود. مع أكثر من 3 سنوات خبرة في فلاتر، قدمت تطبيقات على الأجهزة المحمولة والويب وسطح المكتب.">
+      I work as a digital product builder, not a task-based developer...
     </p>
   </div>
 </section>
@@ -239,14 +127,15 @@ footer{
 <!-- DOMAINS -->
 <section id="domains">
   <div class="container">
-    <h2 class="section-title">Domains I’ve Worked In</h2>
+    <h2 class="section-title lang" data-en="Domains I’ve Worked In" data-ar="المجالات التي عملت بها">Domains I’ve Worked In</h2>
     <div class="categories">
-      <div class="cat"> <h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
-      <div class="cat"> <h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
-      <div class="cat"> <h3>Education</h3><p>Quizzes & learning platforms</p></div>
-      <div class="cat"> <h3>Healthcare</h3><p>Pharmacies & health apps</p></div>
-      <div class="cat"> <h3>Social</h3><p>Chats, communities, profiles</p></div>
-      <div class="cat"> <h3>IoT</h3><p>Arduino & smart monitoring</p></div>
+      <div class="cat"><h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
+      <div class="cat"><h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
+      <div class="cat"><h3>Education</h3><p>Quizzes, learning platforms</p></div>
+      <div class="cat"><h3>Healthcare</h3><p>Mental health, pharmacies</p></div>
+      <div class="cat"><h3>Social Platforms</h3><p>Chats, communities, profiles</p></div>
+      <div class="cat"><h3>IoT</h3><p>Arduino & smart monitoring</p></div>
+      <div class="cat"><h3>Real-Time Apps</h3><p>Voice, video, live rooms</p></div>
     </div>
   </div>
 </section>
@@ -254,13 +143,13 @@ footer{
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
-    <h2 class="section-title">How I Work</h2>
+    <h2 class="section-title lang" data-en="How I Work" data-ar="كيف أعمل">How I Work</h2>
     <div class="process">
-      <div class="step">Idea & Requirements</div>
-      <div class="step">Analysis & Planning</div>
-      <div class="step">UX & Architecture</div>
-      <div class="step">Development</div>
-      <div class="step">Launch & Growth</div>
+      <div class="step lang" data-en="Idea & Requirements" data-ar="الفكرة والمتطلبات">Idea & Requirements</div>
+      <div class="step lang" data-en="Analysis & Planning" data-ar="التحليل والتخطيط">Analysis & Planning</div>
+      <div class="step lang" data-en="UX & Architecture" data-ar="تصميم UX والهندسة">UX & Architecture</div>
+      <div class="step lang" data-en="Development" data-ar="التطوير">Development</div>
+      <div class="step lang" data-en="Launch & Growth" data-ar="الإطلاق والنمو">Launch & Growth</div>
     </div>
   </div>
 </section>
@@ -268,40 +157,35 @@ footer{
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title lang" data-en="Projects" data-ar="المشاريع">Projects</h2>
+    <div class="project-count" id="projectCount"></div>
     <div class="projects">
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Azkar">
-        <div class="project-content"><h3>Yaqeen – Daily Azkar</h3><p>Islamic app for daily remembrance.<br><strong>Status:</strong> Under review</p></div>
-      </div>
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Quiz">
-        <div class="project-content"><h3>Yaqeen – Quiz Arena</h3><p>Educational quiz app with engaging UX.</p></div>
-      </div>
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni">
-        <div class="project-content"><h3>Qimni App</h3><small>Flutter • Firebase • REST APIs</small><p>Social marketplace with subscriptions & commissions.</p></div>
-      </div>
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=POP-ROOM">
-        <div class="project-content"><h3>POP-ROOM</h3><p>Real-time voice chat using LiveKit.</p></div>
-      </div>
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Smart+Pharmacy">
-        <div class="project-content"><h3>Smart Pharmacy</h3><p>E-commerce medicine platform.</p></div>
-      </div>
-      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qatra+IoT">
-        <div class="project-content"><h3>Qatra IoT</h3><p>Smart water monitoring with Arduino.</p></div>
-      </div>
+      <!-- جميع المشاريع -->
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni"><div class="project-content"><h3>Qimni App</h3><small>Flutter • Firebase • REST APIs</small><p>Social marketplace allowing users to share links, sell products, manage subscriptions, commissions, payments, and analytics.</p></div></div>
+
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Azkar"><div class="project-content"><h3>Yaqeen – Daily Azkar</h3><p>Islamic app helping users maintain daily remembrance with clean UI and smooth UX.<br><strong>Status:</strong> Under review on Google Play</p></div></div>
+
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Quiz"><div class="project-content"><h3>Yaqeen – Quiz Arena</h3><p>Interactive educational quiz application offering diverse tests to measure knowledge and enhance thinking skills.</p></div></div>
+
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=POP-ROOM"><div class="project-content"><h3>POP-ROOM</h3><p>Real-time voice chat application using LiveKit and WebSockets with public and private rooms.</p></div></div>
+
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Smart+Pharmacy"><div class="project-content"><h3>Smart Pharmacy</h3><p>E-commerce application for browsing, ordering, and purchasing medicines online with secure checkout.</p></div></div>
+
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qatra+IoT"><div class="project-content"><h3>Qatra IoT App</h3><p>Smart water consumption monitoring system integrated with Arduino for tracking usage and detecting leaks.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <footer id="contact">
-  <h2>Let’s Build Something Serious</h2>
-  <p>Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com</p>
-  <p><a href="https://linkedin.com/in/ahmedmahrous0023" target="_blank">LinkedIn</a> · <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a></p>
+  <h2 class="lang" data-en="Let’s Build Something Serious" data-ar="لنبدأ في بناء شيء مميز">Let’s Build Something Serious</h2>
+  <p class="lang" data-en="Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com" data-ar="القاهرة، مصر<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com">Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com</p>
+  <p><a href="https://linkedin.com/in/AhmedMahrous0023" target="_blank">LinkedIn</a> · <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a></p>
   <p>© 2025 Ahmed Mahrous — Digital Product Studio</p>
 </footer>
 
-<!-- ================= JS ANIMATION ================= -->
 <script>
+// ================= ANIMATION ON SCROLL =================
 const animateElements = document.querySelectorAll('.animate, section');
 function isInViewport(el){
   const rect = el.getBoundingClientRect();
@@ -314,6 +198,24 @@ function runAnimation(){
 }
 window.addEventListener('scroll', runAnimation);
 window.addEventListener('load', runAnimation);
+
+// ================= LANGUAGE TOGGLE =================
+let lang = 'ar';
+const langToggle = document.getElementById('langToggle');
+langToggle.addEventListener('click', ()=>{
+  const elements = document.querySelectorAll('.lang');
+  lang = lang==='en'?'ar':'en';
+  elements.forEach(el=>{
+    el.innerHTML = el.dataset[lang];
+  });
+  document.body.className = lang==='ar'?'rtl':'ltr';
+  langToggle.textContent = lang==='ar'?'English':'عربي';
+});
+
+// ================= PROJECT COUNT =================
+const projectCount = document.getElementById('projectCount');
+const totalProjects = document.querySelectorAll('.project').length;
+projectCount.textContent = `Total Projects: ${totalProjects}`;
 </script>
 
 </body>
