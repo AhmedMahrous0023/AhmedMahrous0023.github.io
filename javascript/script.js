@@ -1,15 +1,14 @@
-// Simple scroll-based fade animation
-const faders = document.querySelectorAll('.fade-in');
+const items = document.querySelectorAll(".card, .project-card");
 
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
+        entry.target.classList.add("show");
       }
     });
   },
-  { threshold: 0.2 }
+  { threshold: 0.25 }
 );
 
-faders.forEach(el => observer.observe(el));
+items.forEach(item => observer.observe(item));
