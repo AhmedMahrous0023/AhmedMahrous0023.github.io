@@ -8,7 +8,7 @@
 
   <!-- SEO -->
   <meta name="description" content="Ahmed Mahrous - Flutter Developer with 3+ years experience"/>
-  <meta name="keywords" content="Flutter, Dart, Firebase, Bloc, Cubit"/>
+  <meta name="keywords" content="Flutter, Dart, Firebase, Bloc, Cubit, Mobile Apps, Cross-platform"/>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,14 +21,16 @@
       --card:#111827;
       --text:#e5e7eb;
       --muted:#9ca3af;
+      --accent:#facc15;
     }
 
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;}
     body{
       margin:0;
       font-family:Poppins, Cairo, sans-serif;
       background:linear-gradient(180deg,#020617,#0f172a);
       color:var(--text);
+      scroll-behavior:smooth;
     }
 
     a{color:var(--main);text-decoration:none}
@@ -49,6 +51,11 @@
       padding:6px 14px;
       border-radius:20px;
       cursor:pointer;
+      transition:0.3s;
+    }
+    .lang-btn:hover{
+      background:var(--main);
+      color:#fff;
     }
 
     .hero{
@@ -56,12 +63,18 @@
       grid-template-columns:1fr 300px;
       gap:40px;
       align-items:center;
+      margin-bottom:60px;
     }
 
     .hero img{
       width:100%;
       border-radius:20px;
       border:2px solid var(--main);
+      transform: translateY(0);
+      transition: transform 0.8s ease;
+    }
+    .hero img.animate{
+      transform: translateY(-20px);
     }
 
     h1{font-size:38px;margin:0}
@@ -74,6 +87,12 @@
       padding:25px;
       border-radius:18px;
       border:1px solid #1f2933;
+      margin-bottom:40px;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    .card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
 
     .skills{
@@ -84,16 +103,30 @@
 
     .projects{
       display:grid;
-      gap:30px;
+      gap:50px;
     }
 
-    .project{
+    .project-card{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:20px;
+      align-items:center;
+      opacity:0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .project-card.visible{
+      opacity:1;
+      transform: translateY(0);
     }
 
-    .badge{
+    .project-card img{
+      width:100%;
+      border-radius:12px;
+      border:1px solid #1f2933;
+    }
+
+    .project-badge{
       display:inline-block;
       padding:4px 10px;
       font-size:12px;
@@ -102,17 +135,17 @@
       color:#93c5fd;
       margin-bottom:10px;
     }
+    .project-badge.review{background:#facc15;color:#111}
+    .project-badge.private{background:#ef4444;color:#fff}
 
-    .screens{
-      display:flex;
-      gap:10px;
-    }
-
-    .screens img{
-      width:100%;
-      max-width:160px;
+    .project-tags span{
+      display:inline-block;
+      margin:5px 8px 0 0;
+      padding:4px 10px;
       border-radius:12px;
-      border:1px solid #1f2933;
+      background:#1e293b;
+      color:#93c5fd;
+      font-size:12px;
     }
 
     footer{
@@ -122,7 +155,7 @@
     }
 
     @media(max-width:900px){
-      .hero,.project{grid-template-columns:1fr}
+      .hero,.project-card{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -144,7 +177,7 @@
         3+ years building high-quality cross-platform apps
       </p>
     </div>
-    <img src="./assets/profile.png" alt="Ahmed Mahrous">
+    <img src="./assets/profile.png" alt="Ahmed Mahrous" class="animate">
   </section>
 
   <!-- ABOUT -->
@@ -166,140 +199,110 @@
       <div class="card">REST APIs</div>
       <div class="card">LiveKit & WebSockets</div>
       <div class="card">Payments</div>
+      <div class="card">Animations & UX</div>
+      <div class="card">Localization</div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="container"> 
+    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
 
-      
-      <h2 class="section-title dark-blue-text">Projects</h2>
-    <!-- ================= FEATURED PROJECTS ================= -->
-      <h3 class="projects-subtitle">🚀 Featured Projects (Coming Soon)</h3>
-          <!-- YAQEEN AZKAR -->
-      <article class="project-card featured">
-        <div class="project-image">
-          <img src="./assets/projects/yaqeen-azkar/1.png" alt="Yaqeen Azkar App">
+    <!-- Featured Projects -->
+    <h3 data-en="🚀 Featured Projects (Coming Soon)" data-ar="🚀 المشاريع القادمة">🚀 Featured Projects (Coming Soon)</h3>
+
+    <!-- YAQEEN AZKAR -->
+    <article class="project-card">
+      <div>
+        <img src="./assets/projects/yaqeen-azkar/1.png" alt="Yaqeen Azkar App">
+      </div>
+      <div>
+        <span class="project-badge review" data-en="In Review – Google Play" data-ar="قيد المراجعة – Google Play">In Review – Google Play</span>
+        <h3>📿 يقين – أذكار المسلم</h3>
+        <p data-en="Islamic app to help users maintain daily dhikr easily with a simple interface."
+           data-ar="تطبيق إسلامي يهدف إلى مساعدة المستخدم على المداومة على الأذكار اليومية بسهولة ومع واجهة بسيطة.">
+          Islamic app to help users maintain daily dhikr easily with a simple interface.
+        </p>
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Local Storage</span>
+          <span>Clean Architecture</span>
         </div>
-        <div class="project-content">
-          <span class="project-badge review">In Review – Google Play</span>
-          <h3>📿 يقين – أذكار المسلم</h3>
+      </div>
+    </article>
 
-          <p>
-            تطبيق إسلامي يهدف إلى مساعدة المستخدم على المداومة على الأذكار اليومية
-            بطريقة سهلة ومنظمة، مع واجهة بسيطة وتجربة استخدام مريحة.
-          </p>
-
-          <p>
-            تم التركيز على الأداء العالي، سهولة الوصول للأذكار، وإمكانية الاستخدام
-            اليومي بدون تعقيد، مع تصميم هادئ يناسب جميع الفئات.
-          </p>
-
-          <div class="project-tags">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>Local Storage</span>
-            <span>Clean Architecture</span>
-          </div>
+    <!-- YAQEEN QUIZ -->
+    <article class="project-card">
+      <div>
+        <img src="./assets/projects/yaqeen-quiz/1.png" alt="Yaqeen Quiz App">
+      </div>
+      <div>
+        <span class="project-badge review" data-en="In Review – Google Play" data-ar="قيد المراجعة – Google Play">In Review – Google Play</span>
+        <h3>🧠 يقين – ساحة الاختبارات</h3>
+        <p data-en="Interactive educational app offering quizzes to measure knowledge and stimulate thinking."
+           data-ar="تطبيق تعليمي تفاعلي يقدم اختبارات متنوعة لقياس المعرفة وتنمية التفكير بطريقة ممتعة وسلسة.">
+          Interactive educational app offering quizzes to measure knowledge and stimulate thinking.
+        </p>
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>JSON</span>
+          <span>State Management</span>
+          <span>Performance Optimization</span>
         </div>
-      </article> 
+      </div>
+    </article>
 
-          <!-- YAQEEN QUIZ -->
+    <!-- Other Professional Projects -->
+    <h3 data-en="💼 Other Professional Projects" data-ar="💼 مشاريع أخرى">💼 Other Professional Projects</h3>
 
-      <article class="project-card featured">
-        <div class="project-image">
-          <img src="./assets/projects/yaqeen-quiz/1.png" alt="Yaqeen Quiz App">
+    <!-- QIMNI -->
+    <article class="project-card">
+      <div><img src="./assets/projects/qimni/1.png" alt="Qimni App"></div>
+      <div>
+        <h3>Qimni App</h3>
+        <p data-en="Multi-use platform for sharing personal social media links with marketplace and subscriptions."
+           data-ar="منصة متعددة الاستخدامات لمشاركة الروابط الشخصية مع متجر ونظام اشتراكات.">
+          Multi-use platform for sharing personal social media links with marketplace and subscriptions.
+        </p>
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Payments</span>
+          <span>Deep Linking</span>
         </div>
+      </div>
+    </article>
 
-        <div class="project-content">
-          <span class="project-badge review">In Review – Google Play</span>
-          <h3>🧠 يقين – ساحة الاختبارات</h3>
-
-          <p>
-            تطبيق تعليمي تفاعلي يقدّم اختبارات متنوعة لقياس المعرفة وتنمية التفكير
-            بطريقة سلسة ومحفزة، مع تصميم عملي يركز على سهولة الاستخدام.
-          </p>
-
-          <p>
-            يعتمد التطبيق على جلسات قصيرة، عرض نتائج فوري، وتحفيز المستخدم على
-            الاستمرار من خلال تجربة استخدام بسيطة وسريعة.
-          </p>
-
-          <div class="project-tags">
-            <span>Flutter</span>
-            <span>JSON</span>
-            <span>State Management</span>
-            <span>Performance Optimization</span>
-          </div>
+    <!-- POP ROOM -->
+    <article class="project-card">
+      <div><img src="./assets/projects/poproom/1.png" alt="POP ROOM"></div>
+      <div>
+        <span class="project-badge private" data-en="Private Project" data-ar="مشروع خاص">Private Project</span>
+        <h3>POP ROOM</h3>
+        <p data-en="Real-time voice chat app with public/private rooms and country-based discovery."
+           data-ar="تطبيق محادثات صوتية لحظية مع غرف عامة وخاصة واكتشاف الغرف حسب الدولة.">
+          Real-time voice chat app with public/private rooms and country-based discovery.
+        </p>
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>LiveKit</span>
+          <span>WebSockets</span>
+          <span>Real-time</span>
         </div>
-      </article>
+      </div>
+    </article>
 
-          <!-- ================= OTHER PROJECTS ================= -->
-      <h3 class="projects-subtitle">💼 Other Professional Projects</h3>
-      <!-- QIMNI -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="./assets/projects/qimni/1.png" alt="Qimni App">
-        </div>
-
-        <div class="project-content">
-          <div class="project-content">
-          <h3>Qimni App</h3>
-            
-          <p>
-            منصة متعددة الاستخدامات تتيح للمستخدمين إنشاء مساحات شخصية لمشاركة
-            روابطهم الاجتماعية، مع متجر مدمج ونظام اشتراكات وعمولات.
-          </p>
-
-          <div class="project-tags">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>Payments</span>
-            <span>Deep Linking</span>
-          </div>
-        </div>
-      </article>
-
-          <!-- POP ROOM -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="./assets/projects/poproom/1.png" alt="POP ROOM">
-        </div>
-
-        <div class="project-content">
-          <span class="project-badge private">Private Project</span>
-          <h3>POP ROOM</h3>
-
-          <p>
-            تطبيق محادثات صوتية لحظية يدعم إنشاء غرف عامة وخاصة، الدعوات،
-             واكتشاف الغرف حسب الدولة.
-          </p>
-
-          <div class="project-tags">
-            <span>Flutter</span>
-            <span>LiveKit</span>
-            <span>WebSockets</span>
-            <span>Real-time</span>
-          </div>
-        </div>
-      </article>
-
-          <!-- VIDEO EDITOR -->
-      <article class="project-card">
-        <div class="project-image">
-          <img src="./assets/projects/video-editor/1.png" alt="Video Editor">
-        </div>
-
-        <div class="project-content">
-          <span class="project-badge private">Private Project</span>
-          <h3>Video Editor</h3>
-
-          <p>
-             أداة تعديل فيديوهات باستخدام Flutter و FFmpeg تدعم القص، الدمج،
-             استخراج الصوت، والتعديل على الصوتيات.
-          </p>
-
+    <!-- VIDEO EDITOR -->
+    <article class="project-card">
+      <div><img src="./assets/projects/video-editor/1.png" alt="Video Editor"></div>
+      <div>
+        <span class="project-badge private" data-en="Private Project" data-ar="مشروع خاص">Private Project</span>
+        <h3>Video Editor</h3>
+        <p data-en="Flutter & FFmpeg tool for trimming, merging, extracting audio, and editing videos."
+           data-ar="أداة تعديل فيديوهات باستخدام Flutter و FFmpeg تدعم القص، الدمج، واستخراج الصوت.">
+          Flutter & FFmpeg tool for trimming, merging, extracting audio, and editing videos.
+        </p>
         <div class="project-tags">
           <span>Flutter</span>
           <span>FFmpeg</span>
@@ -308,8 +311,7 @@
       </div>
     </article>
 
-  </div>
-</section>
+  </section>
 
   <!-- CONTACT -->
   <section class="card">
@@ -342,6 +344,19 @@
   }
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  }, {threshold:0.2});
+
+  document.querySelectorAll(".project-card").forEach(el=>{
+    observer.observe(el);
+  });
 </script>
 
 </body>
