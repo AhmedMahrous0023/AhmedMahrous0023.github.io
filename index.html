@@ -3,27 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ahmed Mahrous | Digital Product Studio</title>
-
 <meta name="description" content="Ahmed Mahrous is a Flutter Developer & Digital Product Builder helping startups build scalable products from idea to launch.">
 <meta name="author" content="Ahmed Mahrous">
 
+<!-- ================= STYLE ================= -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{
   background:radial-gradient(circle at top,#111827,#020617);
   color:#e5e7eb;
   line-height:1.7;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
-.container{width:90%;max-width:1200px;margin:auto}
+.container{width:90%;max-width:1200px;margin:auto;}
 
 /* ================= NAV ================= */
 nav{
   position:fixed;top:0;width:100%;
   backdrop-filter:blur(12px);
-  background:rgba(2,6,23,.7);
+  background:rgba(2,6,23,.85);
   border-bottom:1px solid rgba(255,255,255,.05);
   z-index:999;
 }
@@ -31,8 +32,9 @@ nav{
   display:flex;justify-content:space-between;align-items:center;
   padding:18px 0;
 }
-.logo{font-weight:800;font-size:1.1rem;color:#38bdf8}
+.logo{font-weight:800;font-size:1.2rem;color:#38bdf8;letter-spacing:1px}
 nav ul{display:flex;gap:25px;list-style:none}
+nav a{transition:.3s}
 nav a:hover{color:#38bdf8}
 
 /* ================= HERO ================= */
@@ -47,23 +49,43 @@ nav a:hover{color:#38bdf8}
   gap:60px;
 }
 .hero h1{
-  font-size:3.2rem;
+  font-size:3.4rem;
   line-height:1.15;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease-out;
 }
 .hero span{color:#38bdf8}
-.hero p{margin:20px 0;color:#cbd5f5;font-size:1.1rem}
-.buttons{display:flex;gap:15px;margin-top:25px}
-.btn{
-  padding:14px 26px;
-  border-radius:12px;
-  font-weight:600;
+.hero p{
+  margin:20px 0;color:#cbd5f5;font-size:1.15rem;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease-out .3s;
 }
-.primary{background:#38bdf8;color:#020617}
-.secondary{border:1px solid rgba(255,255,255,.2)}
+.buttons{display:flex;gap:15px;margin-top:25px;opacity:0;transform:translateY(30px);transition:.8s ease-out .6s}
+.btn{
+  padding:14px 28px;
+  border-radius:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+.primary{background:#38bdf8;color:#020617;transition:.3s}
+.primary:hover{background:#0ea5e9;box-shadow:0 8px 25px rgba(56,189,248,.35);}
+.secondary{
+  border:1px solid rgba(255,255,255,.3);
+  transition:.3s;
+}
+.secondary:hover{
+  background:rgba(56,189,248,.1);
+  transform:translateY(-3px);
+}
 
 /* PROFILE */
 .profile{
   animation:float 6s ease-in-out infinite;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease-out .9s;
 }
 .profile img{
   width:100%;
@@ -77,19 +99,16 @@ nav a:hover{color:#38bdf8}
 }
 
 /* ================= SECTIONS ================= */
-section{padding:110px 0}
+section{padding:110px 0;opacity:0;transform:translateY(40px);transition:.8s ease-out;}
 .section-title{
-  font-size:2.3rem;
+  font-size:2.4rem;
   margin-bottom:40px;
 }
 
-/* ================= ABOUT ================= */
-.about p{
-  max-width:800px;
-  color:#cbd5f5;
-}
+/* ABOUT */
+.about p{max-width:800px;color:#cbd5f5;}
 
-/* ================= DOMAINS ================= */
+/* DOMAINS */
 .categories{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -106,9 +125,9 @@ section{padding:110px 0}
   transform:translateY(-8px);
   box-shadow:0 20px 50px rgba(56,189,248,.25);
 }
-.cat h3{color:#38bdf8;margin-bottom:10px}
+.cat h3{color:#38bdf8;margin-bottom:10px;}
 
-/* ================= PROCESS ================= */
+/* PROCESS */
 .process{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -120,9 +139,14 @@ section{padding:110px 0}
   background:#020617;
   border:1px solid rgba(255,255,255,.08);
   text-align:center;
+  transition:.4s;
+}
+.step:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(56,189,248,.2);
 }
 
-/* ================= PROJECTS ================= */
+/* PROJECTS */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -148,16 +172,18 @@ section{padding:110px 0}
 .project h3{color:#38bdf8;margin-bottom:8px}
 .project small{color:#94a3b8}
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
   text-align:center;
   padding:70px 0;
   border-top:1px solid rgba(255,255,255,.08);
   color:#94a3b8;
 }
+
+/* ================= ANIMATION CLASS ================= */
+.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
-
 <body>
 
 <!-- NAV -->
@@ -178,18 +204,18 @@ footer{
 <header class="hero container">
   <div class="hero-grid">
     <div>
-      <h1>Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
-      <p>
+      <h1 class="animate">Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
+      <p class="animate">
         I help startups and companies transform ideas into scalable,
         production-ready digital products using Flutter, clean architecture,
         and business-focused thinking.
       </p>
-      <div class="buttons">
+      <div class="buttons animate">
         <a class="btn primary" href="#contact">Hire Me</a>
         <a class="btn secondary" href="#projects">View Work</a>
       </div>
     </div>
-    <div class="profile">
+    <div class="profile animate">
       <img src="assets/profile.png" alt="Ahmed Mahrous">
     </div>
   </div>
@@ -215,12 +241,12 @@ footer{
   <div class="container">
     <h2 class="section-title">Domains I’ve Worked In</h2>
     <div class="categories">
-      <div class="cat"><h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
-      <div class="cat"><h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
-      <div class="cat"><h3>Education</h3><p>Quizzes & learning platforms</p></div>
-      <div class="cat"><h3>Healthcare</h3><p>Pharmacies & health apps</p></div>
-      <div class="cat"><h3>Social</h3><p>Chats, communities, profiles</p></div>
-      <div class="cat"><h3>IoT</h3><p>Arduino & smart monitoring</p></div>
+      <div class="cat"> <h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
+      <div class="cat"> <h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
+      <div class="cat"> <h3>Education</h3><p>Quizzes & learning platforms</p></div>
+      <div class="cat"> <h3>Healthcare</h3><p>Pharmacies & health apps</p></div>
+      <div class="cat"> <h3>Social</h3><p>Chats, communities, profiles</p></div>
+      <div class="cat"> <h3>IoT</h3><p>Arduino & smart monitoring</p></div>
     </div>
   </div>
 </section>
@@ -243,58 +269,25 @@ footer{
 <section id="projects">
   <div class="container">
     <h2 class="section-title">Projects</h2>
-
     <div class="projects">
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Azkar">
-        <div class="project-content">
-          <h3>Yaqeen – Daily Azkar</h3>
-          <p>Islamic app for daily remembrance.<br><strong>Status:</strong> Under review</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Azkar">
+        <div class="project-content"><h3>Yaqeen – Daily Azkar</h3><p>Islamic app for daily remembrance.<br><strong>Status:</strong> Under review</p></div>
       </div>
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Quiz">
-        <div class="project-content">
-          <h3>Yaqeen – Quiz Arena</h3>
-          <p>Educational quiz app with engaging UX.</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Quiz">
+        <div class="project-content"><h3>Yaqeen – Quiz Arena</h3><p>Educational quiz app with engaging UX.</p></div>
       </div>
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni">
-        <div class="project-content">
-          <h3>Qimni App</h3>
-          <small>Flutter • Firebase • REST APIs</small>
-          <p>Social marketplace with subscriptions & commissions.</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni">
+        <div class="project-content"><h3>Qimni App</h3><small>Flutter • Firebase • REST APIs</small><p>Social marketplace with subscriptions & commissions.</p></div>
       </div>
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=POP-ROOM">
-        <div class="project-content">
-          <h3>POP-ROOM</h3>
-          <p>Real-time voice chat using LiveKit.</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=POP-ROOM">
+        <div class="project-content"><h3>POP-ROOM</h3><p>Real-time voice chat using LiveKit.</p></div>
       </div>
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Smart+Pharmacy">
-        <div class="project-content">
-          <h3>Smart Pharmacy</h3>
-          <p>E-commerce medicine platform.</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Smart+Pharmacy">
+        <div class="project-content"><h3>Smart Pharmacy</h3><p>E-commerce medicine platform.</p></div>
       </div>
-
-      <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Qatra+IoT">
-        <div class="project-content">
-          <h3>Qatra IoT</h3>
-          <p>Smart water monitoring with Arduino.</p>
-        </div>
+      <div class="project"><img src="https://placehold.co/600x400/020617/38bdf8?text=Qatra+IoT">
+        <div class="project-content"><h3>Qatra IoT</h3><p>Smart water monitoring with Arduino.</p></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -302,17 +295,26 @@ footer{
 <!-- CONTACT -->
 <footer id="contact">
   <h2>Let’s Build Something Serious</h2>
-  <p>
-    Cairo, Egypt<br>
-    📞 +20 111 400 9880<br>
-    ✉️ ahmed.mahrous1092@gmail.com
-  </p>
-  <p>
-    <a href="https://linkedin.com/in/ahmedmahrous0023" target="_blank">LinkedIn</a> ·
-    <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a>
-  </p>
+  <p>Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com</p>
+  <p><a href="https://linkedin.com/in/ahmedmahrous0023" target="_blank">LinkedIn</a> · <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a></p>
   <p>© 2025 Ahmed Mahrous — Digital Product Studio</p>
 </footer>
+
+<!-- ================= JS ANIMATION ================= -->
+<script>
+const animateElements = document.querySelectorAll('.animate, section');
+function isInViewport(el){
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight - 100;
+}
+function runAnimation(){
+  animateElements.forEach(el=>{
+    if(isInViewport(el)) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', runAnimation);
+window.addEventListener('load', runAnimation);
+</script>
 
 </body>
 </html>
