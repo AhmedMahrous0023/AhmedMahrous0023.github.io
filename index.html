@@ -20,26 +20,32 @@
       --muted:#9ca3af;
       --accent:#facc15;
     }
-
     *{box-sizing:border-box;}
     body{
       margin:0;
       font-family:Poppins, Cairo, sans-serif;
-      background:linear-gradient(180deg,#020617,#0f172a);
       color:var(--text);
       scroll-behavior:smooth;
+      background:linear-gradient(-45deg,#0f172a,#1e293b,#0f172a,#020617);
+      background-size:400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
-    a{color:var(--main);text-decoration:none}
-    .container{width:90%;max-width:1200px;margin:auto}
+    @keyframes gradientBG{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    a{color:var(--main);text-decoration:none;}
+    .container{width:90%;max-width:1200px;margin:auto;}
 
     header{
-      padding:40px 0;
+      padding:30px 0;
       display:flex;
       justify-content:space-between;
       align-items:center;
       position:sticky;
       top:0;
-      background:rgba(15,23,42,0.95);
+      background:rgba(15,23,42,0.85);
       z-index:100;
       backdrop-filter:blur(8px);
     }
@@ -57,7 +63,7 @@
       color:#fff;
     }
 
-    /* HERO */
+    /* Hero Section */
     .hero{
       display:flex;
       align-items:center;
@@ -78,7 +84,21 @@
     }
     .hero-text p{
       font-size:20px;
-      margin:0;
+      margin:0 0 20px;
+    }
+    .hero-text .cta-btn{
+      padding:12px 25px;
+      border:none;
+      background:var(--main);
+      color:#fff;
+      border-radius:25px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .hero-text .cta-btn:hover{
+      background:var(--accent);
+      color:#111;
     }
     .hero-img{
       max-width:300px;
@@ -133,6 +153,73 @@
       font-size:24px;
     }
 
+    /* Services */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:20px;
+    }
+    .service-card{
+      text-align:center;
+      padding:20px;
+      background:var(--card);
+      border-radius:15px;
+      border:1px solid #1f2933;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover{
+      transform: translateY(-10px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+    .service-card i{
+      font-size:36px;
+      color:var(--main);
+      margin-bottom:10px;
+    }
+
+    /* Timeline */
+    .timeline{
+      position:relative;
+      margin:40px 0;
+      padding-left:20px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:15px;
+      width:3px;
+      height:100%;
+      background:var(--main);
+    }
+    .timeline-item{
+      position:relative;
+      margin-bottom:40px;
+      padding-left:30px;
+      opacity:0;
+      transform:translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .timeline-item.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-2px;
+      top:0;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:var(--accent);
+      border:3px solid var(--main);
+    }
+    .timeline-item h4{
+      margin:0 0 5px;
+      color:var(--accent);
+    }
+
     /* Projects */
     .projects{
       display:grid;
@@ -185,7 +272,7 @@
     }
 
     @media(max-width:900px){
-      .hero,.project-card{grid-template-columns:1fr;}
+      .hero,.project-card,.services{grid-template-columns:1fr;}
       .hero-text h1{font-size:36px;}
     }
   </style>
@@ -207,6 +294,7 @@
          data-ar="أكثر من 3 سنوات خبرة في تطوير تطبيقات متعددة المنصات">
         3+ years building high-quality cross-platform apps
       </p>
+      <button class="cta-btn" onclick="scrollToSection('projects')" data-en="View Projects" data-ar="مشاهدة المشاريع">View Projects</button>
     </div>
     <div class="hero-img">
       <img src="./assets/profile.png" alt="Ahmed Mahrous">
@@ -234,6 +322,44 @@
       <div class="card"><i class="fa-solid fa-credit-card"></i> Payments</div>
       <div class="card"><i class="fa-solid fa-layer-group"></i> Animations & UX</div>
       <div class="card"><i class="fa-solid fa-language"></i> Localization</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2 data-en="Services" data-ar="الخدمات">Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class="fa-brands fa-google"></i>
+        <h3 data-en="Flutter Development" data-ar="تطوير Flutter">Flutter Development</h3>
+        <p data-en="Cross-platform apps for mobile, web, and desktop" data-ar="تطبيقات متعددة المنصات للهاتف، الويب، والكمبيوتر">Cross-platform apps for mobile, web, and desktop</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-database"></i>
+        <h3 data-en="Firebase Integration" data-ar="دمج Firebase">Firebase Integration</h3>
+        <p data-en="Authentication, Firestore, Cloud Messaging" data-ar="المصادقة، Firestore، الإشعارات">Authentication, Firestore, Cloud Messaging</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-brush"></i>
+        <h3 data-en="UI/UX Design" data-ar="تصميم واجهات">UI/UX Design</h3>
+        <p data-en="Custom UI, Animations, Responsive Design" data-ar="تصميم واجهات مخصصة، أنيميشن، تجاوب">Custom UI, Animations, Responsive Design</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-wifi"></i>
+        <h3 data-en="Real-time Apps" data-ar="تطبيقات لحظية">Real-time Apps</h3>
+        <p data-en="LiveKit, WebSockets, Chat & Video Calls" data-ar="محادثات صوت/فيديو لحظية باستخدام LiveKit وWebSockets">LiveKit, WebSockets, Chat & Video Calls</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section>
+    <h2 data-en="Experience" data-ar="الخبرات">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4 data-en="Flutter Developer - Freelance / Personal Projects" data-ar="مطور Flutter – أعمال حرة / مشاريع شخصية">Flutter Developer - Freelance / Personal Projects</h4>
+        <p data-en="2022 – Present: Developed cross-platform apps, integrated Firebase, Bloc/Cubit, published apps to stores." data-ar="2022 – حتى الآن: تطوير تطبيقات متعددة المنصات، دمج Firebase، Bloc/Cubit، نشر التطبيقات على المتاجر.">2022 – Present: Developed cross-platform apps, integrated Firebase, Bloc/Cubit, published apps to stores.</p>
+      </div>
     </div>
   </section>
 
@@ -282,7 +408,7 @@
       </div>
     </article>
 
-    <!-- Add all other projects in same format as previous response... -->
+    <!-- يمكن إضافة كل المشاريع الأخرى بنفس التنسيق -->
   </section>
 
   <!-- CONTACT -->
@@ -322,9 +448,13 @@
       }
     });
   }, {threshold:0.2});
-  document.querySelectorAll(".project-card").forEach(el=>{
+  document.querySelectorAll(".project-card, .timeline-item").forEach(el=>{
     observer.observe(el);
   });
+
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
 </script>
 </body>
 </html>
