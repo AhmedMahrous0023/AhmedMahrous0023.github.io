@@ -1,374 +1,223 @@
-<!-- HELLO
--
-DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
-Created by Anil Seervi.
--
-GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
--
-Have fun creating your portfolio on this template!!! -->
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-    <!-- Title: add your Portfolio websites's title here -->
-    <title> Ahmed Mahrous |  Flutter Developer</title>
+    <title>Ahmed Mahrous | Flutter Developer</title>
 
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Ahmed Mahrous | Flutter Developer with 3+ years experience in building high-performance cross-platform applications using Flutter & Firebase."
+    />
+    <meta
+      name="keywords"
+      content="Ahmed Mahrous, Flutter Developer, Mobile App Developer, Dart, Firebase, Bloc, Cubit"
+    />
 
-    <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="[Your name here] | Developer" />
-
-    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
-    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
-
-    <!-- Add your primary-theme color for the value of content -->
-    <meta name="theme-color" content="#36d1dc" />
-
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <!-- Fill content with the URL of this portfolio you'll host -->
-    <meta property="og:url" content="https://devfolio.js.org/" />
-    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
-    <meta property="og:title" content="[Your name here] | Developer" />
-    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
-    <meta property="og:description" content="Made using DevFolio Template" />
-    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
-      so that a thumbnail image of your portfolio is shown while shared on other platform -->
+    <meta property="og:title" content="Ahmed Mahrous | Flutter Developer" />
     <meta
-      property="og:image"
-      content="https://devfolio.js.org/assets/devfolio.png"
+      property="og:description"
+      content="Flutter Developer with 3+ years experience in cross-platform mobile applications."
     />
+    <meta property="og:image" content="./assets/profileee.png" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <!-- Again fill content attr with the URL of this portfolio you'll host -->
-    <meta property="twitter:url" content="https://devfolio.js.org" />
-    <!-- Recommended to use the same text used within <title> element -->
-    <meta property="twitter:title" content="[Your name here] | Developer" />
-    <!-- short description that shows up while your portfolio is shared -->
-    <meta
-      property="twitter:description"
-      content="Made using DevFolio Template"
-    />
-    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
-    <meta
-      property="twitter:image"
-      content="https://anilseervi.vercel.app/assets/devfolio.png"
-    />
-
-    <!-- link tags -->
+    <!-- Styles -->
     <link rel="preload" as="style" href="./css/main.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
-    <!-- FontAwesome Icons link -->
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
+
+    <!-- Animations -->
     <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="./javascript/scrollveal.js"
-    ></script>
-
-    <!-- Remove Google Analytics once you have your portfolio website set-up -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag("js", new Date())
-
-      gtag("config", "UA-122228201-4")
-    </script>
-    <!-- End of Google Analytics -->
+    <script defer src="./javascript/scrollveal.js"></script>
   </head>
+
   <body>
-    <!-- Hero Section -->
+    <!-- HERO -->
     <div id="hero">
       <section class="container">
         <h1 class="hero-title">
-          Hi, my name is <span class="text-color-main name">Ahmed Mahrous</span>
+          Hi, my name is
+          <span class="text-color-main name">Ahmed Mahrous</span>
           <br />
-          I'm a  Flutter Developer | Mobile App Developer.
+          Flutter Developer & Mobile App Engineer
         </h1>
+
         <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#about">Get in touch</a>
+          <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
         </p>
       </section>
-      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
-        <div class="scroll-down"></div
-      ></a>
     </div>
-    <!-- /END Hero Section -->
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
+
         <div class="row about-wrapper">
           <div class="about-wrapper__image">
             <img
+              src="./assets/profile.png"
+              alt="Ahmed Mahrous"
               class="img-fluid"
-              src="./assets/profileee.png"
-              alt="Profile Image"
               width="450"
-              height="350"
+              height="450"
             />
           </div>
+
           <div class="about-wrapper__info">
             <p class="about-wrapper__info-text">
-             Flutter Developer with 3 years of hands-on experience in building high-quality
-             cross-platform mobile applications using Dart and Flutter.
+              Flutter Developer with 3+ years of hands-on experience in building
+              secure, scalable, and high-performance cross-platform applications
+              using Dart and Flutter.
             </p>
 
             <p class="about-wrapper__info-text">
-             Experienced in Firebase integration, RESTful APIs, and state management
-             solutions such as Bloc and Cubit, with a strong focus on clean architecture,
-             performance optimization, and user-friendly UI/UX design.
+              Strong expertise in Firebase, RESTful APIs, state management
+              (Bloc, Cubit), clean architecture, performance optimization, and
+              delivering modern, user-friendly UI/UX experiences.
             </p>
 
             <span class="about-wrapper__cta">
               <a
-               href="./assets/Ahmed_Mahrous_CV.pdf"
-               class="cta-btn cta-btn--resume"
-               target="_blank"
+                href="./assets/Ahmed_Mahrous_CV.pdf"
+                target="_blank"
+                class="cta-btn cta-btn--resume"
               >
-               View Resume
+                View Resume
               </a>
-
             </span>
           </div>
         </div>
       </div>
     </section>
-    <!-- /END About Section -->
 
-    <!--Projects Section-->
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
+        <h2 class="section-title dark-blue-text">Projects</h2>
 
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
+        <!-- Qimni -->
+        <article class="row">
+          <div class="project-wrapper__text">
+            <h3 class="project-wrapper__text-title">Qimni App</h3>
+            <p class="project-wrapper__text-info">
+              Cross-platform Flutter application that allows users to create
+              personalized spaces for sharing social media links and products.
+              Includes subscriptions, commission-based sales, deep linking,
+              payments, and multi-language support.
+            </p>
 
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
+            <div class="project-wrapper__text-btns">
+              <a
+                href="#"
+                class="cta-btn cta-btn--hero cta-btn--projects"
+                target="_blank"
+              >
+                Google Play
+              </a>
+              <a
+                href="https://github.com/AhmedMahrous0023"
+                class="cta-btn text-color-main"
+                target="_blank"
+              >
+                Source Code
               </a>
             </div>
-          </article>
-          <!-- /END Project -->
+          </div>
 
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
+          <div class="project-wrapper__image">
+            <img
+              src="./assets/project.png"
+              class="img-fluid"
+              alt="Qimni App"
+            />
+          </div>
+        </article>
 
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
+        <!-- POP ROOM -->
+        <article class="row">
+          <div class="project-wrapper__text">
+            <h3 class="project-wrapper__text-title">POP ROOM</h3>
+            <p class="project-wrapper__text-info">
+              Real-time voice chat application built with Flutter, LiveKit, and
+              WebSockets. Supports public/private rooms, invitations, deep
+              linking, and country-based discovery.
+            </p>
+          </div>
+        </article>
 
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-        </div>
+        <!-- Video Editor -->
+        <article class="row">
+          <div class="project-wrapper__text">
+            <h3 class="project-wrapper__text-title">Video Editor</h3>
+            <p class="project-wrapper__text-info">
+              Flutter-based media editing tool using FFmpeg for trimming,
+              merging, audio extraction, and video sound manipulation.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
-    <!-- End Projects Section -->
 
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title">Contact</h2>
+
         <div class="contact-wrapper">
-          <p class="contact-wrapper__text">[Put your call to action here]</p>
-          <a href="#" class="cta-btn cta-btn--resume">Call to Action</a>
+          <p class="contact-wrapper__text">
+            Interested in working together or hiring me?
+          </p>
+
+          <a
+            href="mailto:ahmed.mahrous1092@gmail.com"
+            class="cta-btn cta-btn--resume"
+          >
+            Email Me
+          </a>
         </div>
       </div>
     </section>
-    <!-- END Contact Section -->
 
-    <!-- Footer Section -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <a href="#hero" class="back-to-top" aria-label="go back to top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
         <div class="social-links">
           <a
-            href="#!"
+            href="https://github.com/AhmedMahrous0023"
             target="_blank"
-            rel="noopener noreferrer"
-            aria-label="twitter"
-          >
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="instagram"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="codepen"
-          >
-            <i class="fa-brands fa-codepen"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="github"
+            aria-label="GitHub"
           >
             <i class="fa-brands fa-github"></i>
           </a>
-        </div>
-        <hr />
-        <p class="footer__text">
-          &copy; <span id="year"></span> - Template by
           <a
-            href="https://github.com/AnilSeervi"
+            href="https://linkedin.com/in/ahmedmahrous0023"
             target="_blank"
-            rel="noopener noreferrer"
-            >Anil Seervi</a
-          >. <br />Made with &hearts;
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+
+        <p class="footer__text">
+          © <span id="year"></span> Ahmed Mahrous
         </p>
       </div>
     </footer>
-    <!-- END Footer Section -->
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear()
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
     </script>
-    <script src="./javascript/vanilla-tilt.min.js"></script>
-    <script type="text/javascript" src="./javascript/valtilt.js"></script>
   </body>
 </html>
