@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ahmed Mahrous | Flutter Developer</title>
+<title>Ahmed Mahrous | Digital Product Studio</title>
 
-<meta name="description" content="Ahmed Mahrous - Flutter Developer building scalable cross-platform apps with Firebase, clean architecture, and modern UI/UX.">
+<meta name="description" content="Ahmed Mahrous is a Flutter Developer & Digital Product Builder helping startups build scalable products from idea to launch.">
 <meta name="author" content="Ahmed Mahrous">
 
-<!-- ================= STYLE ================= -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
 body{
@@ -20,7 +19,7 @@ body{
 a{text-decoration:none;color:inherit}
 .container{width:90%;max-width:1200px;margin:auto}
 
-/* NAV */
+/* ================= NAV ================= */
 nav{
   position:fixed;top:0;width:100%;
   backdrop-filter:blur(12px);
@@ -36,11 +35,11 @@ nav{
 nav ul{display:flex;gap:25px;list-style:none}
 nav a:hover{color:#38bdf8}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   min-height:100vh;
   display:flex;align-items:center;
-  padding-top:100px;
+  padding-top:120px;
 }
 .hero-grid{
   display:grid;
@@ -53,7 +52,6 @@ nav a:hover{color:#38bdf8}
 }
 .hero span{color:#38bdf8}
 .hero p{margin:20px 0;color:#cbd5f5;font-size:1.1rem}
-
 .buttons{display:flex;gap:15px;margin-top:25px}
 .btn{
   padding:14px 26px;
@@ -61,18 +59,15 @@ nav a:hover{color:#38bdf8}
   font-weight:600;
 }
 .primary{background:#38bdf8;color:#020617}
-.secondary{
-  border:1px solid rgba(255,255,255,.2)
-}
+.secondary{border:1px solid rgba(255,255,255,.2)}
 
 /* PROFILE */
 .profile{
-  position:relative;
   animation:float 6s ease-in-out infinite;
 }
 .profile img{
   width:100%;
-  border-radius:24px;
+  border-radius:28px;
   border:1px solid rgba(255,255,255,.1);
   box-shadow:0 30px 80px rgba(56,189,248,.25);
 }
@@ -81,33 +76,53 @@ nav a:hover{color:#38bdf8}
   50%{transform:translateY(-15px)}
 }
 
-/* SECTIONS */
-section{padding:100px 0}
+/* ================= SECTIONS ================= */
+section{padding:110px 0}
 .section-title{
-  font-size:2.2rem;
+  font-size:2.3rem;
   margin-bottom:40px;
 }
 
-/* CATEGORIES */
+/* ================= ABOUT ================= */
+.about p{
+  max-width:800px;
+  color:#cbd5f5;
+}
+
+/* ================= DOMAINS ================= */
 .categories{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .cat{
-  background:linear-gradient(145deg,#020617,#020617);
+  background:#020617;
   border:1px solid rgba(255,255,255,.08);
-  padding:25px;
-  border-radius:18px;
+  padding:28px;
+  border-radius:20px;
   transition:.4s;
 }
 .cat:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(56,189,248,.2);
+  box-shadow:0 20px 50px rgba(56,189,248,.25);
 }
 .cat h3{color:#38bdf8;margin-bottom:10px}
 
-/* PROJECTS */
+/* ================= PROCESS ================= */
+.process{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+.step{
+  padding:25px;
+  border-radius:18px;
+  background:#020617;
+  border:1px solid rgba(255,255,255,.08);
+  text-align:center;
+}
+
+/* ================= PROJECTS ================= */
 .projects{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -121,8 +136,8 @@ section{padding:100px 0}
   transition:.4s;
 }
 .project:hover{
-  transform:translateY(-10px);
-  box-shadow:0 25px 70px rgba(56,189,248,.25);
+  transform:translateY(-12px);
+  box-shadow:0 30px 80px rgba(56,189,248,.3);
 }
 .project img{
   width:100%;
@@ -130,13 +145,13 @@ section{padding:100px 0}
   object-fit:cover;
 }
 .project-content{padding:25px}
-.project h3{color:#38bdf8;margin-bottom:10px}
+.project h3{color:#38bdf8;margin-bottom:8px}
 .project small{color:#94a3b8}
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   text-align:center;
-  padding:60px 0;
+  padding:70px 0;
   border-top:1px solid rgba(255,255,255,.08);
   color:#94a3b8;
 }
@@ -148,12 +163,13 @@ footer{
 <!-- NAV -->
 <nav>
   <div class="container nav-inner">
-    <div class="logo">Ahmed Mahrous</div>
+    <div class="logo">Mahrous Studio</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#categories">Domains</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">Vision</a></li>
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact">Hire Me</a></li>
     </ul>
   </div>
 </nav>
@@ -162,17 +178,17 @@ footer{
 <header class="hero container">
   <div class="hero-grid">
     <div>
-      <h1>Flutter Developer<br><span>Building Real Products</span></h1>
+      <h1>Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
       <p>
-        3+ years of experience building scalable cross-platform applications
-        with Flutter, Firebase, clean architecture, and modern UI/UX.
+        I help startups and companies transform ideas into scalable,
+        production-ready digital products using Flutter, clean architecture,
+        and business-focused thinking.
       </p>
       <div class="buttons">
         <a class="btn primary" href="#contact">Hire Me</a>
         <a class="btn secondary" href="#projects">View Work</a>
       </div>
     </div>
-
     <div class="profile">
       <img src="assets/profile.png" alt="Ahmed Mahrous">
     </div>
@@ -180,29 +196,45 @@ footer{
 </header>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="about">
   <div class="container">
-    <h2 class="section-title">Who I Am</h2>
+    <h2 class="section-title">Vision & Mindset</h2>
     <p>
-      I’m Ahmed Mahrous, a Flutter Developer specialized in building
-      production-ready mobile applications from idea to store publishing.
-      I focus on performance, scalability, and business-oriented solutions.
+      I work as a digital product builder, not a task-based developer.
+      My process starts with understanding business problems,
+      defining system logic, and designing scalable solutions before coding.
+      <br><br>
+      With 3+ years of Flutter experience, I’ve delivered applications
+      across mobile, web, and desktop platforms.
     </p>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section id="categories">
+<!-- DOMAINS -->
+<section id="domains">
   <div class="container">
     <h2 class="section-title">Domains I’ve Worked In</h2>
     <div class="categories">
       <div class="cat"><h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
       <div class="cat"><h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
-      <div class="cat"><h3>Education</h3><p>Quizzes, learning platforms</p></div>
-      <div class="cat"><h3>Healthcare</h3><p>Mental health, pharmacies</p></div>
-      <div class="cat"><h3>Social Platforms</h3><p>Chats, communities, profiles</p></div>
+      <div class="cat"><h3>Education</h3><p>Quizzes & learning platforms</p></div>
+      <div class="cat"><h3>Healthcare</h3><p>Pharmacies & health apps</p></div>
+      <div class="cat"><h3>Social</h3><p>Chats, communities, profiles</p></div>
       <div class="cat"><h3>IoT</h3><p>Arduino & smart monitoring</p></div>
-      <div class="cat"><h3>Real-Time Apps</h3><p>Voice, video, live rooms</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <h2 class="section-title">How I Work</h2>
+    <div class="process">
+      <div class="step">Idea & Requirements</div>
+      <div class="step">Analysis & Planning</div>
+      <div class="step">UX & Architecture</div>
+      <div class="step">Development</div>
+      <div class="step">Launch & Growth</div>
     </div>
   </div>
 </section>
@@ -215,26 +247,10 @@ footer{
     <div class="projects">
 
       <div class="project">
-        <img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni">
-        <div class="project-content">
-          <h3>Qimni App</h3>
-          <small>Flutter • Firebase • REST APIs</small>
-          <p>
-            Social marketplace allowing users to share links, sell products,
-            manage subscriptions, commissions, payments, and analytics.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
         <img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Azkar">
         <div class="project-content">
           <h3>Yaqeen – Daily Azkar</h3>
-          <p>
-            Islamic app helping users maintain daily remembrance with
-            clean UI and smooth experience.
-            <br><strong>Status:</strong> Under review on Google Play
-          </p>
+          <p>Islamic app for daily remembrance.<br><strong>Status:</strong> Under review</p>
         </div>
       </div>
 
@@ -242,11 +258,16 @@ footer{
         <img src="https://placehold.co/600x400/020617/38bdf8?text=Yaqeen+Quiz">
         <div class="project-content">
           <h3>Yaqeen – Quiz Arena</h3>
-          <p>
-            Educational quiz app focused on knowledge testing
-            with motivating and simple design.
-            <br><strong>Status:</strong> Under review
-          </p>
+          <p>Educational quiz app with engaging UX.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://placehold.co/600x400/020617/38bdf8?text=Qimni">
+        <div class="project-content">
+          <h3>Qimni App</h3>
+          <small>Flutter • Firebase • REST APIs</small>
+          <p>Social marketplace with subscriptions & commissions.</p>
         </div>
       </div>
 
@@ -254,7 +275,7 @@ footer{
         <img src="https://placehold.co/600x400/020617/38bdf8?text=POP-ROOM">
         <div class="project-content">
           <h3>POP-ROOM</h3>
-          <p>Real-time voice chat app using LiveKit & WebSockets.</p>
+          <p>Real-time voice chat using LiveKit.</p>
         </div>
       </div>
 
@@ -262,7 +283,7 @@ footer{
         <img src="https://placehold.co/600x400/020617/38bdf8?text=Smart+Pharmacy">
         <div class="project-content">
           <h3>Smart Pharmacy</h3>
-          <p>E-commerce app for browsing and purchasing medicines.</p>
+          <p>E-commerce medicine platform.</p>
         </div>
       </div>
 
@@ -270,7 +291,7 @@ footer{
         <img src="https://placehold.co/600x400/020617/38bdf8?text=Qatra+IoT">
         <div class="project-content">
           <h3>Qatra IoT</h3>
-          <p>Smart water consumption monitoring system with Arduino.</p>
+          <p>Smart water monitoring with Arduino.</p>
         </div>
       </div>
 
@@ -290,7 +311,7 @@ footer{
     <a href="https://linkedin.com/in/ahmedmahrous0023" target="_blank">LinkedIn</a> ·
     <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a>
   </p>
-  <p>© 2025 Ahmed Mahrous</p>
+  <p>© 2025 Ahmed Mahrous — Digital Product Studio</p>
 </footer>
 
 </body>
