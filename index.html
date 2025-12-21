@@ -170,43 +170,146 @@
   </section>
 
   <!-- PROJECTS -->
-  <section>
-    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
+  <section id="projects">
+    <div class="container"> 
 
-    <div class="projects">
+      
+      <h2 class="section-title dark-blue-text">Projects</h2>
+    <!-- ================= FEATURED PROJECTS ================= -->
+      <h3 class="projects-subtitle">🚀 Featured Projects (Coming Soon)</h3>
+          <!-- YAQEEN AZKAR -->
+      <article class="project-card featured">
+        <div class="project-image">
+          <img src="./assets/projects/yaqeen-azkar/1.png" alt="Yaqeen Azkar App">
+        </div>
+        <div class="project-content">
+          <span class="project-badge review">In Review – Google Play</span>
+          <h3>📿 يقين – أذكار المسلم</h3>
 
-      <div class="card project">
-        <div>
-          <span class="badge">Published</span>
+          <p>
+            تطبيق إسلامي يهدف إلى مساعدة المستخدم على المداومة على الأذكار اليومية
+            بطريقة سهلة ومنظمة، مع واجهة بسيطة وتجربة استخدام مريحة.
+          </p>
+
+          <p>
+            تم التركيز على الأداء العالي، سهولة الوصول للأذكار، وإمكانية الاستخدام
+            اليومي بدون تعقيد، مع تصميم هادئ يناسب جميع الفئات.
+          </p>
+
+          <div class="project-tags">
+            <span>Flutter</span>
+            <span>Firebase</span>
+            <span>Local Storage</span>
+            <span>Clean Architecture</span>
+          </div>
+        </div>
+      </article> 
+
+          <!-- YAQEEN QUIZ -->
+
+      <article class="project-card featured">
+        <div class="project-image">
+          <img src="./assets/projects/yaqeen-quiz/1.png" alt="Yaqeen Quiz App">
+        </div>
+
+        <div class="project-content">
+          <span class="project-badge review">In Review – Google Play</span>
+          <h3>🧠 يقين – ساحة الاختبارات</h3>
+
+          <p>
+            تطبيق تعليمي تفاعلي يقدّم اختبارات متنوعة لقياس المعرفة وتنمية التفكير
+            بطريقة سلسة ومحفزة، مع تصميم عملي يركز على سهولة الاستخدام.
+          </p>
+
+          <p>
+            يعتمد التطبيق على جلسات قصيرة، عرض نتائج فوري، وتحفيز المستخدم على
+            الاستمرار من خلال تجربة استخدام بسيطة وسريعة.
+          </p>
+
+          <div class="project-tags">
+            <span>Flutter</span>
+            <span>JSON</span>
+            <span>State Management</span>
+            <span>Performance Optimization</span>
+          </div>
+        </div>
+      </article>
+
+          <!-- ================= OTHER PROJECTS ================= -->
+      <h3 class="projects-subtitle">💼 Other Professional Projects</h3>
+      <!-- QIMNI -->
+      <article class="project-card">
+        <div class="project-image">
+          <img src="./assets/projects/qimni/1.png" alt="Qimni App">
+        </div>
+
+        <div class="project-content">
+          <div class="project-content">
           <h3>Qimni App</h3>
-          <p data-en="Social links & marketplace app with subscriptions and commissions."
-             data-ar="تطبيق لمشاركة الروابط والمتاجر بنظام اشتراكات وعمولات.">
-            Social links & marketplace app with subscriptions and commissions.
+            
+          <p>
+            منصة متعددة الاستخدامات تتيح للمستخدمين إنشاء مساحات شخصية لمشاركة
+            روابطهم الاجتماعية، مع متجر مدمج ونظام اشتراكات وعمولات.
           </p>
-        </div>
-        <div class="screens">
-          <img src="./assets/projects/qimni/1.png">
-          <img src="./assets/projects/qimni/2.png">
-        </div>
-      </div>
 
-      <div class="card project">
-        <div>
-          <span class="badge">Private Project</span>
+          <div class="project-tags">
+            <span>Flutter</span>
+            <span>Firebase</span>
+            <span>Payments</span>
+            <span>Deep Linking</span>
+          </div>
+        </div>
+      </article>
+
+          <!-- POP ROOM -->
+      <article class="project-card">
+        <div class="project-image">
+          <img src="./assets/projects/poproom/1.png" alt="POP ROOM">
+        </div>
+
+        <div class="project-content">
+          <span class="project-badge private">Private Project</span>
           <h3>POP ROOM</h3>
-          <p data-en="Real-time voice chat app using LiveKit."
-             data-ar="تطبيق محادثات صوتية مباشرة باستخدام LiveKit.">
-            Real-time voice chat app using LiveKit.
+
+          <p>
+            تطبيق محادثات صوتية لحظية يدعم إنشاء غرف عامة وخاصة، الدعوات،
+             واكتشاف الغرف حسب الدولة.
           </p>
+
+          <div class="project-tags">
+            <span>Flutter</span>
+            <span>LiveKit</span>
+            <span>WebSockets</span>
+            <span>Real-time</span>
+          </div>
         </div>
-        <div class="screens">
-          <img src="./assets/projects/poproom/1.png">
-          <img src="./assets/projects/poproom/2.png">
+      </article>
+
+          <!-- VIDEO EDITOR -->
+      <article class="project-card">
+        <div class="project-image">
+          <img src="./assets/projects/video-editor/1.png" alt="Video Editor">
+        </div>
+
+        <div class="project-content">
+          <span class="project-badge private">Private Project</span>
+          <h3>Video Editor</h3>
+
+          <p>
+             أداة تعديل فيديوهات باستخدام Flutter و FFmpeg تدعم القص، الدمج،
+             استخراج الصوت، والتعديل على الصوتيات.
+          </p>
+
+        <div class="project-tags">
+          <span>Flutter</span>
+          <span>FFmpeg</span>
+          <span>Media Processing</span>
         </div>
       </div>
+    </article>
 
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section class="card">
