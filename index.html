@@ -1,223 +1,245 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Ahmed Mahrous | Flutter Developer</title>
+  <title>Ahmed Mahrous | Flutter Developer</title>
 
-    <!-- SEO -->
-    <meta
-      name="description"
-      content="Ahmed Mahrous | Flutter Developer with 3+ years experience in building high-performance cross-platform applications using Flutter & Firebase."
-    />
-    <meta
-      name="keywords"
-      content="Ahmed Mahrous, Flutter Developer, Mobile App Developer, Dart, Firebase, Bloc, Cubit"
-    />
+  <!-- SEO -->
+  <meta name="description" content="Ahmed Mahrous - Flutter Developer with 3+ years experience"/>
+  <meta name="keywords" content="Flutter, Dart, Firebase, Bloc, Cubit"/>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Ahmed Mahrous | Flutter Developer" />
-    <meta
-      property="og:description"
-      content="Flutter Developer with 3+ years experience in cross-platform mobile applications."
-    />
-    <meta property="og:image" content="./assets/profileee.png" />
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <!-- Styles -->
-    <link rel="preload" as="style" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+  <style>
+    :root{
+      --main:#2563eb;
+      --bg:#0f172a;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+    }
 
-    <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Poppins, Cairo, sans-serif;
+      background:linear-gradient(180deg,#020617,#0f172a);
+      color:var(--text);
+    }
 
-    <!-- Animations -->
-    <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script defer src="./javascript/scrollveal.js"></script>
-  </head>
+    a{color:var(--main);text-decoration:none}
 
-  <body>
-    <!-- HERO -->
-    <div id="hero">
-      <section class="container">
-        <h1 class="hero-title">
-          Hi, my name is
-          <span class="text-color-main name">Ahmed Mahrous</span>
-          <br />
-          Flutter Developer & Mobile App Engineer
-        </h1>
+    .container{width:90%;max-width:1100px;margin:auto}
 
-        <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
-        </p>
-      </section>
+    header{
+      padding:40px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .lang-btn{
+      border:1px solid var(--main);
+      background:none;
+      color:var(--main);
+      padding:6px 14px;
+      border-radius:20px;
+      cursor:pointer;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:20px;
+      border:2px solid var(--main);
+    }
+
+    h1{font-size:38px;margin:0}
+    h2{margin-bottom:20px}
+
+    section{padding:60px 0}
+
+    .card{
+      background:var(--card);
+      padding:25px;
+      border-radius:18px;
+      border:1px solid #1f2933;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:15px;
+    }
+
+    .projects{
+      display:grid;
+      gap:30px;
+    }
+
+    .project{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:4px 10px;
+      font-size:12px;
+      border-radius:12px;
+      background:#1e293b;
+      color:#93c5fd;
+      margin-bottom:10px;
+    }
+
+    .screens{
+      display:flex;
+      gap:10px;
+    }
+
+    .screens img{
+      width:100%;
+      max-width:160px;
+      border-radius:12px;
+      border:1px solid #1f2933;
+    }
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    @media(max-width:900px){
+      .hero,.project{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <header>
+    <h2>Ahmed Mahrous</h2>
+    <button class="lang-btn" onclick="toggleLang()">AR / EN</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1 data-en="Flutter Developer" data-ar="مطور Flutter">Flutter Developer</h1>
+      <p data-en="3+ years building high-quality cross-platform apps"
+         data-ar="أكثر من 3 سنوات خبرة في تطوير تطبيقات متعددة المنصات">
+        3+ years building high-quality cross-platform apps
+      </p>
     </div>
+    <img src="./assets/profile.jpg" alt="Ahmed Mahrous">
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
+  <!-- ABOUT -->
+  <section class="card">
+    <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
+    <p data-en="Flutter Developer with strong experience in Firebase, Bloc, Clean Architecture and performance optimization."
+       data-ar="مطور Flutter بخبرة قوية في Firebase و Bloc و Clean Architecture وتحسين الأداء.">
+      Flutter Developer with strong experience in Firebase, Bloc, Clean Architecture and performance optimization.
+    </p>
+  </section>
 
-        <div class="row about-wrapper">
-          <div class="about-wrapper__image">
-            <img
-              src="./assets/profile.png"
-              alt="Ahmed Mahrous"
-              class="img-fluid"
-              width="450"
-              height="450"
-            />
-          </div>
+  <!-- SKILLS -->
+  <section>
+    <h2 data-en="Skills" data-ar="المهارات">Skills</h2>
+    <div class="skills">
+      <div class="card">Flutter & Dart</div>
+      <div class="card">Firebase</div>
+      <div class="card">Bloc / Cubit</div>
+      <div class="card">REST APIs</div>
+      <div class="card">LiveKit & WebSockets</div>
+      <div class="card">Payments</div>
+    </div>
+  </section>
 
-          <div class="about-wrapper__info">
-            <p class="about-wrapper__info-text">
-              Flutter Developer with 3+ years of hands-on experience in building
-              secure, scalable, and high-performance cross-platform applications
-              using Dart and Flutter.
-            </p>
+  <!-- PROJECTS -->
+  <section>
+    <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
 
-            <p class="about-wrapper__info-text">
-              Strong expertise in Firebase, RESTful APIs, state management
-              (Bloc, Cubit), clean architecture, performance optimization, and
-              delivering modern, user-friendly UI/UX experiences.
-            </p>
+    <div class="projects">
 
-            <span class="about-wrapper__cta">
-              <a
-                href="./assets/Ahmed_Mahrous_CV.pdf"
-                target="_blank"
-                class="cta-btn cta-btn--resume"
-              >
-                View Resume
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title dark-blue-text">Projects</h2>
-
-        <!-- Qimni -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3 class="project-wrapper__text-title">Qimni App</h3>
-            <p class="project-wrapper__text-info">
-              Cross-platform Flutter application that allows users to create
-              personalized spaces for sharing social media links and products.
-              Includes subscriptions, commission-based sales, deep linking,
-              payments, and multi-language support.
-            </p>
-
-            <div class="project-wrapper__text-btns">
-              <a
-                href="#"
-                class="cta-btn cta-btn--hero cta-btn--projects"
-                target="_blank"
-              >
-                Google Play
-              </a>
-              <a
-                href="https://github.com/AhmedMahrous0023"
-                class="cta-btn text-color-main"
-                target="_blank"
-              >
-                Source Code
-              </a>
-            </div>
-          </div>
-
-          <div class="project-wrapper__image">
-            <img
-              src="./assets/project.png"
-              class="img-fluid"
-              alt="Qimni App"
-            />
-          </div>
-        </article>
-
-        <!-- POP ROOM -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3 class="project-wrapper__text-title">POP ROOM</h3>
-            <p class="project-wrapper__text-info">
-              Real-time voice chat application built with Flutter, LiveKit, and
-              WebSockets. Supports public/private rooms, invitations, deep
-              linking, and country-based discovery.
-            </p>
-          </div>
-        </article>
-
-        <!-- Video Editor -->
-        <article class="row">
-          <div class="project-wrapper__text">
-            <h3 class="project-wrapper__text-title">Video Editor</h3>
-            <p class="project-wrapper__text-info">
-              Flutter-based media editing tool using FFmpeg for trimming,
-              merging, audio extraction, and video sound manipulation.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-
-        <div class="contact-wrapper">
-          <p class="contact-wrapper__text">
-            Interested in working together or hiring me?
+      <div class="card project">
+        <div>
+          <span class="badge">Published</span>
+          <h3>Qimni App</h3>
+          <p data-en="Social links & marketplace app with subscriptions and commissions."
+             data-ar="تطبيق لمشاركة الروابط والمتاجر بنظام اشتراكات وعمولات.">
+            Social links & marketplace app with subscriptions and commissions.
           </p>
-
-          <a
-            href="mailto:ahmed.mahrous1092@gmail.com"
-            class="cta-btn cta-btn--resume"
-          >
-            Email Me
-          </a>
+        </div>
+        <div class="screens">
+          <img src="./assets/projects/qimni/1.png">
+          <img src="./assets/projects/qimni/2.png">
         </div>
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <div class="social-links">
-          <a
-            href="https://github.com/AhmedMahrous0023"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/ahmedmahrous0023"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
+      <div class="card project">
+        <div>
+          <span class="badge">Private Project</span>
+          <h3>POP ROOM</h3>
+          <p data-en="Real-time voice chat app using LiveKit."
+             data-ar="تطبيق محادثات صوتية مباشرة باستخدام LiveKit.">
+            Real-time voice chat app using LiveKit.
+          </p>
         </div>
-
-        <p class="footer__text">
-          © <span id="year"></span> Ahmed Mahrous
-        </p>
+        <div class="screens">
+          <img src="./assets/projects/poproom/1.png">
+          <img src="./assets/projects/poproom/2.png">
+        </div>
       </div>
-    </footer>
 
-    <script>
-      document.getElementById("year").textContent =
-        new Date().getFullYear();
-    </script>
-  </body>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card">
+    <h2 data-en="Contact" data-ar="تواصل معي">Contact</h2>
+    <p>Email: ahmed.mahrous1092@gmail.com</p>
+    <p>Phone: +20 1114009880</p>
+    <p>
+      <a href="https://linkedin.com/in/ahmedmahrous0023">LinkedIn</a> |
+      <a href="https://github.com/AhmedMahrous0023">GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Ahmed Mahrous
+  </footer>
+</div>
+
+<script>
+  const html = document.getElementById("htmlRoot");
+  let lang = "en";
+
+  function toggleLang(){
+    lang = lang === "en" ? "ar" : "en";
+    html.lang = lang;
+    html.dir = lang === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-en]").forEach(el=>{
+      el.textContent = el.dataset[lang];
+    });
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
 </html>
