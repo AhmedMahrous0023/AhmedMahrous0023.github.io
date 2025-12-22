@@ -1,342 +1,173 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed Mahrous | Digital Product Studio</title>
-<meta name="description" content="Ahmed Mahrous is a Flutter Developer & Digital Product Builder helping startups build scalable products from idea to launch.">
-<meta name="author" content="Ahmed Mahrous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahrous Studio | Digital Product Builder</title>
 
-<style>
-/* ================= RESET ================= */
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-body{background:radial-gradient(circle at top,#111827,#020617);color:#e5e7eb;line-height:1.7;scroll-behavior:smooth;overflow-x:hidden;}
-a{text-decoration:none;color:inherit}
-.container{width:90%;max-width:1200px;margin:auto;}
-.rtl{direction:rtl;text-align:right;}
-.ltr{direction:ltr;text-align:left;}
-.hide{display:none;}
+  <!-- SEO -->
+  <meta name="description" content="Mahrous Studio is a premium digital product studio led by Ahmed Mahrous. We plan, design, and build scalable digital products using Flutter and business-driven thinking.">
+  <meta name="author" content="Ahmed Mahrous">
 
-/* ================= NAV ================= */
-nav{
-  position:fixed;top:0;width:100%;
-  backdrop-filter:blur(12px);
-  background:rgba(2,6,23,.85);
-  border-bottom:1px solid rgba(255,255,255,.05);
-  z-index:999;
-}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0;}
-.logo{font-weight:800;font-size:1.2rem;color:#38bdf8;letter-spacing:1px;}
-nav ul{display:flex;gap:25px;list-style:none;}
-nav a{transition:.3s;}
-nav a:hover{color:#38bdf8;}
-.lang-toggle{cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid #38bdf8;color:#38bdf8;transition:.3s;}
-.lang-toggle:hover{background:#38bdf8;color:#020617;}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/* ================= HERO ================= */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;}
-.hero h1{font-size:3.4rem;opacity:0;transform:translateY(30px);transition:.8s ease-out;}
-.hero span{color:#38bdf8;}
-.hero p{margin:20px 0;color:#cbd5f5;font-size:1.15rem;opacity:0;transform:translateY(30px);transition:.8s ease-out .3s;}
-.buttons{display:flex;gap:15px;margin-top:25px;opacity:0;transform:translateY(30px);transition:.8s ease-out .6s;}
-.btn{padding:14px 28px;border-radius:14px;font-weight:600;cursor:pointer;}
-.primary{background:#38bdf8;color:#020617;transition:.3s;}
-.primary:hover{background:#0ea5e9;box-shadow:0 8px 25px rgba(56,189,248,.35);}
-.secondary{border:1px solid rgba(255,255,255,.3);transition:.3s;}
-.secondary:hover{background:rgba(56,189,248,.1);transform:translateY(-3px);}
-
-/* PROFILE */
-.profile{animation:float 6s ease-in-out infinite;opacity:0;transform:translateY(30px);transition:.8s ease-out .9s;}
-.profile img{width:100%;border-radius:28px;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(56,189,248,.25);}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-
-/* ================= SECTIONS ================= */
-section{padding:110px 0;opacity:0;transform:translateY(40px);transition:.8s ease-out;}
-.section-title{font-size:2.4rem;margin-bottom:40px;}
-.about p{max-width:800px;color:#cbd5f5;}
-.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.cat{background:#020617;border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:20px;transition:.4s;}
-.cat:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(56,189,248,.25);}
-.cat h3{color:#38bdf8;margin-bottom:10px;}
-.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
-.step{padding:25px;border-radius:18px;background:#020617;border:1px solid rgba(255,255,255,.08);text-align:center;transition:.4s;}
-.step:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(56,189,248,.2);}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.project{background:#020617;border-radius:22px;border:1px solid rgba(255,255,255,.08);overflow:hidden;transition:.4s;}
-.project:hover{transform:translateY(-12px);box-shadow:0 30px 80px rgba(56,189,248,.3);}
-.project img{width:100%;height:200px;object-fit:cover;}
-.project-content{padding:25px;}
-.project h3{color:#38bdf8;margin-bottom:8px;}
-.project small{color:#94a3b8;}
-.project-count{color:#38bdf8;font-size:1.2rem;margin-bottom:20px;text-align:center;}
-
-/* CV & CONTACT */
-.cv-download{margin:20px 0;text-align:center;}
-.cv-download a{padding:12px 24px;border-radius:12px;background:#38bdf8;color:#020617;font-weight:600;transition:.3s;}
-.cv-download a:hover{background:#0ea5e9;box-shadow:0 8px 25px rgba(56,189,248,.35);}
-
-/* CLIENT REVIEWS */
-.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px;}
-.review{background:#020617;padding:20px;border-radius:18px;border:1px solid rgba(255,255,255,.08);transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.1);}
-.review p{color:#cbd5f5;margin-bottom:12px;}
-.review small{color:#38bdf8;font-weight:600;}
-
-/* FOOTER */
-footer{text-align:center;padding:70px 0;border-top:1px solid rgba(255,255,255,.08);color:#94a3b8;}
-.visible{opacity:1;transform:translateY(0);}
-</style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="ltr">
 
-<!-- NAV -->
+<!-- ================= NAV ================= -->
 <nav>
   <div class="container nav-inner">
     <div class="logo">Mahrous Studio</div>
     <ul>
       <li><a href="#about" class="lang" data-en="Vision" data-ar="الرؤية">Vision</a></li>
-      <li><a href="#domains" class="lang" data-en="Domains" data-ar="المجالات">Domains</a></li>
-      <li><a href="#process" class="lang" data-en="Process" data-ar="العمل">Process</a></li>
-      <li><a href="#projects" class="lang" data-en="Work" data-ar="المشاريع">Work</a></li>
-      <li><a href="#cv" class="lang" data-en="CV" data-ar="السيرة الذاتية">CV</a></li>
-      <li><a href="#reviews" class="lang" data-en="Reviews" data-ar="آراء العملاء">Reviews</a></li>
-      <li><a href="#contact" class="btn primary lang" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a></li>
+      <li><a href="#what" class="lang" data-en="What We Do" data-ar="ماذا نقدم">What We Do</a></li>
+      <li><a href="#process" class="lang" data-en="Process" data-ar="المنهجية">Process</a></li>
+      <li><a href="#projects" class="lang" data-en="Work" data-ar="الأعمال">Work</a></li>
+      <li><a href="#services" class="lang" data-en="Services" data-ar="الخدمات">Services</a></li>
+      <li><a href="#contact" class="btn primary lang" data-en="Hire Us" data-ar="تواصل معنا">Hire Us</a></li>
     </ul>
     <div class="lang-toggle" id="langToggle">عربي</div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <header class="hero container">
   <div class="hero-grid">
     <div>
-      <h1 class="animate lang" data-en="Building Digital Products,<br><span>Not Just Flutter Apps</span>" data-ar="بناء المنتجات الرقمية,<br><span>ليس تطبيقات فلاتر فقط</span>">Building Digital Products,<br><span>Not Just Flutter Apps</span></h1>
-      <p class="animate lang" data-en="I help startups and companies transform ideas into scalable, production-ready digital products using Flutter, clean architecture, and business-focused thinking." data-ar="أساعد الشركات الناشئة والمؤسسات على تحويل الأفكار إلى منتجات رقمية جاهزة للتشغيل باستخدام فلاتر والهندسة النظيفة والتركيز على الأعمال.">
-        I help startups and companies transform ideas into scalable, production-ready digital products using Flutter, clean architecture, and business-focused thinking.
+      <h1 class="animate lang"
+        data-en="We Build <span>Digital Products</span><br>From Idea to Scale"
+        data-ar="نحن نبني <span>منتجات رقمية</span><br>من الفكرة إلى التوسع">
+        We Build <span>Digital Products</span><br>From Idea to Scale
+      </h1>
+
+      <p class="animate lang"
+        data-en="Mahrous Studio helps startups and companies plan, design, and launch scalable digital products. We combine business thinking, UX, and Flutter engineering to deliver production-ready systems."
+        data-ar="ستوديو محروس يساعد الشركات الناشئة والمؤسسات على تخطيط وتصميم وإطلاق منتجات رقمية قابلة للتوسع، من خلال الجمع بين التفكير التجاري وتجربة المستخدم وهندسة فلاتر.">
+        Mahrous Studio helps startups and companies plan, design, and launch scalable digital products.
       </p>
+
       <div class="buttons animate">
-        <a class="btn primary lang" href="#contact" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a>
-        <a class="btn secondary lang" href="#projects" data-en="View Work" data-ar="عرض المشاريع">View Work</a>
+        <a href="#contact" class="btn primary lang" data-en="Start a Project" data-ar="ابدأ مشروعك">Start a Project</a>
+        <a href="#projects" class="btn secondary lang" data-en="View Case Studies" data-ar="شاهد الأعمال">View Case Studies</a>
       </div>
     </div>
+
     <div class="profile animate">
       <img src="assets/profile.png" alt="Ahmed Mahrous">
     </div>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="about">
+<!-- ================= ABOUT ================= -->
+<section id="about">
   <div class="container">
-    <h2 class="section-title lang" data-en="Vision & Mindset" data-ar="الرؤية والطريقة">Vision & Mindset</h2>
-    <p class="lang" data-en="I work as a digital product builder, not a task-based developer. My process starts with understanding business problems, defining system logic, and designing scalable solutions before coding. With 3+ years of Flutter experience, I’ve delivered applications across mobile, web, and desktop platforms." data-ar="أعمل كباني منتجات رقمية، وليس مطور مهام فقط. تبدأ عمليتي بفهم مشاكل الأعمال، وتحديد منطق النظام، وتصميم حلول قابلة للتوسع قبل كتابة الكود. مع أكثر من 3 سنوات خبرة في فلاتر، قدمت تطبيقات على الأجهزة المحمولة والويب وسطح المكتب.">
-      I work as a digital product builder, not a task-based developer...
+    <h2 class="section-title lang" data-en="Vision & Philosophy" data-ar="الرؤية والفلسفة">Vision & Philosophy</h2>
+    <p class="lang"
+       data-en="We don’t build features. We build systems. Every product starts with understanding business goals, user behavior, and long-term scalability. Code is only the final layer of a much deeper process."
+       data-ar="نحن لا نبني خصائص، بل نبني أنظمة. يبدأ كل منتج بفهم أهداف العمل وسلوك المستخدم وقابلية التوسع على المدى الطويل. الكود هو المرحلة الأخيرة فقط.">
+      We don’t build features. We build systems.
     </p>
   </div>
 </section>
 
-<!-- DOMAINS -->
-<section id="domains">
+<!-- ================= WHAT WE DO ================= -->
+<section id="what">
   <div class="container">
-    <h2 class="section-title lang" data-en="Domains I’ve Worked In" data-ar="المجالات التي عملت بها">Domains I’ve Worked In</h2>
+    <h2 class="section-title lang" data-en="What We Do" data-ar="ماذا نقدم">What We Do</h2>
     <div class="categories">
-      <div class="cat"><h3>FinTech</h3><p>Payments, subscriptions, analytics</p></div>
-      <div class="cat"><h3>E-Commerce</h3><p>Products, carts, checkout</p></div>
-      <div class="cat"><h3>Education</h3><p>Quizzes, learning platforms</p></div>
-      <div class="cat"><h3>Healthcare</h3><p>Mental health, pharmacies</p></div>
-      <div class="cat"><h3>Social Platforms</h3><p>Chats, communities, profiles</p></div>
-      <div class="cat"><h3>IoT</h3><p>Arduino & smart monitoring</p></div>
-      <div class="cat"><h3>Real-Time Apps</h3><p>Voice, video, live rooms</p></div>
+      <div class="cat"><h3>Product Planning</h3><p>Idea validation, MVP definition, roadmap</p></div>
+      <div class="cat"><h3>Business Logic</h3><p>System flows, data models, scalability</p></div>
+      <div class="cat"><h3>UX Thinking</h3><p>User journeys, usability, simplicity</p></div>
+      <div class="cat"><h3>Flutter Development</h3><p>Mobile, web, desktop apps</p></div>
+      <div class="cat"><h3>Architecture</h3><p>Clean Architecture, maintainability</p></div>
+      <div class="cat"><h3>Launch & Growth</h3><p>Publishing, iteration, optimization</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ================= PROCESS ================= -->
 <section id="process">
   <div class="container">
-    <h2 class="section-title lang" data-en="How I Work" data-ar="كيف أعمل">How I Work</h2>
+    <h2 class="section-title lang" data-en="Our Process" data-ar="منهجية العمل">Our Process</h2>
     <div class="process">
-      <div class="step lang" data-en="Idea & Requirements" data-ar="الفكرة والمتطلبات">Idea & Requirements</div>
-      <div class="step lang" data-en="Analysis & Planning" data-ar="التحليل والتخطيط">Analysis & Planning</div>
-      <div class="step lang" data-en="UX & Architecture" data-ar="تصميم UX والهندسة">UX & Architecture</div>
-      <div class="step lang" data-en="Development" data-ar="التطوير">Development</div>
-      <div class="step lang" data-en="Launch & Growth" data-ar="الإطلاق والنمو">Launch & Growth</div>
+      <div class="step">Idea</div>
+      <div class="step">Analysis</div>
+      <div class="step">UX & Architecture</div>
+      <div class="step">Development</div>
+      <div class="step">Launch & Scale</div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title lang" data-en="Projects" data-ar="المشاريع">Projects</h2>
+    <h2 class="section-title lang" data-en="Selected Work" data-ar="أعمال مختارة">Selected Work</h2>
     <div class="project-count" id="projectCount"></div>
-    <div class="projects">
 
-      <!-- Example Project with placeholder image, replace with assets/screenshots -->
+    <div class="projects">
       <div class="project">
-        <img src="assets/qimni_app.png" alt="Qimni App Screenshot">
+        <img src="assets/qimni_app.png">
         <div class="project-content">
           <h3>Qimni App</h3>
-          <small>Flutter • Firebase • REST APIs</small>
-          <p>
-            • Developed and published a cross-platform application that allows users to create personalized spaces to share their social media links.<br>
-            • Implemented marketplace features with separate plans for sellers and marketers, enabling product listing, subscription packages, and commission-based sales.<br>
-            • Integrated Firebase services for authentication, database management, push notifications, and analytics.<br>
-            • Added deep linking for seamless profile and product sharing outside the app.<br>
-            • Supported multi-language localization (Arabic & English).<br>
-            • Implemented secure online payments and subscription management.
-          </p>
+          <small>Flutter · Firebase · SaaS</small>
+          <p>Multi-platform digital identity & marketplace system with subscriptions, analytics, and payments.</p>
         </div>
       </div>
 
       <div class="project">
-        <img src="assets/smart_pharmacy.png" alt="Smart Pharmacy Screenshot">
-        <div class="project-content">
-          <h3>Smart Pharmacy</h3>
-          <small>Flutter • Firebase • E-commerce</small>
-          <p>
-            • Designed and built an e-commerce style app for browsing, searching, and purchasing medicines online.<br>
-            • Integrated Firebase backend services for authentication, database, and notifications.<br>
-            • Implemented secure ordering flow with cart and checkout features.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="assets/neama.png" alt="Neama App Screenshot">
-        <div class="project-content">
-          <h3>Neama</h3>
-          <small>Flutter • Firebase • Donations Platform</small>
-          <p>
-            • Charity and food-bank application allowing users to donate meals or money.<br>
-            • Implemented features for users to claim daily meals via booking system with delivery or pickup.<br>
-            • Integrated real-time notifications and Firebase backend.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="assets/meknaz.png" alt="Meknaz App Screenshot">
-        <div class="project-content">
-          <h3>Meknaz</h3>
-          <small>Flutter • Firebase • Data Visualization</small>
-          <p>
-            • Personal finance management app for tracking daily/monthly expenses and setting saving goals.<br>
-            • Implemented interactive charts and statistics for better financial insights.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="assets/pop_room.png" alt="POP-ROOM Screenshot">
+        <img src="assets/pop_room.png">
         <div class="project-content">
           <h3>POP-ROOM</h3>
-          <small>Flutter • LiveKit • WebSockets</small>
-          <p>
-            • Real-time voice chat application with room creation (public/private) and invitations.<br>
-            • Integrated LiveKit SDK, WebSockets, and deep linking for seamless navigation.<br>
-            • Developed country-based room discovery and global browsing.<br>
-            • Currently in publishing stage.
-          </p>
+          <small>Flutter · Real-time · LiveKit</small>
+          <p>Voice-based real-time rooms with global discovery and scalable backend architecture.</p>
         </div>
       </div>
 
       <div class="project">
-        <img src="assets/aou_connect.png" alt="AOU Connect Screenshot">
+        <img src="assets/smart_pharmacy.png">
         <div class="project-content">
-          <h3>AOU Connect</h3>
-          <small>Flutter • Firebase • Academic Platform</small>
-          <p>
-            • University-focused app for connecting students, professors, and academic advisors.<br>
-            • Implemented course-specific chats, event scheduling, and notification system.<br>
-            • Provided admin controls for managing lectures, exams, and announcements.
-          </p>
+          <h3>Smart Pharmacy</h3>
+          <small>Flutter · E-Commerce</small>
+          <p>Medicine ordering platform with secure checkout and inventory logic.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="project">
-        <img src="assets/nafes_quiz.png" alt="Nafes Quiz App Screenshot">
-        <div class="project-content">
-          <h3>Nafes Quiz App</h3>
-          <small>Flutter • JSON • Education</small>
-          <p>
-            • Mathematics quiz application for students with multiple-choice questions and instant results.<br>
-            • Implemented performance tracking and percentage-based result visualization.
-          </p>
-        </div>
-      </div>
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title lang" data-en="Services" data-ar="الخدمات">Services</h2>
+    <div class="categories">
+      <div class="cat"><h3>Startups</h3><p>MVPs, validation, early-stage products</p></div>
+      <div class="cat"><h3>Companies</h3><p>Internal systems, scalable apps</p></div>
+      <div class="cat"><h3>Long-Term Products</h3><p>Ongoing development & growth</p></div>
+    </div>
+  </div>
+</section>
 
-      <div class="project">
-        <img src="assets/video_editor.png" alt="Video Editor Screenshot">
-        <div class="project-content">
-          <h3>Video Editor</h3>
-          <small>Flutter • FFmpeg</small>
-          <p>
-            • Media tool for trimming, merging, extracting audio, and changing sound of videos.<br>
-            • Integrated FFmpeg for advanced video/audio editing functionalities.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <img src="assets/inner_peace.png" alt="Inner Peace App Screenshot">
-        <div class="project-content">
-          <h3>Inner Peace</h3>
-          <small>Flutter • Firebase • Health & Wellness</small>
-          <p>
-            • Mental health app supporting depression patients through mood tracking and awareness content.<br>
-            • Features include journaling, memory saving, motivational content, and doctor/patient chat.<br>
-            • Integrated vital signs monitoring with alerts and emergency notifications.
-          </p>
-        </div>
-      </div>       
-   </section>
-
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 <footer id="contact">
-  <h2 class="lang" data-en="Let’s Build Something Serious" data-ar="لنبدأ في بناء شيء مميز">Let’s Build Something Serious</h2>
-  <p class="lang" data-en="Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com" data-ar="القاهرة، مصر<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com">Cairo, Egypt<br>📞 +20 111 400 9880<br>✉️ ahmed.mahrous1092@gmail.com</p>
+  <h2 class="lang" data-en="Let’s Build Something Serious" data-ar="لنبدأ في بناء شيء جاد">Let’s Build Something Serious</h2>
   <p>
-    <a href="https://linkedin.com/in/AhmedMahrous0023" target="_blank">LinkedIn</a> · 
-    <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a> · 
-    <a href="https://khamsat.com/user/ahmed_mahrous25" target="_blank">Khamsat</a>
+    Cairo, Egypt<br>
+    📞 +20 111 400 9880<br>
+    ✉️ ahmed.mahrous1092@gmail.com
   </p>
-  <p>© 2025 Ahmed Mahrous — Digital Product Studio</p>
+  <p>
+    <a href="https://linkedin.com/in/AhmedMahrous0023" target="_blank">LinkedIn</a> ·
+    <a href="https://github.com/AhmedMahrous0023" target="_blank">GitHub</a>
+  </p>
+  <p>© 2025 Mahrous Studio</p>
 </footer>
 
-<script>
-// ================= PROJECT COUNT =================
-const projectCount = document.getElementById('projectCount');
-const totalProjects = document.querySelectorAll('.project').length;
-projectCount.textContent = `Total Projects: ${totalProjects}`;
-
-// ================= ANIMATION ON SCROLL =================
-const animateElements = document.querySelectorAll('.animate, section');
-function isInViewport(el){
-  const rect = el.getBoundingClientRect();
-  return rect.top < window.innerHeight - 100;
-}
-function runAnimation(){
-  animateElements.forEach(el=>{
-    if(isInViewport(el)) el.classList.add('visible');
-  });
-}
-window.addEventListener('scroll', runAnimation);
-window.addEventListener('load', runAnimation);
-
-// ================= LANGUAGE TOGGLE =================
-let lang = 'ar';
-const langToggle = document.getElementById('langToggle');
-langToggle.addEventListener('click', ()=>{
-  const elements = document.querySelectorAll('.lang');
-  lang = lang==='en'?'ar':'en';
-  elements.forEach(el=>{
-    el.innerHTML = el.dataset[lang];
-  });
-  document.body.className = lang==='ar'?'rtl':'ltr';
-  langToggle.textContent = lang==='ar'?'English':'عربي';
-});
-</script>
-
+<script src="javascript/script.js"></script>
 </body>
 </html>
