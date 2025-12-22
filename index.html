@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AhmedMahrous Studio | Flutter Developer & Digital Product Builder</title>
+  <title>AhmedMahrous Studio | Flutter Developer & Product Builder</title>
 
   <!-- SEO -->
-  <meta name="description" content="AhmedMahrous Studio is a premium digital product studio led by Ahmed Mahrous, a Flutter Developer with 3 years of experience building scalable cross-platform applications.">
+  <meta name="description" content="Ahmed Mahrous is a Flutter Developer & Product Builder helping startups and companies build scalable digital products across mobile, web, and desktop.">
   <meta name="author" content="Ahmed Mahrous">
 
   <!-- Fonts -->
@@ -14,119 +14,267 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',system-ui;
+    }
+
+    body{
+      background:radial-gradient(circle at top,#111827,#020617);
+      color:#e5e7eb;
+      line-height:1.7;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    /* ================= NAV ================= */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(2,6,23,.85);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-weight:800;
+      color:#38bdf8;
+      letter-spacing:1px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+
+    nav a:hover{color:#38bdf8}
+
+    .btn{
+      padding:12px 26px;
+      border-radius:14px;
+      font-weight:600;
+    }
+
+    .primary{
+      background:#38bdf8;
+      color:#020617;
+    }
+
+    .secondary{
+      border:1px solid rgba(255,255,255,.35);
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      min-height:100vh;
+      padding-top:140px;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:3.1rem;
+      font-weight:800;
+      margin-bottom:22px;
+    }
+
+    .hero h1 span{
+      color:#38bdf8;
+    }
+
+    .hero p{
+      font-size:1.05rem;
+      color:#cbd5f5;
+      max-width:560px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:16px;
+      margin-top:32px;
+    }
+
+    /* ================= PROFILE CARD ================= */
+    .profile{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .profile-card{
+      position:relative;
+      width:270px;
+      padding:24px 24px 28px;
+      border-radius:28px;
+      background:linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.02)
+      );
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        inset 0 0 0 1px rgba(255,255,255,.04);
+      text-align:center;
+      animation:float 6s ease-in-out infinite;
+      transition:.45s;
+    }
+
+    .profile-card:hover{
+      transform:translateY(-16px) scale(1.04);
+      box-shadow:0 50px 130px rgba(56,189,248,.35);
+    }
+
+    .profile-glow{
+      position:absolute;
+      inset:-40px;
+      background:radial-gradient(
+        circle,
+        rgba(56,189,248,.4),
+        transparent 65%
+      );
+      opacity:.65;
+      z-index:-1;
+    }
+
+    .profile-card img{
+      width:155px;
+      height:155px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid rgba(56,189,248,.7);
+      margin-bottom:18px;
+      background:#020617;
+    }
+
+    .profile-info h4{
+      font-size:1.15rem;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .profile-info span{
+      font-size:.85rem;
+      color:#94a3b8;
+      letter-spacing:.3px;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    /* ================= SECTIONS ================= */
+    section{
+      padding:110px 0;
+    }
+
+    .section-title{
+      font-size:2.3rem;
+      margin-bottom:36px;
+    }
+
+    .categories,.process{
+      display:grid;
+      gap:24px;
+    }
+
+    .categories{
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    }
+
+    .process{
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    }
+
+    .cat,.step{
+      background:#020617;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:26px;
+      transition:.4s;
+    }
+
+    .cat:hover{
+      transform:translateY(-8px);
+      box-shadow:0 25px 60px rgba(56,189,248,.25);
+    }
+  </style>
 </head>
 
-<body class="ltr">
+<body>
 
 <!-- ================= NAV ================= -->
 <nav>
   <div class="container nav-inner">
     <div class="logo">AhmedMahrous Studio</div>
     <ul>
-      <li><a href="#about" class="lang" data-en="About" data-ar="نبذة">About</a></li>
-      <li><a href="#skills" class="lang" data-en="Skills" data-ar="المهارات">Skills</a></li>
-      <li><a href="#process" class="lang" data-en="Process" data-ar="المنهجية">Process</a></li>
-      <li><a href="#projects" class="lang" data-en="Work" data-ar="الأعمال">Work</a></li>
-      <li><a href="#cv" class="lang" data-en="CV" data-ar="السيرة الذاتية">CV</a></li>
-      <li><a href="#contact" class="btn primary lang" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact" class="btn primary">Hire Me</a></li>
     </ul>
-    <div class="lang-toggle" id="langToggle">عربي</div>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <header class="hero container">
   <div class="hero-grid">
+
     <div>
-      <h1 class="animate lang"
-        data-en="Flutter Developer with 3+ Years Experience<br><span>Building Real Digital Products</span>"
-        data-ar="مطور فلاتر بخبرة أكثر من 3 سنوات<br><span>أبني منتجات رقمية حقيقية</span>">
-        Flutter Developer with 3+ Years Experience<br><span>Building Real Digital Products</span>
+      <h1>
+        Flutter Developer & Product Engineer<br>
+        <span>Turning Ideas into Scalable Digital Products</span>
       </h1>
 
-      <p class="animate lang"
-        data-en="I’m Ahmed Mahrous, a Flutter Developer and product-minded engineer who helps startups and companies transform ideas into scalable, production-ready digital products across mobile, web, and desktop."
-        data-ar="أنا أحمد محروس، مطور فلاتر بعقلية منتجات، أساعد الشركات الناشئة والمؤسسات على تحويل الأفكار إلى منتجات رقمية قابلة للتوسع تعمل على الموبايل والويب وسطح المكتب.">
-        I’m Ahmed Mahrous, a Flutter Developer and product-minded engineer.
+      <p>
+        I’m Ahmed Mahrous, a Flutter Developer with a strong product mindset.
+        I help startups and companies transform ideas into real, scalable,
+        production-ready applications across mobile, web, and desktop —
+        focusing on clean architecture, performance, and long-term growth.
       </p>
 
-      <div class="buttons animate">
-        <a href="#contact" class="btn primary lang" data-en="Hire Me" data-ar="تواصل معي">Hire Me</a>
-        <a href="#projects" class="btn secondary lang" data-en="View Projects" data-ar="عرض المشاريع">View Projects</a>
+      <div class="buttons">
+        <a href="#contact" class="btn primary">Hire Me</a>
+        <a href="#projects" class="btn secondary">View Projects</a>
       </div>
     </div>
 
-    <div class="profile animate">
-      <img src="assets/profile.png" alt="Ahmed Mahrous">
-    </div>
-  </div>
-</header>
-
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title lang" data-en="About Me" data-ar="من أنا">About Me</h2>
-    <p class="lang"
-       data-en="Flutter Developer with 3 years of hands-on experience designing and building cross-platform applications using Dart and Flutter. I specialize in clean architecture, scalable systems, and real-world production apps. I work beyond coding — understanding business goals, system logic, and long-term maintainability."
-       data-ar="مطور فلاتر بخبرة عملية 3 سنوات في تصميم وبناء تطبيقات متعددة المنصات باستخدام Dart وFlutter. أركز على الهندسة النظيفة وبناء أنظمة قابلة للتوسع وتطبيقات جاهزة للإنتاج، مع فهم عميق للأهداف التجارية ومنطق الأنظمة.">
-    </p>
-  </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title lang" data-en="Technical Skills" data-ar="المهارات التقنية">Technical Skills</h2>
-
-    <div class="categories">
-      <div class="cat">
-        <h3>Flutter & Dart</h3>
-        <p>Android • iOS • Web • Desktop<br>Custom Widgets • Responsive UI • Animations</p>
-      </div>
-
-      <div class="cat">
-        <h3>Architecture</h3>
-        <p>Clean Architecture • MVVM • SOLID • Dependency Injection</p>
-      </div>
-
-      <div class="cat">
-        <h3>State Management</h3>
-        <p>Bloc • Cubit • Provider • Data Persistence</p>
-      </div>
-
-      <div class="cat">
-        <h3>Backend & APIs</h3>
-        <p>Firebase (Auth, Firestore, FCM, Functions)<br>REST APIs • SQLite</p>
-      </div>
-
-      <div class="cat">
-        <h3>Real-time Systems</h3>
-        <p>LiveKit • WebSockets • Chat • Voice & Video Calls</p>
-      </div>
-
-      <div class="cat">
-        <h3>Advanced Features</h3>
-        <p>Payments • Localization • Notifications • Performance Optimization</p>
+    <div class="profile">
+      <div class="profile-card">
+        <div class="profile-glow"></div>
+        <img src="assets/profile.png" alt="Ahmed Mahrous">
+        <div class="profile-info">
+          <h4>Ahmed Mahrous</h4>
+          <span>Flutter Developer & Product Builder</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section id="process">
-  <div class="container">
-    <h2 class="section-title lang" data-en="How I Work" data-ar="طريقة العمل">How I Work</h2>
-    <div class="process">
-      <div class="step">Idea</div>
-      <div class="step">Analysis</div>
-      <div class="step">UX & Architecture</div>
-      <div class="step">Development</div>
-      <div class="step">Launch & Maintenance</div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
   <div class="container">
