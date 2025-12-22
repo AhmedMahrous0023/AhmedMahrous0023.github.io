@@ -1,14 +1,20 @@
-const items = document.querySelectorAll(".card, .project-card");
+// script.js
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  { threshold: 0.25 }
-);
+// Project counter
+const count = document.getElementById("projectCount");
+if(count){
+  count.textContent = `Total Projects: ${document.querySelectorAll(".project").length}`;
+}
 
-items.forEach(item => observer.observe(item));
+// Language toggle
+let lang = "en";
+const toggle = document.getElementById("langToggle");
+
+toggle.addEventListener("click",()=>{
+  lang = lang === "en" ? "ar" : "en";
+  document.querySelectorAll(".lang").forEach(el=>{
+    el.innerHTML = el.dataset[lang];
+  });
+  document.body.className = lang === "ar" ? "rtl" : "ltr";
+  toggle.textContent = lang === "ar" ? "English" : "عربي";
+});
