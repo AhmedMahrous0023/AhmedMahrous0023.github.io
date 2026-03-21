@@ -46,12 +46,12 @@
       eyebrowRole: "مطوّر Flutter",
       heroLead:
         "أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية — مناسب للشركات الناشئة والعمل الحر.",
-      metricApps: "تطبيقات منشورة",
+      metricApps: "مشاريع منفّذة",
       metricUsersValue: "1K+",
       metricUsersCum: "مستخدِم تراكمي",
       metricYears: "سنوات في التطوير",
       metricsFootnote:
-        "الأرقام تعكس التطبيقات المنشورة والتقريبات المعتمدة على إحصاءات المنتجات المنشورة.",
+        "يشمل العدد المشاريع المنجزة والمنشورة ضمن نطاق العمل؛ بقية الأرقام تقريبية ويمكن توضيحها عند التواصل.",
       aboutTitle: "🎯 لماذا تتعامل معي؟",
       aboutLead:
         "أعمل بشكل واضح على المخرجات والمواعيد: كود منظم، بنية قابلة للصيانة، وتواصل منتظم — مناسب إذا كنت شركة تبحث عن مطوّر يدمج مع الفريق، أو صاحب فكرة تحتاج تنفيذاً من الصفر.",
@@ -90,26 +90,15 @@
         "مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.",
       workTitle: "🚀 المشاريع ودراسات الحالة",
       workLead:
-        "كل مشروع يُبنى حول هدف واضح: تجربة مستخدم بسيطة، بنية قابلة للنمو، وقابلية الصيانة.",
+        "ثمانية عشر مشروعاً متنوّعاً — يُعرض أول ستة بتفصيل كامل، ويمكنك فتح الباقي بنقرة واحدة.",
       caseLabelProblem: "المشكلة",
       caseLabelBuilt: "ما الذي بُني",
       caseLabelStack: "التقنيات",
       caseLabelOutcome: "النتيجة",
-      qimniProblem:
-        "المبدعون يحتاجون رابط واحد يجمع حضورهم الرقمي مع إمكانية بسيطة لبيع منتجات دون بناء متجر معقّد.",
-      qimniBuilt:
-        "تطبيق Flutter لملف شخصي قابل للتخصيص، روابط، ومتجر داخلي مع تدفّق دفع/طلب مبسّط.",
-      qimniStack: "Flutter · Dart · Clean Architecture · Firebase / واجهات خلفية سحابية · REST",
-      qimniOutcome:
-        "تطبيق منشور يخدم مئات المستخدمين النشطين ضمن نطاق المنتج — واجهة موحّدة لعرض الروابط والبيع.",
-      meknazProblem:
-        "متابعة المصاريف والأهداف المالية تحتاج أداة خفيفة دون تعقيد تطبيقات البنوك أو الجداول اليدوية.",
-      meknazBuilt:
-        "تطبيق Flutter لإدارة الإنفاق، الأهداف، وتلخيصات بصرية بسيطة تدعم الالتزام اليومي.",
-      meknazStack: "Flutter · Dart · تخزين محلي / مزامنة حسب التصميم · واجهات UX بسيطة",
-      meknazOutcome:
-        "تجربة استخدام واضحة تقلّل الاحتكاك في تسجيل المعاملات وتساعد على رؤية التقدم نحو الهدف.",
       workGithubProfile: "مستودعات GitHub",
+      playPublishedBadge: "منشور على Google Play",
+      projectsShowMore: "عرض المزيد من المشاريع",
+      projectsShowLess: "عرض عدد أقل",
       availTitle: "📅 التوفر وأشكال التعاون",
       availLead:
         "وضّح في رسالتك الشكل الذي يناسبك — أساعد في اختيار النموذج الأنسب بعد فهم النطاق.",
@@ -142,8 +131,6 @@
         "أفضّل رسالة قصيرة: نوع المشروع، الجدول الزمني، والميزانية التقريبية إن وجدت — أرد خلال يوم عمل.",
       footerCopy: "© 2026 أحمد محروس — مطوّر Flutter",
       photoAlt: "أحمد محروس — مطوّر Flutter",
-      imgQimni: "لقطة شاشة من تطبيق Qimni",
-      imgMeknaz: "لقطة شاشة من تطبيق Meknaz",
     },
     en: {
       metaDesc:
@@ -177,12 +164,12 @@
       eyebrowRole: "Flutter Developer",
       heroLead:
         "I turn your idea into a production-ready app with Clean Architecture and Firebase / Supabase — polished UX for startups and freelance collaborations.",
-      metricApps: "Apps shipped",
+      metricApps: "Projects delivered",
       metricUsersValue: "1K+",
       metricUsersCum: "Cumulative users",
       metricYears: "Years shipping apps",
       metricsFootnote:
-        "Figures reflect shipped apps and product-side estimates; happy to clarify scope on a call.",
+        "The project count includes shipped work in scope; other figures are estimates — happy to clarify on a call.",
       aboutTitle: "🎯 Why work with me?",
       aboutLead:
         "Clear outcomes and timelines: maintainable architecture, clean code, and steady communication — whether you need a developer who fits a team or a build from zero.",
@@ -222,26 +209,15 @@
         "Code reviews, faster screens, and leaner dependencies so the product stays snappy over time.",
       workTitle: "🚀 Projects & case studies",
       workLead:
-        "Each build targets a clear goal: simple UX, scalable structure, and maintainable code.",
+        "18 diverse products — the first six include full case studies; expand to browse the rest.",
       caseLabelProblem: "Problem",
       caseLabelBuilt: "What we built",
       caseLabelStack: "Tech stack",
       caseLabelOutcome: "Outcome",
-      qimniProblem:
-        "Creators need one link for their digital presence plus lightweight selling without a heavy storefront.",
-      qimniBuilt:
-        "A Flutter app for customizable profiles, links, and an in-app shop with a streamlined order flow.",
-      qimniStack: "Flutter · Dart · Clean Architecture · Firebase / cloud backends · REST",
-      qimniOutcome:
-        "A shipped app serving hundreds of active users in-scope — one surface for links and commerce.",
-      meknazProblem:
-        "People need a lightweight way to track spending and savings goals without banking-app complexity.",
-      meknazBuilt:
-        "A Flutter app for expenses, goals, and simple summaries that support daily habit-building.",
-      meknazStack: "Flutter · Dart · local storage / sync as designed · focused UX",
-      meknazOutcome:
-        "A clear flow that lowers friction when logging transactions and shows progress toward goals.",
       workGithubProfile: "GitHub repositories",
+      playPublishedBadge: "Live on Google Play",
+      projectsShowMore: "Show more projects",
+      projectsShowLess: "Show fewer",
       availTitle: "📅 Availability & collaboration",
       availLead:
         "Mention the model that fits you in your first message — I’ll suggest the best fit after scoping.",
@@ -277,8 +253,6 @@
         "A short note works best: project type, timeline, and budget range if you have one — I usually reply within one business day.",
       footerCopy: "© 2026 Ahmed Mahrous — Flutter Developer",
       photoAlt: "Ahmed Mahrous — Flutter Developer",
-      imgQimni: "Screenshot of the Qimni app",
-      imgMeknaz: "Screenshot of the Meknaz app",
     },
   };
 
@@ -353,6 +327,136 @@
     if (ogLoc && t.ogLocale) ogLoc.setAttribute("content", t.ogLocale);
   }
 
+  var activeLang = "ar";
+  var projectsExpanded = false;
+  var githubProjectsUrl = "https://github.com/ahmedmahrous0023";
+
+  var reveal = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  function renderPortfolioProjects(lang) {
+    var root = document.getElementById("projects-root");
+    if (!root) return;
+    var projects = window.PORTFOLIO_PROJECTS;
+    var initialN = window.PROJECTS_INITIAL_COUNT || 6;
+    if (!projects || !projects.length) {
+      root.innerHTML = "";
+      var wrapEmpty = document.querySelector(".projects-more");
+      if (wrapEmpty) wrapEmpty.style.display = "none";
+      return;
+    }
+
+    var labels = translations[lang];
+    root.innerHTML = "";
+
+    if (projectsExpanded) root.classList.add("projects-expanded");
+    else root.classList.remove("projects-expanded");
+
+    projects.forEach(function (p, index) {
+      var c = lang === "en" ? p.en : p.ar;
+      var article = document.createElement("article");
+      article.className = "card case-study project-card hidden";
+
+      if (index >= initialN) article.classList.add("project-card--extra");
+
+      var thumb = document.createElement("div");
+      thumb.className = "work-thumb";
+      var img = document.createElement("img");
+      img.src = p.image || "assets/project-placeholder.svg";
+      img.alt = (lang === "ar" ? "لقطة من تطبيق " : "Screenshot: ") + c.name;
+      img.loading = "lazy";
+      img.width = 800;
+      img.height = 450;
+      if (img.src.indexOf("placeholder.svg") === -1) {
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = "assets/project-placeholder.svg";
+        };
+      }
+      thumb.appendChild(img);
+
+      var titleWrap = document.createElement("div");
+      titleWrap.className = "project-card__title";
+      var h3 = document.createElement("h3");
+      h3.textContent = c.name;
+      titleWrap.appendChild(h3);
+      if (p.badgePlay) {
+        var badge = document.createElement("span");
+        badge.className = "project-badge";
+        badge.textContent = labels.playPublishedBadge;
+        titleWrap.appendChild(badge);
+      }
+
+      var dl = document.createElement("dl");
+      dl.className = "case-study__list";
+
+      function addRow(dtText, ddText, ddClass) {
+        var block = document.createElement("div");
+        block.className = "case-study__block";
+        var dt = document.createElement("dt");
+        dt.textContent = dtText;
+        var dd = document.createElement("dd");
+        if (ddClass) dd.className = ddClass;
+        dd.textContent = ddText;
+        block.appendChild(dt);
+        block.appendChild(dd);
+        dl.appendChild(block);
+      }
+
+      addRow(labels.caseLabelProblem, c.problem, "prose");
+      addRow(labels.caseLabelBuilt, c.built, "prose");
+      addRow(labels.caseLabelStack, c.stack, null);
+      addRow(labels.caseLabelOutcome, c.outcome, "prose");
+
+      var actions = document.createElement("div");
+      actions.className = "actions";
+      var link = document.createElement("a");
+      link.href = githubProjectsUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = labels.workGithubProfile;
+      actions.appendChild(link);
+
+      article.appendChild(thumb);
+      article.appendChild(titleWrap);
+      article.appendChild(dl);
+      article.appendChild(actions);
+
+      if (projectsExpanded && index >= initialN) {
+        article.classList.add("show");
+      }
+
+      root.appendChild(article);
+    });
+
+    root.querySelectorAll(".project-card").forEach(function (card) {
+      if (card.classList.contains("project-card--extra") && !projectsExpanded) return;
+      reveal.observe(card);
+    });
+
+    var btn = document.getElementById("projects-toggle");
+    var wrap = document.querySelector(".projects-more");
+    if (btn && wrap) {
+      var extraCount = Math.max(0, projects.length - initialN);
+      if (extraCount === 0) {
+        wrap.style.display = "none";
+      } else {
+        wrap.style.display = "flex";
+        btn.setAttribute("aria-expanded", projectsExpanded ? "true" : "false");
+        var tbtn = translations[lang];
+        btn.textContent = projectsExpanded
+          ? tbtn.projectsShowLess
+          : tbtn.projectsShowMore + " (+" + extraCount + ")";
+      }
+    }
+  }
+
   function setCtaCallHref(lang) {
     var ctaCall = document.getElementById("cta-call");
     if (!ctaCall) return;
@@ -361,6 +465,7 @@
   }
 
   function setLanguage(lang) {
+    activeLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     var t = translations[lang];
@@ -410,6 +515,8 @@
 
     setCtaCallHref(lang);
 
+    renderPortfolioProjects(lang);
+
     try {
       localStorage.setItem("lang", lang);
     } catch (e) {}
@@ -423,6 +530,11 @@
     saved = localStorage.getItem("lang") || "ar";
   } catch (e) {}
   setLanguage(saved === "en" ? "en" : "ar");
+
+  document.getElementById("projects-toggle")?.addEventListener("click", function () {
+    projectsExpanded = !projectsExpanded;
+    renderPortfolioProjects(activeLang);
+  });
 
   var skip = document.querySelector(".skip-link");
   var mainEl = document.getElementById("main-content");
@@ -443,15 +555,8 @@
     closeMenu();
   });
 
-  var reveal = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    },
-    { threshold: 0.15 }
-  );
   document.querySelectorAll(".hidden").forEach(function (el) {
+    if (el.closest("#projects-root")) return;
     reveal.observe(el);
   });
 
