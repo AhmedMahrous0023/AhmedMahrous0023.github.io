@@ -1,112 +1,147 @@
-(function () {
-  const STRINGS = {
-    ar: {
-      nav: { projects: "المشاريع", skills: "المهارات", cv: "السيرة الذاتية", contact: "تواصل" },
-      badge: "مطوّر تطبيقات موبايل",
-      heroTitle: "أبني تطبيقات حديثة بفلاتر — سريعة، واضحة، وجاهزة للنشر",
-      heroLead:
-        "أعمل مع الأفراد والفرق على منتجات حقيقية: من الفكرة إلى المتجر. اهتم بالأداء، تجربة المستخدم، والتكامل مع الخلفيات والخدمات السحابية.",
-      ctaWork: "شاهد أعمالي",
-      ctaHire: "توظيف / تعاون",
-      photoAlt: "صورة أحمد محروس",
-      photoCaption: "أحمد محروس — مطوّر Flutter",
-      secProjects: "مشاريع مختارة",
-      secProjectsDesc:
-        "أمثلة على تطبيقات نُشرت أو قيد التطوير. يمكن إضافة صور شاشة وروابط المتاجر لاحقاً.",
-      projQimni: "تطبيق يجمع بين صفحة روابط، متجر بسيط، وتحليلات لزيارات الروابط.",
-      projMeknaz: "تتبع مالي وأهداف مالية مع واجهة واضحة لتنظيم الإنفاق والادخار.",
-      linkGithub: "المستودع على GitHub ←",
-      secSkills: "المهارات والتقنيات",
-      secSkillsDesc: "أستخدم أدوات حديثة لبناء تطبيقات قابلة للصيانة والتوسع.",
-      secCv: "السيرة الذاتية",
-      secCvDesc: "اطّلع على الخلفية والخبرة بتنسيق PDF.",
-      cvText: "افتح أو حمّل السيرة من assets/cv.pdf بعد رفعها للمستودع.",
-      cvView: "عرض PDF",
-      cvDownload: "تحميل PDF",
-      secContact: "تواصل معي",
-      secContactDesc: "للاستفسارات التجارية، العروض، أو المشاريع الطويلة المدى.",
-      labelEmail: "البريد",
-      labelWhatsapp: "واتساب",
-      labelGithub: "GitHub",
-      labelLinkedin: "LinkedIn",
-      footer: "© أحمد محروس. جميع الحقوق محفوظة."
-    },
-    en: {
-      nav: { projects: "Projects", skills: "Skills", cv: "Résumé", contact: "Contact" },
-      badge: "Mobile app developer",
-      heroTitle: "I build modern Flutter apps — polished, fast, and ready to ship",
-      heroLead:
-        "I work with individuals and teams on real products: from idea to store listing. I care about performance, UX, and integration with backends and cloud services.",
-      ctaWork: "View my work",
-      ctaHire: "Hire / collaborate",
-      photoAlt: "Ahmed Mahrous photo",
-      photoCaption: "Ahmed Mahrous — Flutter Developer",
-      secProjects: "Selected projects",
-      secProjectsDesc: "Shipped or in-progress apps. Add screenshots and store links when available.",
-      projQimni: "Link-in-bio style app with a simple shop and link analytics.",
-      projMeknaz: "Money tracking and savings goals with a clear, focused UI.",
-      linkGithub: "GitHub repository →",
-      secSkills: "Skills & stack",
-      secSkillsDesc: "Modern tooling for maintainable, scalable mobile apps.",
-      secCv: "Résumé",
-      secCvDesc: "Experience and background in PDF format.",
-      cvText: "Open or download the PDF from assets/cv.pdf after uploading it to the repo.",
-      cvView: "Open PDF",
-      cvDownload: "Download PDF",
-      secContact: "Get in touch",
-      secContactDesc: "For commercial inquiries, proposals, or long-term projects.",
-      labelEmail: "Email",
-      labelWhatsapp: "WhatsApp",
-      labelGithub: "GitHub",
-      labelLinkedin: "LinkedIn",
-      footer: "© Ahmed Mahrous. All rights reserved."
+// ==========================
+// 🔥 Loading Screen
+// ==========================
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    setTimeout(() => loader.remove(), 500);
+  }
+});
+
+// ==========================
+// ✨ Scroll Animations (Reveal)
+// ==========================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
     }
-  };
+  });
+}, {
+  threshold: 0.15
+});
 
-  function applyLang(lang) {
-    const isAr = lang === "ar";
-    document.documentElement.lang = lang;
-    document.documentElement.dir = isAr ? "rtl" : "ltr";
-    const btnAr = document.querySelector("#lang-ar");
-    const btnEn = document.querySelector("#lang-en");
-    if (btnAr) btnAr.setAttribute("aria-pressed", isAr);
-    if (btnEn) btnEn.setAttribute("aria-pressed", !isAr);
+document.querySelectorAll(".card, .section__title, .hero__copy").forEach(el => {
+  el.classList.add("hidden");
+  observer.observe(el);
+});
 
-    const t = STRINGS[lang];
-    document.querySelectorAll("[data-i18n-nav]").forEach(function (el) {
-      const key = el.getAttribute("data-i18n-nav");
-      el.textContent = (t.nav && t.nav[key]) || "";
-    });
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      const key = el.getAttribute("data-i18n");
-      if (key && t[key] !== undefined) el.textContent = t[key];
-    });
-    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
-      const key = el.getAttribute("data-i18n-alt");
-      if (key && t[key] !== undefined) el.setAttribute("alt", t[key]);
-    });
+// ==========================
+// ✍️ Typing Effect
+// ==========================
+const typingElement = document.querySelector(".hero__title");
 
-    try {
-      localStorage.setItem("portfolio-lang", lang);
-    } catch (e) {}
-  }
+const texts = [
+  "أبني تطبيقات Flutter احترافية",
+  "I build high-performance Flutter apps",
+  "Clean Code • Scalable Apps • Modern UI"
+];
 
-  function init() {
-    const btnAr = document.getElementById("lang-ar");
-    const btnEn = document.getElementById("lang-en");
-    if (btnAr) btnAr.addEventListener("click", function () { applyLang("ar"); });
-    if (btnEn) btnEn.addEventListener("click", function () { applyLang("en"); });
+let index = 0;
+let charIndex = 0;
 
-    var saved = null;
-    try {
-      saved = localStorage.getItem("portfolio-lang");
-    } catch (e) {}
-    applyLang(saved === "en" || saved === "ar" ? saved : "ar");
-  }
+function typeEffect() {
+  if (!typingElement) return;
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+  if (charIndex < texts[index].length) {
+    typingElement.textContent += texts[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 50);
   } else {
-    init();
+    setTimeout(() => {
+      typingElement.textContent = "";
+      charIndex = 0;
+      index = (index + 1) % texts.length;
+      typeEffect();
+    }, 2000);
   }
-})();
+}
+
+typeEffect();
+
+// ==========================
+// 🌍 Language Switch (AR / EN)
+// ==========================
+const translations = {
+  ar: {
+    heroLead: "أساعدك في تحويل فكرتك إلى تطبيق حقيقي",
+    contact: "تواصل معي",
+  },
+  en: {
+    heroLead: "I help you turn your idea into a real app",
+    contact: "Contact Me",
+  }
+};
+
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  localStorage.setItem("lang", lang);
+}
+
+// Buttons (لو ضفتهم)
+const langAr = document.getElementById("lang-ar");
+const langEn = document.getElementById("lang-en");
+
+if (langAr && langEn) {
+  langAr.onclick = () => setLanguage("ar");
+  langEn.onclick = () => setLanguage("en");
+}
+
+// Load saved language
+const savedLang = localStorage.getItem("lang") || "ar";
+setLanguage(savedLang);
+
+// ==========================
+// 🖱 Custom Cursor
+// ==========================
+const cursor = document.createElement("div");
+cursor.classList.add("custom-cursor");
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
+
+// Hover effect
+document.querySelectorAll("a, button").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("cursor-hover");
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("cursor-hover");
+  });
+});
+
+// ==========================
+// ⚡ Smooth Scroll Enhancement
+// ==========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+// ==========================
+// 💫 Parallax Effect
+// ==========================
+document.addEventListener("mousemove", (e) => {
+  document.querySelectorAll(".orb").forEach((orb, i) => {
+    const speed = (i + 1) * 0.02;
+    const x = (window.innerWidth / 2 - e.pageX) * speed;
+    const y = (window.innerHeight / 2 - e.pageY) * speed;
+    orb.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
