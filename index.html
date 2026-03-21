@@ -4,76 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmed Mahrous | Flutter Developer</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {background:#0f172a; color:#fff;}
+    section {padding:80px 10%;}
+    h1,h2,h3 {margin-bottom:20px;}
+    p {color:#cbd5f5;}
+
+    /* Hero */
+    .hero {display:flex; align-items:center; justify-content:space-between; min-height:100vh;}
+    .hero img {width:250px; border-radius:50%;}
+    .hero-text h1 {font-size:40px;}
+    .hero-text span {color:#6366f1;}
+    .btn {display:inline-block; padding:12px 25px; margin-top:20px; background:#6366f1; color:#fff; border-radius:8px; text-decoration:none;}
+
+    /* Projects */
+    .projects {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
+    .card {background:#1e293b; padding:20px; border-radius:15px; transition:.3s;}
+    .card:hover {transform:translateY(-10px);}
+    .card img {width:100%; border-radius:10px;}
+
+    /* Skills */
+    .skills span {display:inline-block; background:#334155; padding:10px 15px; margin:5px; border-radius:8px;}
+
+    /* Contact */
+    .contact a {display:block; margin:10px 0; color:#6366f1; text-decoration:none;}
+
+    footer {text-align:center; padding:20px; background:#020617;}
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="container">
-      <h1>Ahmed Mahrous</h1>
-      <p>Flutter Developer | Building Scalable & High-Performance Mobile Apps</p>
-      <a href="#contact" class="btn">Hire Me</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Ahmed Mahrous</span></h1>
+      <h3>Flutter Developer</h3>
+      <p>I build modern mobile apps with clean architecture and great user experience.</p>
+      <a href="#projects" class="btn">View My Work</a>
     </div>
+    <img src="assets/profile.jpg" alt="profile">
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a Flutter developer with experience building high-quality mobile apps for Android and iOS, focusing on clean architecture and user-friendly UI/UX.</p>
-    </div>
+  <!-- About -->
+  <section>
+    <h2>About Me</h2>
+    <p>I am a passionate Flutter developer with experience building scalable apps using BLoC, REST APIs, Firebase and Supabase.</p>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul>
-        <li>Flutter & Dart</li>
-        <li>Firebase & Supabase</li>
-        <li>REST APIs & Backend Integration</li>
-        <li>Clean Architecture</li>
-        <li>State Management (Bloc / Cubit)</li>
-        <li>UI/UX Design</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <!-- Project Example -->
-        <div class="project-card">
-          <img src="images/placeholder1.png" alt="Qimni">
-          <h3>Qimni</h3>
-          <p>A Linktree-like platform with mini shop. Published on Google Play.</p>
-          <a href="#" class="btn">View Project</a>
-        </div>
-
-        <div class="project-card">
-          <img src="images/placeholder2.png" alt="Meknaz">
-          <h3>Meknaz</h3>
-          <p>Personal finance app for tracking expenses and goals.</p>
-          <a href="#" class="btn">View Project</a>
-        </div>
-
-        <!-- Add all 18 projects similarly -->
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="assets/project1.png">
+        <h3>Qimni App</h3>
+        <p>Linktree-style app with shop and analytics.</p>
+      </div>
+      <div class="card">
+        <img src="assets/project2.png">
+        <h3>Meknaz</h3>
+        <p>Money management and goal tracking app.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>GitHub: <a href="#">github.com/username</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/username</a></p>
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>Firebase</span>
+      <span>Supabase</span>
+      <span>REST APIs</span>
     </div>
   </section>
 
-  <script src="js/main.js"></script>
+  <!-- CV -->
+  <section>
+    <h2>My CV</h2>
+    <a href="assets/cv.pdf" class="btn">Download CV</a>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <a href="mailto:your@email.com">Email</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Ahmed Mahrous. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
