@@ -117,8 +117,8 @@
 
           <div class="hero__metrics" aria-describedby="metrics-note">
             <div class="metric">
-              <strong class="metric__num"><span class="counter" data-target="3">0</span></strong>
-              <span class="metric__label" data-i18n="metricApps">تطبيقات منشورة</span>
+              <strong class="metric__num"><span class="counter" data-target="18">0</span></strong>
+              <span class="metric__label" data-i18n="metricApps">مشاريع منفّذة</span>
             </div>
             <div class="metric">
               <strong class="metric__num metric__num--static" data-i18n="metricUsersValue">1K+</strong>
@@ -216,65 +216,14 @@
 
     <section id="work" class="section shell">
       <h2 class="section__title hidden" data-i18n="workTitle">🚀 المشاريع ودراسات الحالة</h2>
-      <p class="section__lead hidden prose" data-i18n="workLead">كل مشروع يُبنى حول هدف واضح: تجربة مستخدم بسيطة، بنية قابلة للنمو، وقابلية الصيانة.</p>
+      <p class="section__lead hidden prose" data-i18n="workLead">ثمانية عشر مشروعاً متنوّعاً — يُعرض أول ستة بتفصيل كامل، ويمكنك فتح الباقي بنقرة واحدة.</p>
 
-      <div class="work">
-        <article class="card hidden case-study">
-          <div class="work-thumb">
-            <img src="assets/projects/qimni/1.png" alt="لقطة شاشة من تطبيق Qimni" loading="lazy" width="800" height="450" data-i18n-alt="imgQimni">
-          </div>
-          <h3>Qimni</h3>
-          <dl class="case-study__list">
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelProblem">المشكلة</dt>
-              <dd class="prose" data-i18n="qimniProblem">المبدعون يحتاجون رابط واحد يجمع حضورهم الرقمي مع إمكانية بسيطة لبيع منتجات دون بناء متجر معقّد.</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelBuilt">ما الذي بُني</dt>
-              <dd class="prose" data-i18n="qimniBuilt">تطبيق Flutter لملف شخصي قابل للتخصيص، روابط، ومتجر داخلي مع تدفّق دفع/طلب مبسّط.</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelStack">التقنيات</dt>
-              <dd data-i18n="qimniStack">Flutter · Dart · Clean Architecture · Firebase / واجهات خلفية سحابية · REST</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelOutcome">النتيجة</dt>
-              <dd class="prose" data-i18n="qimniOutcome">تطبيق منشور يخدم مئات المستخدمين النشطين ضمن نطاق المنتج — واجهة موحّدة لعرض الروابط والبيع.</dd>
-            </div>
-          </dl>
-          <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithubProfile">مستودعات GitHub</a>
-          </div>
-        </article>
+      <div id="projects-root" class="work" aria-live="polite"></div>
 
-        <article class="card hidden case-study">
-          <div class="work-thumb">
-            <img src="assets/project-meknaz.png" alt="لقطة شاشة من تطبيق Meknaz" loading="lazy" width="800" height="450" data-i18n-alt="imgMeknaz"
-                 onerror="this.onerror=null;this.src='assets/project-placeholder.svg'">
-          </div>
-          <h3>Meknaz</h3>
-          <dl class="case-study__list">
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelProblem">المشكلة</dt>
-              <dd class="prose" data-i18n="meknazProblem">متابعة المصاريف والأهداف المالية تحتاج أداة خفيفة دون تعقيد تطبيقات البنوك أو الجداول اليدوية.</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelBuilt">ما الذي بُني</dt>
-              <dd class="prose" data-i18n="meknazBuilt">تطبيق Flutter لإدارة الإنفاق، الأهداف، وتلخيصات بصرية بسيطة تدعم الالتزام اليومي.</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelStack">التقنيات</dt>
-              <dd data-i18n="meknazStack">Flutter · Dart · تخزين محلي / مزامنة حسب التصميم · واجهات UX بسيطة</dd>
-            </div>
-            <div class="case-study__block">
-              <dt data-i18n="caseLabelOutcome">النتيجة</dt>
-              <dd class="prose" data-i18n="meknazOutcome">تجربة استخدام واضحة تقلّل الاحتكاك في تسجيل المعاملات وتساعد على رؤية التقدم نحو الهدف.</dd>
-            </div>
-          </dl>
-          <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithubProfile">مستودعات GitHub</a>
-          </div>
-        </article>
+      <div class="projects-more">
+        <button type="button" class="btn btn--secondary" id="projects-toggle" aria-expanded="false" aria-controls="projects-root" data-i18n="projectsShowMore">
+          عرض المزيد من المشاريع
+        </button>
       </div>
     </section>
 
@@ -370,6 +319,7 @@
     <p data-i18n="footerCopy">© 2026 أحمد محروس — مطوّر Flutter</p>
   </footer>
 
+  <script src="js/projects-data.js" defer></script>
   <script src="js/site.js" defer></script>
 </body>
 </html>
