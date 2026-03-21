@@ -8,7 +8,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- AOS Animation -->
+  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- CSS -->
@@ -18,42 +18,53 @@
 
 <!-- Navbar -->
 <nav class="navbar">
-  <h2>Ahmed</h2>
+  <h2 class="logo">Ahmed.</h2>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button id="langToggle">AR</button>
+  <button id="langToggle" class="lang-btn">AR</button>
 </nav>
 
 <!-- Hero -->
 <section id="home" class="hero">
-  <div data-aos="fade-right">
+  <div class="hero-text" data-aos="fade-right">
     <h1 id="title">Hi, I'm Ahmed Mahrous</h1>
     <p id="subtitle">Flutter Developer building modern mobile apps</p>
-    <a href="#projects" class="btn" id="cta">View My Work</a>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn" id="cta">View My Work</a>
+      <a href="#contact" class="btn outline">Hire Me</a>
+    </div>
   </div>
-  <img src="assets/profile.jpg" alt="profile" data-aos="fade-left">
+
+  <div class="hero-img" data-aos="fade-left">
+    <img src="assets/profile.jpg" alt="profile">
+  </div>
 </section>
 
 <!-- Projects -->
 <section id="projects">
   <h2 data-aos="fade-up">Projects</h2>
+
   <div class="projects">
 
     <div class="card" data-aos="zoom-in">
       <img src="assets/project1.png">
-      <h3>Qimni</h3>
-      <p>Linktree app with shop and analytics</p>
-      <a href="#" class="btn small">GitHub</a>
+      <div class="card-content">
+        <h3>Qimni</h3>
+        <p>Linktree app with shop and analytics</p>
+        <a href="#" class="btn small">GitHub</a>
+      </div>
     </div>
 
     <div class="card" data-aos="zoom-in">
       <img src="assets/project2.png">
-      <h3>Meknaz</h3>
-      <p>Money tracking and goals app</p>
-      <a href="#" class="btn small">GitHub</a>
+      <div class="card-content">
+        <h3>Meknaz</h3>
+        <p>Money tracking and goals app</p>
+        <a href="#" class="btn small">GitHub</a>
+      </div>
     </div>
 
   </div>
@@ -72,16 +83,19 @@
 </section>
 
 <!-- CV -->
-<section>
+<section class="cv">
   <h2 data-aos="fade-up">My CV</h2>
+  <p>Download my resume to know more about my experience</p>
   <a href="assets/cv.pdf" class="btn">Download CV</a>
 </section>
 
 <!-- Contact -->
 <section id="contact">
   <h2 data-aos="fade-up">Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>WhatsApp: 01xxxxxxxxx</p>
+  <div class="contact-box">
+    <p>Email: your@email.com</p>
+    <p>WhatsApp: 01xxxxxxxxx</p>
+  </div>
 </section>
 
 <footer>
