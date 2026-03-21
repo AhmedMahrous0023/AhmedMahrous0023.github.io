@@ -47,7 +47,7 @@
       heroLead:
         "أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية — مناسب للشركات الناشئة والعمل الحر.",
       metricApps: "مشاريع منفّذة",
-      metricUsersValue: "1K+",
+      metricUsersValue: "25+",
       metricUsersCum: "مستخدِم تراكمي",
       metricYears: "سنوات في التطوير",
       metricsFootnote:
