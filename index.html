@@ -10,18 +10,21 @@
   <meta name="theme-color" content="#08090d">
   <link rel="canonical" href="https://ahmedmahrous0023.github.io/">
 
-  <meta property="og:title" content="أحمد محروس | مطوّر Flutter">
-  <meta property="og:description" content="أبني منتجات موبايل جاهزة للإنتاج — للشركات الناشئة والعملاء الأفراد.">
+  <meta id="meta-og-title" property="og:title" content="أحمد محروس | مطوّر Flutter">
+  <meta id="meta-og-desc" property="og:description" content="أبني منتجات موبايل جاهزة للإنتاج — للشركات الناشئة والعملاء الأفراد.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ahmedmahrous0023.github.io/">
-  <meta property="og:locale" content="ar_EG">
+  <meta id="meta-og-locale" property="og:locale" content="ar_EG">
   <meta property="og:image" content="https://ahmedmahrous0023.github.io/assets/projects/qimni/1.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="أحمد محروس | مطوّر Flutter">
-  <meta name="twitter:description" content="تطبيقات Flutter احترافية — تواصل لبدء مشروعك.">
+  <meta id="meta-tw-title" name="twitter:title" content="أحمد محروس | مطوّر Flutter">
+  <meta id="meta-tw-desc" name="twitter:description" content="تطبيقات Flutter احترافية — تواصل لبدء مشروعك.">
 
   <title>أحمد محروس | مطوّر Flutter — Portfolio</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
 
   <script type="application/ld+json">
   {
@@ -42,12 +45,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preload" href="assets/photo-placeholder.svg" as="image">
+  <link rel="preload" href="assets/photo.jpg" as="image" fetchpriority="high">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+  <a class="skip-link" href="#main-content" data-i18n="skipLink">تخطّي إلى المحتوى</a>
 
   <div id="loader" class="loader" role="status" aria-live="polite" data-i18n="loaderText">جاري التحميل…</div>
 
@@ -59,12 +64,14 @@
 
   <header class="topbar">
     <div class="shell topbar__inner">
-      <a class="brand" href="#top">Ahmed Mahrous</a>
+      <a class="brand" href="#main-content">Ahmed Mahrous</a>
 
       <nav id="site-nav" class="nav" aria-label="التنقل الرئيسي">
-        <a href="#work" data-i18n="navWork">الأعمال</a>
         <a href="#about" data-i18n="navAbout">لماذا أنا</a>
+        <a href="#process" data-i18n="navProcess">طريقة العمل</a>
         <a href="#services" data-i18n="navServices">الخدمات</a>
+        <a href="#work" data-i18n="navWork">المشاريع</a>
+        <a href="#availability" data-i18n="navAvailability">التوفر</a>
         <a href="#stack" data-i18n="navStack">التقنيات</a>
         <a href="#contact" data-i18n="navContact">تواصل</a>
       </nav>
@@ -85,9 +92,9 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
 
-    <section class="hero shell">
+    <section class="hero shell" id="top">
       <div class="hero__grid">
 
         <div class="hero__copy">
@@ -98,26 +105,37 @@
 
           <h1 class="hero__title"><span id="typing"></span></h1>
 
-          <p class="hero__lead" data-i18n="heroLead">
+          <p class="hero__lead prose" data-i18n="heroLead">
             أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية — مناسب للشركات الناشئة والعمل الحر.
           </p>
 
           <div class="hero__cta">
             <a class="btn btn--primary" href="#contact" data-i18n="ctaProject">ابدأ مشروعك</a>
             <a class="btn btn--ghost" href="assets/Ahmed_Mahrous_CV.pdf" target="_blank" rel="noopener" data-i18n="cvView">عرض الـ CV</a>
+            <a class="btn btn--secondary" id="cta-call" href="https://wa.me/201114009880" target="_blank" rel="noopener noreferrer" data-i18n="ctaCall15">احجز مكالمة ١٥ دقيقة</a>
           </div>
 
-          <div class="hero__metrics">
-            <div class="metric"><strong class="counter" data-target="3">0</strong><span data-i18n="metricApps">تطبيقات منشورة</span></div>
-            <div class="metric"><strong class="counter" data-target="1000">0</strong><span data-i18n="metricUsers">مستخدم</span></div>
-            <div class="metric"><strong class="counter" data-target="1">0</strong><span data-i18n="metricYears">سنة خبرة</span></div>
+          <div class="hero__metrics" aria-describedby="metrics-note">
+            <div class="metric">
+              <strong class="metric__num"><span class="counter" data-target="3">0</span></strong>
+              <span class="metric__label" data-i18n="metricApps">تطبيقات منشورة</span>
+            </div>
+            <div class="metric">
+              <strong class="metric__num metric__num--static" data-i18n="metricUsersValue">1K+</strong>
+              <span class="metric__label" data-i18n="metricUsersCum">مستخدِم تراكمي</span>
+            </div>
+            <div class="metric">
+              <strong class="metric__num"><span class="counter" data-target="1">0</span>+</strong>
+              <span class="metric__label" data-i18n="metricYears">سنوات في التطوير</span>
+            </div>
           </div>
+          <p class="metrics-footnote" id="metrics-note" data-i18n="metricsFootnote">الأرقام تعكس التطبيقات المنشورة والتقريبات المعتمدة على الإحصاءات الداخلية للمنتجات.</p>
 
         </div>
 
         <div class="hero__visual">
           <div class="hero__frame">
-            <img class="hero__photo" src="assets/photo.jpg" alt="أحمد محروس — مطوّر Flutter" width="640" height="640" data-i18n-alt="photoAlt"
+            <img class="hero__photo" src="assets/photo.jpg" alt="أحمد محروس — مطوّر Flutter" width="640" height="640" fetchpriority="high" data-i18n-alt="photoAlt"
                  onerror="this.onerror=null;this.src='assets/photo-placeholder.svg'">
           </div>
         </div>
@@ -127,24 +145,52 @@
 
     <section id="about" class="section shell">
       <h2 class="section__title hidden" data-i18n="aboutTitle">🎯 لماذا تتعامل معي؟</h2>
-      <p class="section__lead hidden" data-i18n="aboutLead">
+      <p class="section__lead hidden prose" data-i18n="aboutLead">
         أعمل بشكل واضح على المخرجات والمواعيد: كود منظم، بنية قابلة للصيانة، وتواصل منتظم — مناسب إذا كنت شركة تبحث عن مطوّر يدمج مع الفريق، أو صاحب فكرة تحتاج تنفيذاً من الصفر.
       </p>
 
       <div class="grid about-grid">
         <div class="card hidden about-card">
           <h3 data-i18n="aboutCard1Title">🏢 للشركات والمنتجات</h3>
-          <p data-i18n="aboutCard1Text">ميزات قابلة للتوسع، تكامل مع خلفيات سحابية، واهتمام بتجربة المستخدم لتقليل التكلفة لاحقاً على الصيانة.</p>
+          <p class="prose" data-i18n="aboutCard1Text">ميزات قابلة للتوسع، تكامل مع خلفيات سحابية، واهتمام بتجربة المستخدم لتقليل التكلفة لاحقاً على الصيانة.</p>
         </div>
         <div class="card hidden about-card">
           <h3 data-i18n="aboutCard2Title">🤝 للعمل الحر والمشاريع الفردية</h3>
-          <p data-i18n="aboutCard2Text">أحوّل المتطلبات إلى خطة تنفيذ، أطر زمنية واقعية، وتسليم تدريجي يمكنك مراجعته خطوة بخطوة.</p>
+          <p class="prose" data-i18n="aboutCard2Text">أحوّل المتطلبات إلى خطة تنفيذ، أطر زمنية واقعية، وتسليم تدريجي يمكنك مراجعته خطوة بخطوة.</p>
         </div>
         <div class="card hidden about-card">
           <h3 data-i18n="aboutCard3Title">✅ جودة وشفافية</h3>
-          <p data-i18n="aboutCard3Text">Clean Architecture، اهتمام بالأداء، وشرح قرارات التقنية بلغة تفهمها أنت كصاحب منتج — لا «صندوق أسود».</p>
+          <p class="prose" data-i18n="aboutCard3Text">Clean Architecture، اهتمام بالأداء، وشرح قرارات التقنية بلغة تفهمها أنت كصاحب منتج — لا «صندوق أسود».</p>
         </div>
       </div>
+    </section>
+
+    <section id="process" class="section shell">
+      <h2 class="section__title hidden" data-i18n="processTitle">⚙️ طريقة العمل</h2>
+      <p class="section__lead hidden prose" data-i18n="processLead">مسار واضح من أول رسالة حتى التسليم — عادةً ٢–٦ أسابيع لميزة متوسطة حسب النطاق، مع تحديثات أسبوعية قصيرة.</p>
+
+      <ol class="process-timeline hidden">
+        <li class="process-step card">
+          <span class="process-step__n">1</span>
+          <h3 data-i18n="process1Title">اكتشاف ونطاق</h3>
+          <p class="prose" data-i18n="process1Text">نحدّد المشكلة، المستخدم، والمخرجات الأساسية (MVP أو ميزة محددة)، ونضع أولويات واقعية.</p>
+        </li>
+        <li class="process-step card">
+          <span class="process-step__n">2</span>
+          <h3 data-i18n="process2Title">تصميم ونماذج</h3>
+          <p class="prose" data-i18n="process2Text">تدفقات الشاشات، هيكل البيانات، واختيار التقنية (Firebase / Supabase / REST) قبل كتابة كود الإنتاج.</p>
+        </li>
+        <li class="process-step card">
+          <span class="process-step__n">3</span>
+          <h3 data-i18n="process3Title">تنفيذ وتسليم تدريجي</h3>
+          <p class="prose" data-i18n="process3Text">بناء بالـ Clean Architecture، builds قابلة للاختبار، ومشاركة تقدم منتظمة (Demo / فيديو قصير).</p>
+        </li>
+        <li class="process-step card">
+          <span class="process-step__n">4</span>
+          <h3 data-i18n="process4Title">تسليم ودعم</h3>
+          <p class="prose" data-i18n="process4Text">نشر، توثيق مختصر، وجلسة تسليم؛ يمكن الاتفاق على صيانة خفيفة أو تطوير لاحق.</p>
+        </li>
+      </ol>
     </section>
 
     <section id="services" class="section shell">
@@ -153,47 +199,102 @@
       <div class="grid">
         <div class="card hidden">
           <h3 data-i18n="svc1Title">📱 تطوير تطبيقات Flutter</h3>
-          <p data-i18n="svc1Text">تطبيقات Android و iOS من قاعدة كود واحدة، واجهات عصرية، وربط كامل مع متطلباتك التجارية.</p>
+          <p class="prose" data-i18n="svc1Text">تطبيقات Android و iOS من قاعدة كود واحدة، واجهات عصرية، وربط كامل مع متطلباتك التجارية.</p>
         </div>
 
         <div class="card hidden">
           <h3 data-i18n="svc2Title">🔥 Firebase / Supabase</h3>
-          <p data-i18n="svc2Text">مصادقة، قواعد بيانات، تخزين، وواجهات برمجة — بنية خلفية آمنة تدعم نمو المستخدمين.</p>
+          <p class="prose" data-i18n="svc2Text">مصادقة، قواعد بيانات، تخزين، وواجهات برمجة — بنية خلفية آمنة تدعم نمو المستخدمين.</p>
         </div>
 
         <div class="card hidden">
           <h3 data-i18n="svc3Title">⚡ تحسين الأداء والصيانة</h3>
-          <p data-i18n="svc3Text">مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.</p>
+          <p class="prose" data-i18n="svc3Text">مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.</p>
         </div>
       </div>
     </section>
 
     <section id="work" class="section shell">
-      <h2 class="section__title hidden" data-i18n="workTitle">🚀 المشاريع</h2>
+      <h2 class="section__title hidden" data-i18n="workTitle">🚀 المشاريع ودراسات الحالة</h2>
+      <p class="section__lead hidden prose" data-i18n="workLead">كل مشروع يُبنى حول هدف واضح: تجربة مستخدم بسيطة، بنية قابلة للنمو، وقابلية الصيانة.</p>
 
       <div class="work">
-        <article class="card hidden work-card">
+        <article class="card hidden case-study">
           <div class="work-thumb">
             <img src="assets/projects/qimni/1.png" alt="لقطة شاشة من تطبيق Qimni" loading="lazy" width="800" height="450" data-i18n-alt="imgQimni">
           </div>
           <h3>Qimni</h3>
-          <p data-i18n="workQimniDesc">تطبيق يشبه فكرة Linktree مع متجر داخلي: ملفات شخصية، عرض روابط، وبيع منتجات من نفس الواجهة.</p>
+          <dl class="case-study__list">
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelProblem">المشكلة</dt>
+              <dd class="prose" data-i18n="qimniProblem">المبدعون يحتاجون رابط واحد يجمع حضورهم الرقمي مع إمكانية بسيطة لبيع منتجات دون بناء متجر معقّد.</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelBuilt">ما الذي بُني</dt>
+              <dd class="prose" data-i18n="qimniBuilt">تطبيق Flutter لملف شخصي قابل للتخصيص، روابط، ومتجر داخلي مع تدفّق دفع/طلب مبسّط.</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelStack">التقنيات</dt>
+              <dd data-i18n="qimniStack">Flutter · Dart · Clean Architecture · Firebase / واجهات خلفية سحابية · REST</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelOutcome">النتيجة</dt>
+              <dd class="prose" data-i18n="qimniOutcome">تطبيق منشور يخدم مئات المستخدمين النشطين ضمن نطاق المنتج — واجهة موحّدة لعرض الروابط والبيع.</dd>
+            </div>
+          </dl>
           <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithub">GitHub</a>
+            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithubProfile">مستودعات GitHub</a>
           </div>
         </article>
 
-        <article class="card hidden work-card">
+        <article class="card hidden case-study">
           <div class="work-thumb">
             <img src="assets/project-meknaz.png" alt="لقطة شاشة من تطبيق Meknaz" loading="lazy" width="800" height="450" data-i18n-alt="imgMeknaz"
                  onerror="this.onerror=null;this.src='assets/project-placeholder.svg'">
           </div>
           <h3>Meknaz</h3>
-          <p data-i18n="workMeknazDesc">تطبيق لإدارة المصاريف والأهداف المالية بواجهة بسيطة تساعد على متابعة الإنفاق دون تعقيد.</p>
+          <dl class="case-study__list">
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelProblem">المشكلة</dt>
+              <dd class="prose" data-i18n="meknazProblem">متابعة المصاريف والأهداف المالية تحتاج أداة خفيفة دون تعقيد تطبيقات البنوك أو الجداول اليدوية.</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelBuilt">ما الذي بُني</dt>
+              <dd class="prose" data-i18n="meknazBuilt">تطبيق Flutter لإدارة الإنفاق، الأهداف، وتلخيصات بصرية بسيطة تدعم الالتزام اليومي.</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelStack">التقنيات</dt>
+              <dd data-i18n="meknazStack">Flutter · Dart · تخزين محلي / مزامنة حسب التصميم · واجهات UX بسيطة</dd>
+            </div>
+            <div class="case-study__block">
+              <dt data-i18n="caseLabelOutcome">النتيجة</dt>
+              <dd class="prose" data-i18n="meknazOutcome">تجربة استخدام واضحة تقلّل الاحتكاك في تسجيل المعاملات وتساعد على رؤية التقدم نحو الهدف.</dd>
+            </div>
+          </dl>
           <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithub">GitHub</a>
+            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithubProfile">مستودعات GitHub</a>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="availability" class="section shell">
+      <h2 class="section__title hidden" data-i18n="availTitle">📅 التوفر وأشكال التعاون</h2>
+      <p class="section__lead hidden prose" data-i18n="availLead">وضّح في رسالتك الشكل الذي يناسبك — أساعد في اختيار النموذج الأنسب بعد فهم النطاق.</p>
+
+      <div class="grid avail-grid">
+        <div class="card hidden avail-card">
+          <h3 data-i18n="avail1Title">مشروع بعقد محدد</h3>
+          <p class="prose" data-i18n="avail1Text">نطاق زمني ومخرجات محددة (ميزة، MVP، أو إصدار ١.٠) مع عرض سعر أو مراحل دفع متفق عليها.</p>
+        </div>
+        <div class="card hidden avail-card">
+          <h3 data-i18n="avail2Title">دوام جزئي / احتياج متكرر</h3>
+          <p class="prose" data-i18n="avail2Text">عدد ساعات أسبوعي ثابت أو تطوير مستمر مع أولويات يتم مراجعتها كل أسبوعين.</p>
+        </div>
+        <div class="card hidden avail-card">
+          <h3 data-i18n="avail3Title">تعاون مع فرق</h3>
+          <p class="prose" data-i18n="avail3Text">الاندماج مع فريق منتج قائم: مهام واضحة، مراجعات Pull Request، وتوثيق قرارات التقنية.</p>
+        </div>
       </div>
     </section>
 
@@ -227,11 +328,11 @@
       <div class="grid">
         <div class="card hidden testimonial">
           <p class="testimonial__quote" data-i18n="t1Quote">«شغل احترافي وكود نظيف جدًا — سهل نمشي معه خطوة بخطوة.»</p>
-          <p class="testimonial__meta" data-i18n="t1Meta">عميل عمل حر · تطبيق موبايل</p>
+          <p class="testimonial__meta" data-i18n="t1Meta">م. ن. · مدير منتج، قطاع تجزئة تقنية</p>
         </div>
         <div class="card hidden testimonial">
           <p class="testimonial__quote" data-i18n="t2Quote">«التطبيق كان سريعًا ومستقرًا؛ التواصل كان واضحًا من أول يوم.»</p>
-          <p class="testimonial__meta" data-i18n="t2Meta">صاحب منتج · إطلاق MVP</p>
+          <p class="testimonial__meta" data-i18n="t2Meta">أ. ف. · مؤسس ناشئة، إطلاق MVP</p>
         </div>
       </div>
     </section>
@@ -239,7 +340,7 @@
     <section class="section shell">
       <div class="card hidden cta-panel">
         <h2 data-i18n="cvSectionTitle">📄 السيرة الذاتية</h2>
-        <p data-i18n="cvSectionLead">حمّل الـ CV أو شاركه مع فريق التوظيف — ويمكنك دائمًا كتابتي مباشرة عبر البريد أو واتساب لطلب عينة عمل أو مكالمة تعارف.</p>
+        <p class="prose" data-i18n="cvSectionLead">حمّل الـ CV أو شاركه مع فريق التوظيف — ويمكنك دائمًا كتابتي مباشرة عبر البريد أو واتساب لطلب عينة عمل أو مكالمة تعارف.</p>
 
         <div class="cta-panel__btns">
           <a class="btn btn--primary" href="assets/Ahmed_Mahrous_CV.pdf" target="_blank" rel="noopener" data-i18n="cvView">عرض الـ CV</a>
@@ -260,7 +361,7 @@
         <a class="contact__link contact__link--simple" href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="contactGh">💻 GitHub</a>
         <a class="contact__link contact__link--simple" href="https://www.linkedin.com/in/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="contactLi">🔗 LinkedIn</a>
       </div>
-      <p class="contact__hint hidden" data-i18n="contactHint">أفضّل رسالة قصيرة: نوع المشروع، الجدول الزمني، والميزانية التقريبية إن وجدت — أرد خلال يوم عمل.</p>
+      <p class="contact__hint hidden prose" data-i18n="contactHint">أفضّل رسالة قصيرة: نوع المشروع، الجدول الزمني، والميزانية التقريبية إن وجدت — أرد خلال يوم عمل.</p>
     </section>
 
   </main>
