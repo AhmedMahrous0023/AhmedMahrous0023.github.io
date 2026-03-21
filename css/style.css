@@ -1,4 +1,4 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -15,16 +15,17 @@ body {
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: none; /* عشان custom cursor */
 }
 
-/* Container */
+/* ================= CONTAINER ================= */
 .shell {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Background Effects */
+/* ================= BACKGROUND ================= */
 .noise {
   position: fixed;
   inset: 0;
@@ -40,6 +41,7 @@ body {
   border-radius: 50%;
   filter: blur(120px);
   opacity: 0.3;
+  transition: transform 0.2s ease-out;
 }
 
 .orb-a {
@@ -54,7 +56,7 @@ body {
   left: -100px;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 .topbar {
   position: sticky;
   top: 0;
@@ -70,6 +72,11 @@ body {
   padding: 15px 0;
 }
 
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 .nav a {
   margin: 0 10px;
   color: #aaa;
@@ -81,13 +88,15 @@ body {
   color: #fff;
 }
 
-/* Buttons */
+/* ================= BUTTONS ================= */
 .btn {
   padding: 10px 18px;
   border-radius: 10px;
   text-decoration: none;
   transition: 0.3s;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn--primary {
@@ -97,7 +106,7 @@ body {
 }
 
 .btn--primary:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 .btn--ghost {
@@ -110,9 +119,9 @@ body {
   color: #000;
 }
 
-/* Hero */
+/* ================= HERO ================= */
 .hero {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .hero__grid {
@@ -125,6 +134,7 @@ body {
 .hero__title {
   font-size: 2.5rem;
   margin: 15px 0;
+  min-height: 60px;
 
   background: linear-gradient(90deg, #00f5a0, #00d9f5);
   -webkit-background-clip: text;
@@ -151,15 +161,16 @@ body {
   display: block;
 }
 
-/* Image */
+/* IMAGE */
 .hero__visual img {
   width: 300px;
   border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 245, 160, 0.2);
 }
 
-/* Sections */
+/* ================= SECTIONS ================= */
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
 .section__title {
@@ -167,28 +178,29 @@ body {
   margin-bottom: 30px;
 }
 
-/* Cards */
+/* ================= CARDS ================= */
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 20px;
   backdrop-filter: blur(10px);
   transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Grid */
+/* ================= GRID ================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Work */
+/* ================= WORK ================= */
 .work {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -222,7 +234,7 @@ body {
   text-decoration: underline;
 }
 
-/* Stack */
+/* ================= STACK ================= */
 .stack {
   display: flex;
   flex-wrap: wrap;
@@ -234,9 +246,15 @@ body {
   background: rgba(255,255,255,0.05);
   border-radius: 20px;
   font-size: 0.9rem;
+  transition: 0.3s;
 }
 
-/* Contact */
+.stack span:hover {
+  background: #00d9f5;
+  color: #000;
+}
+
+/* ================= CONTACT ================= */
 .contact {
   display: flex;
   flex-wrap: wrap;
@@ -257,33 +275,62 @@ body {
   color: #000;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 .footer {
   text-align: center;
   padding: 20px;
   color: #888;
 }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ================= SCROLL ANIMATION ================= */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-.hero__copy,
-.card,
-.section__title {
-  animation: fadeUp 1s ease;
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.6s ease;
 }
 
-/* Responsive */
+/* ================= LOADER ================= */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #070a12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-size: 2rem;
+  color: #00f5a0;
+}
+
+/* ================= CUSTOM CURSOR ================= */
+.custom-cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: #00f5a0;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0.1s;
+  z-index: 9999;
+}
+
+.cursor-hover {
+  transform: scale(2);
+  background: #00d9f5;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+  body {
+    cursor: default; /* نلغي الكيرسر المخصص في الموبايل */
+  }
+
   .hero__grid {
     flex-direction: column;
     text-align: center;
