@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="أحمد محروس — مطوّر Flutter. تطبيقات موبايل احترافية، Clean Architecture، Firebase وSupabase. متاح للشركات والعمل الحر.">
+  <meta id="meta-description" name="description" content="أحمد محروس — مطوّر Flutter. تطبيقات موبايل احترافية، Clean Architecture، Firebase وSupabase. متاح للشركات والعمل الحر.">
   <meta name="keywords" content="Flutter, مطور تطبيقات, Ahmed Mahrous, موبايل, Firebase, Supabase, فريلانس">
   <meta name="author" content="Ahmed Mahrous">
-  <meta name="theme-color" content="#070a12">
+  <meta name="theme-color" content="#08090d">
   <link rel="canonical" href="https://ahmedmahrous0023.github.io/">
 
   <meta property="og:title" content="أحمد محروس | مطوّر Flutter">
@@ -39,7 +38,6 @@
   }
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +49,7 @@
 
 <body>
 
-  <div id="loader" class="loader" role="status" aria-live="polite">جاري التحميل…</div>
+  <div id="loader" class="loader" role="status" aria-live="polite" data-i18n="loaderText">جاري التحميل…</div>
 
   <div class="noise" aria-hidden="true"></div>
   <div class="orb orb-a" aria-hidden="true"></div>
@@ -73,8 +71,8 @@
 
       <div class="topbar__actions">
         <div class="lang" role="group" aria-label="اللغة">
-          <button type="button" id="lang-ar" aria-pressed="true">ع</button>
-          <button type="button" id="lang-en" aria-pressed="false">EN</button>
+          <button type="button" id="lang-ar" class="lang__btn" aria-pressed="true" aria-label="العربية — مفعّلة">عربي</button>
+          <button type="button" id="lang-en" class="lang__btn" aria-pressed="false" aria-label="Switch to English">English</button>
         </div>
         <a class="btn btn--primary topbar__cta" href="#contact" data-i18n="ctaStart">ابدأ مشروع</a>
       </div>
@@ -94,7 +92,7 @@
 
         <div class="hero__copy">
           <p class="eyebrow">
-            <span>Flutter Developer</span>
+            <span data-i18n="eyebrowRole">مطوّر Flutter</span>
             <span class="eyebrow__badge" data-i18n="badgeAvail">متوفر لعروض جديدة</span>
           </p>
 
@@ -110,91 +108,97 @@
           </div>
 
           <div class="hero__metrics">
-            <div class="metric"><strong class="counter" data-target="3">0</strong><span>تطبيقات منشورة</span></div>
-            <div class="metric"><strong class="counter" data-target="1000">0</strong><span>مستخدم</span></div>
-            <div class="metric"><strong class="counter" data-target="1">0</strong><span>سنة خبرة</span></div>
+            <div class="metric"><strong class="counter" data-target="3">0</strong><span data-i18n="metricApps">تطبيقات منشورة</span></div>
+            <div class="metric"><strong class="counter" data-target="1000">0</strong><span data-i18n="metricUsers">مستخدم</span></div>
+            <div class="metric"><strong class="counter" data-target="1">0</strong><span data-i18n="metricYears">سنة خبرة</span></div>
           </div>
 
         </div>
 
         <div class="hero__visual">
-          <img src="assets/photo.jpg" alt="أحمد محروس — مطوّر Flutter" width="400" height="400"
-               onerror="this.onerror=null;this.src='assets/photo-placeholder.svg'">
+          <div class="hero__frame">
+            <img class="hero__photo" src="assets/photo.jpg" alt="أحمد محروس — مطوّر Flutter" width="640" height="640" data-i18n-alt="photoAlt"
+                 onerror="this.onerror=null;this.src='assets/photo-placeholder.svg'">
+          </div>
         </div>
 
       </div>
     </section>
 
     <section id="about" class="section shell">
-      <h2 class="section__title hidden">🎯 لماذا تتعامل معي؟</h2>
-      <p class="section__lead hidden">
+      <h2 class="section__title hidden" data-i18n="aboutTitle">🎯 لماذا تتعامل معي؟</h2>
+      <p class="section__lead hidden" data-i18n="aboutLead">
         أعمل بشكل واضح على المخرجات والمواعيد: كود منظم، بنية قابلة للصيانة، وتواصل منتظم — مناسب إذا كنت شركة تبحث عن مطوّر يدمج مع الفريق، أو صاحب فكرة تحتاج تنفيذاً من الصفر.
       </p>
 
       <div class="grid about-grid">
         <div class="card hidden about-card">
-          <h3>🏢 للشركات والمنتجات</h3>
-          <p>ميزات قابلة للتوسع، تكامل مع خلفيات سحابية، واهتمام بتجربة المستخدم لتقليل التكلفة لاحقاً على الصيانة.</p>
+          <h3 data-i18n="aboutCard1Title">🏢 للشركات والمنتجات</h3>
+          <p data-i18n="aboutCard1Text">ميزات قابلة للتوسع، تكامل مع خلفيات سحابية، واهتمام بتجربة المستخدم لتقليل التكلفة لاحقاً على الصيانة.</p>
         </div>
         <div class="card hidden about-card">
-          <h3>🤝 للعمل الحر والمشاريع الفردية</h3>
-          <p>أحوّل المتطلبات إلى خطة تنفيذ، أطر زمنية واقعية، وتسليم تدريجي يمكنك مراجعته خطوة بخطوة.</p>
+          <h3 data-i18n="aboutCard2Title">🤝 للعمل الحر والمشاريع الفردية</h3>
+          <p data-i18n="aboutCard2Text">أحوّل المتطلبات إلى خطة تنفيذ، أطر زمنية واقعية، وتسليم تدريجي يمكنك مراجعته خطوة بخطوة.</p>
         </div>
         <div class="card hidden about-card">
-          <h3>✅ جودة وشفافية</h3>
-          <p>Clean Architecture، اهتمام بالأداء، وشرح قرارات التقنية بلغة تفهمها أنت كصاحب منتج — لا «صندوق أسود».</p>
+          <h3 data-i18n="aboutCard3Title">✅ جودة وشفافية</h3>
+          <p data-i18n="aboutCard3Text">Clean Architecture، اهتمام بالأداء، وشرح قرارات التقنية بلغة تفهمها أنت كصاحب منتج — لا «صندوق أسود».</p>
         </div>
       </div>
     </section>
 
     <section id="services" class="section shell">
-      <h2 class="section__title hidden">💼 الخدمات</h2>
+      <h2 class="section__title hidden" data-i18n="servicesTitle">💼 الخدمات</h2>
 
       <div class="grid">
         <div class="card hidden">
-          <h3>📱 تطوير تطبيقات Flutter</h3>
-          <p>تطبيقات Android و iOS من قاعدة كود واحدة، واجهات عصرية، وربط كامل مع متطلباتك التجارية.</p>
+          <h3 data-i18n="svc1Title">📱 تطوير تطبيقات Flutter</h3>
+          <p data-i18n="svc1Text">تطبيقات Android و iOS من قاعدة كود واحدة، واجهات عصرية، وربط كامل مع متطلباتك التجارية.</p>
         </div>
 
         <div class="card hidden">
-          <h3>🔥 Firebase / Supabase</h3>
-          <p>مصادقة، قواعد بيانات، تخزين، وواجهات برمجة — بنية خلفية آمنة تدعم نمو المستخدمين.</p>
+          <h3 data-i18n="svc2Title">🔥 Firebase / Supabase</h3>
+          <p data-i18n="svc2Text">مصادقة، قواعد بيانات، تخزين، وواجهات برمجة — بنية خلفية آمنة تدعم نمو المستخدمين.</p>
         </div>
 
         <div class="card hidden">
-          <h3>⚡ تحسين الأداء والصيانة</h3>
-          <p>مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.</p>
+          <h3 data-i18n="svc3Title">⚡ تحسين الأداء والصيانة</h3>
+          <p data-i18n="svc3Text">مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.</p>
         </div>
       </div>
     </section>
 
     <section id="work" class="section shell">
-      <h2 class="section__title hidden">🚀 المشاريع</h2>
+      <h2 class="section__title hidden" data-i18n="workTitle">🚀 المشاريع</h2>
 
       <div class="work">
         <article class="card hidden work-card">
-          <img src="assets/projects/qimni/1.png" alt="لقطة من تطبيق Qimni" loading="lazy" width="800" height="450">
+          <div class="work-thumb">
+            <img src="assets/projects/qimni/1.png" alt="لقطة شاشة من تطبيق Qimni" loading="lazy" width="800" height="450" data-i18n-alt="imgQimni">
+          </div>
           <h3>Qimni</h3>
-          <p>تطبيق يشبه فكرة Linktree مع متجر داخلي: ملفات شخصية، عرض روابط، وبيع منتجات من نفس الواجهة.</p>
+          <p data-i18n="workQimniDesc">تطبيق يشبه فكرة Linktree مع متجر داخلي: ملفات شخصية، عرض روابط، وبيع منتجات من نفس الواجهة.</p>
           <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithub">GitHub</a>
           </div>
         </article>
 
         <article class="card hidden work-card">
-          <img src="assets/project-meknaz.png" alt="لقطة من تطبيق Meknaz" loading="lazy" width="800" height="450"
-               onerror="this.onerror=null;this.src='assets/project-placeholder.svg'">
+          <div class="work-thumb">
+            <img src="assets/project-meknaz.png" alt="لقطة شاشة من تطبيق Meknaz" loading="lazy" width="800" height="450" data-i18n-alt="imgMeknaz"
+                 onerror="this.onerror=null;this.src='assets/project-placeholder.svg'">
+          </div>
           <h3>Meknaz</h3>
-          <p>تطبيق لإدارة المصاريف والأهداف المالية بواجهة بسيطة تساعد على متابعة الإنفاق دون تعقيد.</p>
+          <p data-i18n="workMeknazDesc">تطبيق لإدارة المصاريف والأهداف المالية بواجهة بسيطة تساعد على متابعة الإنفاق دون تعقيد.</p>
           <div class="actions">
-            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="workGithub">GitHub</a>
           </div>
         </article>
       </div>
     </section>
 
     <section id="stack" class="section shell">
-      <h2 class="section__title hidden">🧠 التقنيات</h2>
+      <h2 class="section__title hidden" data-i18n="stackTitle">🧠 التقنيات</h2>
       <div class="stack hidden">
         <span>Flutter</span>
         <span>Dart</span>
@@ -208,38 +212,38 @@
     </section>
 
     <section class="section shell">
-      <h2 class="section__title hidden">🔥 حالياً أعمل على</h2>
+      <h2 class="section__title hidden" data-i18n="nowTitle">🔥 حالياً أعمل على</h2>
 
       <ul class="now-list hidden">
-        <li>تطوير تطبيق Marketplace باستخدام Flutter</li>
-        <li>تعميق التكامل مع Supabase في مشاريع حقيقية</li>
-        <li>تحسين ممارسات Clean Code والاختبارات</li>
+        <li data-i18n="now1">تطوير تطبيق Marketplace باستخدام Flutter</li>
+        <li data-i18n="now2">تعميق التكامل مع Supabase في مشاريع حقيقية</li>
+        <li data-i18n="now3">تحسين ممارسات Clean Code والاختبارات</li>
       </ul>
     </section>
 
     <section class="section shell">
-      <h2 class="section__title hidden">⭐ آراء العملاء</h2>
+      <h2 class="section__title hidden" data-i18n="testimonialTitle">⭐ آراء العملاء</h2>
 
       <div class="grid">
         <div class="card hidden testimonial">
-          <p class="testimonial__quote">«شغل احترافي وكود نظيف جدًا — سهل نمشي معه خطوة بخطوة.»</p>
-          <p class="testimonial__meta">عميل عمل حر · تطبيق موبايل</p>
+          <p class="testimonial__quote" data-i18n="t1Quote">«شغل احترافي وكود نظيف جدًا — سهل نمشي معه خطوة بخطوة.»</p>
+          <p class="testimonial__meta" data-i18n="t1Meta">عميل عمل حر · تطبيق موبايل</p>
         </div>
         <div class="card hidden testimonial">
-          <p class="testimonial__quote">«التطبيق كان سريعًا ومستقرًا؛ التواصل كان واضحًا من أول يوم.»</p>
-          <p class="testimonial__meta">صاحب منتج · إطلاق MVP</p>
+          <p class="testimonial__quote" data-i18n="t2Quote">«التطبيق كان سريعًا ومستقرًا؛ التواصل كان واضحًا من أول يوم.»</p>
+          <p class="testimonial__meta" data-i18n="t2Meta">صاحب منتج · إطلاق MVP</p>
         </div>
       </div>
     </section>
 
     <section class="section shell">
       <div class="card hidden cta-panel">
-        <h2>📄 السيرة الذاتية</h2>
-        <p>حمّل الـ CV أو شاركه مع فريق التوظيف — ويمكنك دائمًا كتابتي مباشرة عبر البريد أو واتساب لطلب عينة عمل أو مكالمة تعارف.</p>
+        <h2 data-i18n="cvSectionTitle">📄 السيرة الذاتية</h2>
+        <p data-i18n="cvSectionLead">حمّل الـ CV أو شاركه مع فريق التوظيف — ويمكنك دائمًا كتابتي مباشرة عبر البريد أو واتساب لطلب عينة عمل أو مكالمة تعارف.</p>
 
         <div class="cta-panel__btns">
-          <a class="btn btn--primary" href="assets/Ahmed_Mahrous_CV.pdf" target="_blank" rel="noopener">عرض الـ CV</a>
-          <a class="btn btn--ghost" href="assets/Ahmed_Mahrous_CV.pdf" download>تحميل</a>
+          <a class="btn btn--primary" href="assets/Ahmed_Mahrous_CV.pdf" target="_blank" rel="noopener" data-i18n="cvView">عرض الـ CV</a>
+          <a class="btn btn--ghost" href="assets/Ahmed_Mahrous_CV.pdf" download data-i18n="cvDownload">تحميل</a>
         </div>
       </div>
     </section>
@@ -248,18 +252,21 @@
       <h2 class="section__title hidden" data-i18n="contactHeading">📩 تواصل معي</h2>
 
       <div class="contact hidden">
-        <a href="mailto:ahmed.mahrous1092@gmail.com">📧 ahmed.mahrous1092@gmail.com</a>
-        <a href="https://wa.me/201114009880" target="_blank" rel="noopener noreferrer">📱 واتساب</a>
-        <a href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/ahmedmahrous0023" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+        <a class="contact__link" href="mailto:ahmed.mahrous1092@gmail.com">
+          <span class="contact__label" data-i18n="contactEmail">📧 البريد الإلكتروني</span>
+          <span class="contact__value">ahmed.mahrous1092@gmail.com</span>
+        </a>
+        <a class="contact__link contact__link--simple" href="https://wa.me/201114009880" target="_blank" rel="noopener noreferrer" data-i18n="contactWa">📱 واتساب</a>
+        <a class="contact__link contact__link--simple" href="https://github.com/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="contactGh">💻 GitHub</a>
+        <a class="contact__link contact__link--simple" href="https://www.linkedin.com/in/ahmedmahrous0023" target="_blank" rel="noopener noreferrer" data-i18n="contactLi">🔗 LinkedIn</a>
       </div>
-      <p class="contact__hint hidden">أفضّل رسالة قصيرة: نوع المشروع، الجدول الزمني، والميزانية التقريبية إن وجدت — أرد خلال يوم عمل.</p>
+      <p class="contact__hint hidden" data-i18n="contactHint">أفضّل رسالة قصيرة: نوع المشروع، الجدول الزمني، والميزانية التقريبية إن وجدت — أرد خلال يوم عمل.</p>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>© 2026 Ahmed Mahrous — Flutter Developer</p>
+    <p data-i18n="footerCopy">© 2026 أحمد محروس — مطوّر Flutter</p>
   </footer>
 
   <script src="js/site.js" defer></script>
