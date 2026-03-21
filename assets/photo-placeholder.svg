@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="5H1) 'DEDA 'D4.5J">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5a0"/>
+      <stop offset="100%" stop-color="#00d9f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="36" fill="#0f1419"/>
+  <circle cx="200" cy="155" r="72" fill="url(#g)" opacity="0.4"/>
+  <text x="200" y="300" text-anchor="middle" fill="#e8eaef" font-family="Cairo, system-ui, sans-serif" font-size="68" font-weight="700">AM</text>
+</svg>
