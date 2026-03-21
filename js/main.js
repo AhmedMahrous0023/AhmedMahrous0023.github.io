@@ -1,10 +1,10 @@
 
-/* ================= JS FILE (js/main.js) ================= */
+
+/* ================= JS ================= */
 
 AOS.init();
 
 let isArabic = false;
-
 const toggle = document.getElementById('langToggle');
 
 toggle.onclick = () => {
