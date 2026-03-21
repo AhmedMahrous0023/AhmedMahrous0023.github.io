@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>404 — الصفحة غير موجودة</title>
+  <meta name="theme-color" content="#08090d">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .err { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .err h1 { font-size: clamp(3rem, 10vw, 5rem); margin-bottom: 0.5rem; background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .err p { color: var(--color-text-muted); max-width: 36ch; margin-bottom: 1.5rem; }
+    .err__links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <main class="shell err">
+    <h1>404</h1>
+    <p>الصفحة غير موجودة أو الرابط قديم.<br><span lang="en" dir="ltr">This page doesn’t exist or the link is outdated.</span></p>
+    <div class="err__links">
+      <a class="btn btn--primary" href="/">العودة للرئيسية</a>
+      <a class="btn btn--ghost" href="/" lang="en">Home</a>
+    </div>
+  </main>
+</body>
+</html>
