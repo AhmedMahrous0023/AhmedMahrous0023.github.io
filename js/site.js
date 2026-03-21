@@ -1,23 +1,45 @@
 (function () {
   "use strict";
 
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) {
+    document.documentElement.classList.add("reduce-motion");
+  }
+
+  var waPhone = "201114009880";
+  var waTextAr = encodeURIComponent(
+    "مرحباً، أرغب بحجز مكالمة تعارف قصيرة (١٥ دقيقة) مع أحمد محروس بخصوص مشروع."
+  );
+  var waTextEn = encodeURIComponent(
+    "Hi, I'd like to book a 15-minute intro call with Ahmed Mahrous about a project."
+  );
+
   var translations = {
     ar: {
       metaDesc:
         "أحمد محروس — مطوّر Flutter. تطبيقات موبايل احترافية، Clean Architecture، Firebase وSupabase. متاح للشركات والعمل الحر.",
+      ogTitle: "أحمد محروس | مطوّر Flutter",
+      ogDesc: "أبني منتجات موبايل جاهزة للإنتاج — للشركات الناشئة والعملاء الأفراد.",
+      twitterTitle: "أحمد محروس | مطوّر Flutter",
+      twitterDesc: "تطبيقات Flutter احترافية — تواصل لبدء مشروعك.",
+      ogLocale: "ar_EG",
       docTitle: "أحمد محروس | مطوّر Flutter — Portfolio",
+      skipLink: "تخطّي إلى المحتوى",
       loaderText: "جاري التحميل…",
       navAria: "التنقل الرئيسي",
       menuAria: "القائمة",
       langGroupAria: "اللغة",
-      navWork: "الأعمال",
+      navWork: "المشاريع",
       navAbout: "لماذا أنا",
+      navProcess: "طريقة العمل",
       navServices: "الخدمات",
       navStack: "التقنيات",
+      navAvailability: "التوفر",
       navContact: "تواصل",
       contactHeading: "📩 تواصل معي",
       ctaStart: "ابدأ مشروع",
       ctaProject: "ابدأ مشروعك",
+      ctaCall15: "احجز مكالمة ١٥ دقيقة (واتساب)",
       cvView: "عرض الـ CV",
       cvDownload: "تحميل",
       badgeAvail: "متوفر لعروض جديدة",
@@ -25,8 +47,11 @@
       heroLead:
         "أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية — مناسب للشركات الناشئة والعمل الحر.",
       metricApps: "تطبيقات منشورة",
-      metricUsers: "مستخدم",
-      metricYears: "سنة خبرة",
+      metricUsersValue: "1K+",
+      metricUsersCum: "مستخدِم تراكمي",
+      metricYears: "سنوات في التطوير",
+      metricsFootnote:
+        "الأرقام تعكس التطبيقات المنشورة والتقريبات المعتمدة على إحصاءات المنتجات المنشورة.",
       aboutTitle: "🎯 لماذا تتعامل معي؟",
       aboutLead:
         "أعمل بشكل واضح على المخرجات والمواعيد: كود منظم، بنية قابلة للصيانة، وتواصل منتظم — مناسب إذا كنت شركة تبحث عن مطوّر يدمج مع الفريق، أو صاحب فكرة تحتاج تنفيذاً من الصفر.",
@@ -39,6 +64,20 @@
       aboutCard3Title: "✅ جودة وشفافية",
       aboutCard3Text:
         "Clean Architecture، اهتمام بالأداء، وشرح قرارات التقنية بلغة تفهمها أنت كصاحب منتج — لا «صندوق أسود».",
+      processTitle: "⚙️ طريقة العمل",
+      processLead:
+        "مسار واضح من أول رسالة حتى التسليم — عادةً ٢–٦ أسابيع لميزة متوسطة حسب النطاق، مع تحديثات أسبوعية قصيرة.",
+      process1Title: "اكتشاف ونطاق",
+      process1Text:
+        "نحدّد المشكلة، المستخدم، والمخرجات الأساسية (MVP أو ميزة محددة)، ونضع أولويات واقعية.",
+      process2Title: "تصميم ونماذج",
+      process2Text:
+        "تدفقات الشاشات، هيكل البيانات، واختيار التقنية (Firebase / Supabase / REST) قبل كتابة كود الإنتاج.",
+      process3Title: "تنفيذ وتسليم تدريجي",
+      process3Text:
+        "بناء بالـ Clean Architecture، builds قابلة للاختبار، ومشاركة تقدم منتظمة (Demo / فيديو قصير).",
+      process4Title: "تسليم ودعم",
+      process4Text: "نشر، توثيق مختصر، وجلسة تسليم؛ يمكن الاتفاق على صيانة خفيفة أو تطوير لاحق.",
       servicesTitle: "💼 الخدمات",
       svc1Title: "📱 تطوير تطبيقات Flutter",
       svc1Text:
@@ -49,12 +88,39 @@
       svc3Title: "⚡ تحسين الأداء والصيانة",
       svc3Text:
         "مراجعة كود، تسريع الشاشات، وتقليل الاعتماديات الثقيلة ليبقى المنتج سريعاً مع الوقت.",
-      workTitle: "🚀 المشاريع",
-      workQimniDesc:
-        "تطبيق يشبه فكرة Linktree مع متجر داخلي: ملفات شخصية، عرض روابط، وبيع منتجات من نفس الواجهة.",
-      workMeknazDesc:
-        "تطبيق لإدارة المصاريف والأهداف المالية بواجهة بسيطة تساعد على متابعة الإنفاق دون تعقيد.",
-      workGithub: "GitHub",
+      workTitle: "🚀 المشاريع ودراسات الحالة",
+      workLead:
+        "كل مشروع يُبنى حول هدف واضح: تجربة مستخدم بسيطة، بنية قابلة للنمو، وقابلية الصيانة.",
+      caseLabelProblem: "المشكلة",
+      caseLabelBuilt: "ما الذي بُني",
+      caseLabelStack: "التقنيات",
+      caseLabelOutcome: "النتيجة",
+      qimniProblem:
+        "المبدعون يحتاجون رابط واحد يجمع حضورهم الرقمي مع إمكانية بسيطة لبيع منتجات دون بناء متجر معقّد.",
+      qimniBuilt:
+        "تطبيق Flutter لملف شخصي قابل للتخصيص، روابط، ومتجر داخلي مع تدفّق دفع/طلب مبسّط.",
+      qimniStack: "Flutter · Dart · Clean Architecture · Firebase / واجهات خلفية سحابية · REST",
+      qimniOutcome:
+        "تطبيق منشور يخدم مئات المستخدمين النشطين ضمن نطاق المنتج — واجهة موحّدة لعرض الروابط والبيع.",
+      meknazProblem:
+        "متابعة المصاريف والأهداف المالية تحتاج أداة خفيفة دون تعقيد تطبيقات البنوك أو الجداول اليدوية.",
+      meknazBuilt:
+        "تطبيق Flutter لإدارة الإنفاق، الأهداف، وتلخيصات بصرية بسيطة تدعم الالتزام اليومي.",
+      meknazStack: "Flutter · Dart · تخزين محلي / مزامنة حسب التصميم · واجهات UX بسيطة",
+      meknazOutcome:
+        "تجربة استخدام واضحة تقلّل الاحتكاك في تسجيل المعاملات وتساعد على رؤية التقدم نحو الهدف.",
+      workGithubProfile: "مستودعات GitHub",
+      availTitle: "📅 التوفر وأشكال التعاون",
+      availLead:
+        "وضّح في رسالتك الشكل الذي يناسبك — أساعد في اختيار النموذج الأنسب بعد فهم النطاق.",
+      avail1Title: "مشروع بعقد محدد",
+      avail1Text:
+        "نطاق زمني ومخرجات محددة (ميزة، MVP، أو إصدار ١.٠) مع عرض سعر أو مراحل دفع متفق عليها.",
+      avail2Title: "دوام جزئي / احتياج متكرر",
+      avail2Text: "عدد ساعات أسبوعي ثابت أو تطوير مستمر مع أولويات يتم مراجعتها كل أسبوعين.",
+      avail3Title: "تعاون مع فرق",
+      avail3Text:
+        "الاندماج مع فريق منتج قائم: مهام واضحة، مراجعات Pull Request، وتوثيق قرارات التقنية.",
       stackTitle: "🧠 التقنيات",
       nowTitle: "🔥 حالياً أعمل على",
       now1: "تطوير تطبيق Marketplace باستخدام Flutter",
@@ -62,9 +128,9 @@
       now3: "تحسين ممارسات Clean Code والاختبارات",
       testimonialTitle: "⭐ آراء العملاء",
       t1Quote: "«شغل احترافي وكود نظيف جدًا — سهل نمشي معه خطوة بخطوة.»",
-      t1Meta: "عميل عمل حر · تطبيق موبايل",
+      t1Meta: "م. ن. · مدير منتج، قطاع تجزئة تقنية",
       t2Quote: "«التطبيق كان سريعًا ومستقرًا؛ التواصل كان واضحًا من أول يوم.»",
-      t2Meta: "صاحب منتج · إطلاق MVP",
+      t2Meta: "أ. ف. · مؤسس ناشئة، إطلاق MVP",
       cvSectionTitle: "📄 السيرة الذاتية",
       cvSectionLead:
         "حمّل الـ CV أو شاركه مع فريق التوظيف — ويمكنك دائمًا كتابتي مباشرة عبر البريد أو واتساب لطلب عينة عمل أو مكالمة تعارف.",
@@ -82,19 +148,29 @@
     en: {
       metaDesc:
         "Ahmed Mahrous — Flutter developer. Professional mobile apps, Clean Architecture, Firebase & Supabase. Open to companies and freelance work.",
+      ogTitle: "Ahmed Mahrous | Flutter Developer",
+      ogDesc:
+        "Production-ready mobile products — for startups and individual clients.",
+      twitterTitle: "Ahmed Mahrous | Flutter Developer",
+      twitterDesc: "Professional Flutter apps — get in touch to start your project.",
+      ogLocale: "en_US",
       docTitle: "Ahmed Mahrous | Flutter Developer — Portfolio",
+      skipLink: "Skip to content",
       loaderText: "Loading…",
       navAria: "Main navigation",
       menuAria: "Menu",
       langGroupAria: "Language",
-      navWork: "Work",
+      navWork: "Projects",
       navAbout: "Why me",
+      navProcess: "How I work",
       navServices: "Services",
       navStack: "Stack",
+      navAvailability: "Availability",
       navContact: "Contact",
       contactHeading: "📩 Get in touch",
       ctaStart: "Start a project",
       ctaProject: "Start your project",
+      ctaCall15: "Book a 15-min intro (WhatsApp)",
       cvView: "View CV",
       cvDownload: "Download",
       badgeAvail: "Open to new work",
@@ -102,8 +178,11 @@
       heroLead:
         "I turn your idea into a production-ready app with Clean Architecture and Firebase / Supabase — polished UX for startups and freelance collaborations.",
       metricApps: "Apps shipped",
-      metricUsers: "Users",
-      metricYears: "Years experience",
+      metricUsersValue: "1K+",
+      metricUsersCum: "Cumulative users",
+      metricYears: "Years shipping apps",
+      metricsFootnote:
+        "Figures reflect shipped apps and product-side estimates; happy to clarify scope on a call.",
       aboutTitle: "🎯 Why work with me?",
       aboutLead:
         "Clear outcomes and timelines: maintainable architecture, clean code, and steady communication — whether you need a developer who fits a team or a build from zero.",
@@ -116,6 +195,21 @@
       aboutCard3Title: "✅ Quality & transparency",
       aboutCard3Text:
         "Clean Architecture, performance-aware work, and tech decisions explained in plain language — no black box.",
+      processTitle: "⚙️ How I work",
+      processLead:
+        "A clear path from first message to handoff — often 2–6 weeks for a medium scope, with short weekly updates.",
+      process1Title: "Discovery & scope",
+      process1Text:
+        "We align on the problem, users, and core outcomes (MVP or a focused feature) with realistic priorities.",
+      process2Title: "Design & specs",
+      process2Text:
+        "Screen flows, data shape, and stack choices (Firebase / Supabase / REST) before production code.",
+      process3Title: "Build & incremental delivery",
+      process3Text:
+        "Clean Architecture, testable builds, and regular progress demos or short Loom-style updates.",
+      process4Title: "Handoff & support",
+      process4Text:
+        "Release, concise documentation, and a walkthrough session; light maintenance or follow-on work optional.",
       servicesTitle: "💼 Services",
       svc1Title: "📱 Flutter app development",
       svc1Text:
@@ -126,12 +220,40 @@
       svc3Title: "⚡ Performance & maintenance",
       svc3Text:
         "Code reviews, faster screens, and leaner dependencies so the product stays snappy over time.",
-      workTitle: "🚀 Projects",
-      workQimniDesc:
-        "Link-in-bio style app with a built-in shop: profiles, links, and selling from one experience.",
-      workMeknazDesc:
-        "Expense and savings goals with a simple UI that makes spending easy to track.",
-      workGithub: "GitHub",
+      workTitle: "🚀 Projects & case studies",
+      workLead:
+        "Each build targets a clear goal: simple UX, scalable structure, and maintainable code.",
+      caseLabelProblem: "Problem",
+      caseLabelBuilt: "What we built",
+      caseLabelStack: "Tech stack",
+      caseLabelOutcome: "Outcome",
+      qimniProblem:
+        "Creators need one link for their digital presence plus lightweight selling without a heavy storefront.",
+      qimniBuilt:
+        "A Flutter app for customizable profiles, links, and an in-app shop with a streamlined order flow.",
+      qimniStack: "Flutter · Dart · Clean Architecture · Firebase / cloud backends · REST",
+      qimniOutcome:
+        "A shipped app serving hundreds of active users in-scope — one surface for links and commerce.",
+      meknazProblem:
+        "People need a lightweight way to track spending and savings goals without banking-app complexity.",
+      meknazBuilt:
+        "A Flutter app for expenses, goals, and simple summaries that support daily habit-building.",
+      meknazStack: "Flutter · Dart · local storage / sync as designed · focused UX",
+      meknazOutcome:
+        "A clear flow that lowers friction when logging transactions and shows progress toward goals.",
+      workGithubProfile: "GitHub repositories",
+      availTitle: "📅 Availability & collaboration",
+      availLead:
+        "Mention the model that fits you in your first message — I’ll suggest the best fit after scoping.",
+      avail1Title: "Fixed-scope project",
+      avail1Text:
+        "Time-boxed delivery with clear outputs (feature, MVP, or v1.0) and agreed pricing or milestones.",
+      avail2Title: "Part-time / ongoing",
+      avail2Text:
+        "A steady weekly hour cap or continuous development with priorities reviewed every two weeks.",
+      avail3Title: "Embedded with teams",
+      avail3Text:
+        "Joining an existing product team: clear tasks, PR reviews, and documented technical decisions.",
       stackTitle: "🧠 Tech stack",
       nowTitle: "🔥 Currently focused on",
       now1: "Building a Flutter marketplace app",
@@ -140,10 +262,10 @@
       testimonialTitle: "⭐ Client feedback",
       t1Quote:
         "“Professional delivery and very clean code — easy to collaborate step by step.”",
-      t1Meta: "Freelance client · mobile app",
+      t1Meta: "M.N. · Product lead, retail tech",
       t2Quote:
         "“The app felt fast and stable; communication was clear from day one.”",
-      t2Meta: "Product owner · MVP launch",
+      t2Meta: "A.F. · Startup founder, MVP launch",
       cvSectionTitle: "📄 Résumé",
       cvSectionLead:
         "Download or share my CV with hiring teams — or email / WhatsApp me for samples or an intro call.",
@@ -185,6 +307,10 @@
 
   function runTyping(phrases) {
     if (!typingElement || !phrases.length) return;
+    if (reduceMotion) {
+      typingElement.textContent = phrases[0];
+      return;
+    }
     typingGen++;
     var gen = typingGen;
     var i = 0;
@@ -214,6 +340,26 @@
     step();
   }
 
+  function applySocialMeta(t) {
+    var ogTitle = document.getElementById("meta-og-title");
+    if (ogTitle && t.ogTitle) ogTitle.setAttribute("content", t.ogTitle);
+    var ogDesc = document.getElementById("meta-og-desc");
+    if (ogDesc && t.ogDesc) ogDesc.setAttribute("content", t.ogDesc);
+    var twTitle = document.getElementById("meta-tw-title");
+    if (twTitle && t.twitterTitle) twTitle.setAttribute("content", t.twitterTitle);
+    var twDesc = document.getElementById("meta-tw-desc");
+    if (twDesc && t.twitterDesc) twDesc.setAttribute("content", t.twitterDesc);
+    var ogLoc = document.getElementById("meta-og-locale");
+    if (ogLoc && t.ogLocale) ogLoc.setAttribute("content", t.ogLocale);
+  }
+
+  function setCtaCallHref(lang) {
+    var ctaCall = document.getElementById("cta-call");
+    if (!ctaCall) return;
+    var q = lang === "ar" ? waTextAr : waTextEn;
+    ctaCall.href = "https://wa.me/" + waPhone + "?text=" + q;
+  }
+
   function setLanguage(lang) {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -234,6 +380,8 @@
 
     var metaDesc = document.getElementById("meta-description");
     if (metaDesc && t.metaDesc) metaDesc.setAttribute("content", t.metaDesc);
+
+    applySocialMeta(t);
 
     var navEl = document.getElementById("site-nav");
     if (navEl && t.navAria) navEl.setAttribute("aria-label", t.navAria);
@@ -260,6 +408,8 @@
       enBtn.setAttribute("aria-label", lang === "en" ? "English — active" : "Switch to English");
     }
 
+    setCtaCallHref(lang);
+
     try {
       localStorage.setItem("lang", lang);
     } catch (e) {}
@@ -273,6 +423,16 @@
     saved = localStorage.getItem("lang") || "ar";
   } catch (e) {}
   setLanguage(saved === "en" ? "en" : "ar");
+
+  var skip = document.querySelector(".skip-link");
+  var mainEl = document.getElementById("main-content");
+  if (skip && mainEl) {
+    skip.addEventListener("click", function () {
+      window.requestAnimationFrame(function () {
+        mainEl.focus({ preventScroll: true });
+      });
+    });
+  }
 
   document.getElementById("lang-ar")?.addEventListener("click", function () {
     setLanguage("ar");
@@ -299,6 +459,10 @@
     var target = +el.getAttribute("data-target");
     if (!target || el.dataset.animated === "1") return;
     el.dataset.animated = "1";
+    if (reduceMotion) {
+      el.textContent = String(target);
+      return;
+    }
     var count = 0;
     var steps = 60;
     var inc = Math.max(1, Math.ceil(target / steps));
@@ -329,7 +493,11 @@
   }
 
   var cursor = document.getElementById("cursor");
-  if (cursor && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  if (
+    !reduceMotion &&
+    cursor &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  ) {
     document.addEventListener("mousemove", function (e) {
       cursor.style.top = e.clientY + "px";
       cursor.style.left = e.clientX + "px";
@@ -391,16 +559,21 @@
       if (!target) return;
       e.preventDefault();
       var y = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      window.scrollTo({
+        top: y,
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
     });
   });
 
-  document.addEventListener("mousemove", function (e) {
-    document.querySelectorAll(".orb").forEach(function (orb, i) {
-      var speed = (i + 1) * 0.015;
-      var x = (window.innerWidth / 2 - e.clientX) * speed;
-      var y = (window.innerHeight / 2 - e.clientY) * speed;
-      orb.style.transform = "translate(" + x + "px, " + y + "px)";
+  if (!reduceMotion) {
+    document.addEventListener("mousemove", function (e) {
+      document.querySelectorAll(".orb").forEach(function (orb, i) {
+        var speed = (i + 1) * 0.015;
+        var x = (window.innerWidth / 2 - e.clientX) * speed;
+        var y = (window.innerHeight / 2 - e.clientY) * speed;
+        orb.style.transform = "translate(" + x + "px, " + y + "px)";
+      });
     });
-  });
+  }
 })();
