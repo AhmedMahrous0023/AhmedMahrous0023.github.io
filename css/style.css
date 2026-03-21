@@ -669,9 +669,43 @@ html[dir="ltr"] .now-list li::before {
   line-height: 1.65;
 }
 
-.case-study h3 {
+.project-card__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin-bottom: 4px;
+}
+
+.project-card__title h3 {
   font-size: 1.35rem;
-  margin-top: 4px;
+  margin: 0;
+}
+
+.project-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  background: rgba(99, 102, 241, 0.18);
+  color: var(--color-accent-soft);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+}
+
+.project-card--extra {
+  display: none;
+}
+
+.work.projects-expanded .project-card--extra {
+  display: block;
+}
+
+.projects-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
 }
 
 /* ----- Process timeline ----- */
