@@ -41,6 +41,27 @@ html {
   scroll-behavior: smooth;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 10000;
+  padding: 10px 16px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 body {
   font-family: var(--font-ar);
   background: var(--color-bg);
@@ -48,6 +69,19 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: default;
+}
+
+.prose {
+  max-width: 65ch;
+}
+
+.section .prose.section__lead,
+.hero .prose.hero__lead {
+  max-width: 65ch;
+}
+
+.hero .prose.hero__lead {
+  margin-inline: 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -142,6 +176,13 @@ body {
 
 .nav a:hover {
   color: var(--color-text);
+}
+
+@media (max-width: 1100px) {
+  .nav a {
+    font-size: 0.82rem;
+    margin: 0 5px;
+  }
 }
 
 .topbar__actions {
@@ -282,6 +323,19 @@ body {
   color: var(--color-text);
 }
 
+.btn--secondary {
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  color: var(--color-accent-soft);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.btn--secondary:hover {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: var(--color-accent-mid);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* ================= HERO ================= */
 .hero {
   padding: 88px 0 100px;
@@ -334,6 +388,13 @@ body {
   line-height: 1.75;
 }
 
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 .hero__metrics {
   display: flex;
   gap: 24px;
@@ -344,16 +405,33 @@ body {
   text-align: center;
 }
 
-.metric strong {
+.metric__num {
   font-size: 1.5rem;
   display: block;
   color: var(--color-text);
   font-variant-numeric: tabular-nums;
 }
 
-.metric span {
+.metric__num--static {
+  color: var(--color-accent-soft);
+}
+
+.metric__label {
   font-size: 0.8rem;
   color: var(--color-text-soft);
+  display: block;
+  margin-top: 4px;
+  max-width: 10rem;
+  margin-inline: auto;
+  line-height: 1.35;
+}
+
+.metrics-footnote {
+  margin-top: 14px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-soft);
+  max-width: 52ch;
 }
 
 /* ----- Profile photo: fixed ratio, no stretch ----- */
@@ -562,6 +640,73 @@ html[dir="ltr"] .now-list li::before {
   text-decoration: underline;
 }
 
+/* ----- Case study ----- */
+.case-study__list {
+  margin: 16px 0 0;
+}
+
+.case-study__block {
+  margin-bottom: 16px;
+}
+
+.case-study__block:last-of-type {
+  margin-bottom: 0;
+}
+
+.case-study__list dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-mid);
+  margin-bottom: 6px;
+}
+
+.case-study__list dd {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.case-study h3 {
+  font-size: 1.35rem;
+  margin-top: 4px;
+}
+
+/* ----- Process timeline ----- */
+.process-timeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.process-step {
+  position: relative;
+  padding-top: 8px;
+}
+
+.process-step__n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.process-step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
 /* ================= STACK ================= */
 .stack {
   display: flex;
@@ -712,6 +857,33 @@ body.menu-open::before {
   z-index: 150;
 }
 
+/* ----- Reduced motion / a11y ----- */
+.reduce-motion html {
+  scroll-behavior: auto;
+}
+
+.reduce-motion .hidden.show {
+  transition: none;
+}
+
+.reduce-motion .orb {
+  transform: none !important;
+}
+
+.reduce-motion body {
+  cursor: auto !important;
+}
+
+.reduce-motion .custom-cursor {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .show {
+    transition: none;
+  }
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   body {
@@ -793,6 +965,15 @@ body.menu-open::before {
   .hero__metrics {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero__cta {
+    justify-content: center;
+  }
+
+  .metrics-footnote {
+    margin-inline: auto;
+    text-align: center;
   }
 
   .hero__frame {
