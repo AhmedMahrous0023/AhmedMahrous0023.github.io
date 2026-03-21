@@ -25,10 +25,16 @@
 
 <body>
 
+  <!-- Loader -->
+  <div id="loader">Loading...</div>
+
   <!-- Background -->
   <div class="noise"></div>
   <div class="orb orb-a"></div>
   <div class="orb orb-b"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
 
   <!-- Header -->
   <header class="topbar">
@@ -42,7 +48,14 @@
         <a href="#contact">تواصل</a>
       </nav>
 
-      <a class="btn btn--primary" href="#contact">ابدأ مشروع</a>
+      <div class="topbar__actions">
+        <!-- Language Switch -->
+        <div class="lang" role="group">
+          <button id="lang-ar" aria-pressed="true">ع</button>
+          <button id="lang-en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--primary" href="#contact">ابدأ مشروع</a>
+      </div>
     </div>
   </header>
 
@@ -55,11 +68,9 @@
         <div class="hero__copy">
           <p class="eyebrow">Flutter Developer</p>
 
-          <h1 class="hero__title">
-            أبني تطبيقات موبايل سريعة وقابلة للتوسع باستخدام Flutter
-          </h1>
+          <h1 class="hero__title"><span id="typing"></span></h1>
 
-          <p class="hero__lead">
+          <p class="hero__lead" data-i18n="heroLead">
             أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية.
           </p>
 
@@ -70,9 +81,9 @@
 
           <!-- Metrics -->
           <div class="hero__metrics">
-            <div class="metric"><strong>+3</strong><span>تطبيقات منشورة</span></div>
-            <div class="metric"><strong>+1000</strong><span>مستخدم</span></div>
-            <div class="metric"><strong>+1 سنة</strong><span>خبرة</span></div>
+            <div class="metric"><strong class="counter" data-target="3">0</strong><span>تطبيقات منشورة</span></div>
+            <div class="metric"><strong class="counter" data-target="1000">0</strong><span>مستخدم</span></div>
+            <div class="metric"><strong class="counter" data-target="1">0</strong><span>سنة خبرة</span></div>
           </div>
 
         </div>
@@ -89,17 +100,17 @@
       <h2 class="section__title">💼 الخدمات</h2>
 
       <div class="grid">
-        <div class="card">
+        <div class="card hidden">
           <h3>📱 تطوير تطبيقات Flutter</h3>
           <p>بناء تطبيقات Android و iOS باحترافية عالية.</p>
         </div>
 
-        <div class="card">
+        <div class="card hidden">
           <h3>🔥 Firebase / Supabase</h3>
           <p>ربط التطبيق بباك اند قوي (Auth - Database - APIs).</p>
         </div>
 
-        <div class="card">
+        <div class="card hidden">
           <h3>⚡ تحسين الأداء</h3>
           <p>حل مشاكل الأداء وتسريع التطبيقات الحالية.</p>
         </div>
@@ -111,60 +122,23 @@
       <h2 class="section__title">🚀 المشاريع</h2>
 
       <div class="work">
-
-        <!-- Project 1 -->
-        <div class="card">
+        <div class="card hidden">
           <img src="assets/project-qimni.png" alt="Qimni" loading="lazy">
-
           <h3>Qimni App</h3>
-
-          <p>
-            تطبيق مشابه لـ Linktree مع متجر داخلي يسمح للمستخدمين بإنشاء ملفات شخصية وبيع منتجات.
-          </p>
-
-          <ul>
-            <li>Clean Architecture + BLoC</li>
-            <li>Firebase Auth & Firestore</li>
-            <li>Dynamic UI & Profile system</li>
-          </ul>
-
-          <div class="actions">
-            <a href="#">🎥 مشاهدة Demo</a>
-            <a href="https://github.com/ahmedmahrous0023" target="_blank">💻 GitHub</a>
-            <a href="#">📖 Case Study</a>
-          </div>
+          <p>تطبيق مشابه لـ Linktree مع متجر داخلي يسمح للمستخدمين بإنشاء ملفات شخصية وبيع منتجات.</p>
         </div>
-
-        <!-- Project 2 -->
-        <div class="card">
+        <div class="card hidden">
           <img src="assets/project-meknaz.png" alt="Meknaz" loading="lazy">
-
           <h3>Meknaz</h3>
-
-          <p>
-            تطبيق لإدارة المصاريف والأهداف المالية مع تجربة استخدام بسيطة وفعالة.
-          </p>
-
-          <ul>
-            <li>State Management (Cubit)</li>
-            <li>Supabase Backend</li>
-            <li>Tracking system for expenses</li>
-          </ul>
-
-          <div class="actions">
-            <a href="#">🎥 مشاهدة Demo</a>
-            <a href="https://github.com/ahmedmahrous0023" target="_blank">💻 GitHub</a>
-          </div>
+          <p>تطبيق لإدارة المصاريف والأهداف المالية مع تجربة استخدام بسيطة وفعالة.</p>
         </div>
-
       </div>
     </section>
 
     <!-- STACK -->
     <section id="stack" class="section shell">
       <h2 class="section__title">🧠 التقنيات</h2>
-
-      <div class="stack">
+      <div class="stack hidden">
         <span>Flutter</span>
         <span>Dart</span>
         <span>Firebase</span>
@@ -178,7 +152,7 @@
     <section class="section shell">
       <h2 class="section__title">🔥 حالياً أعمل على</h2>
 
-      <ul>
+      <ul class="hidden">
         <li>تطوير Marketplace App باستخدام Flutter</li>
         <li>ربط التطبيقات بـ Supabase</li>
         <li>تحسين مهارات Clean Code</li>
@@ -190,10 +164,10 @@
       <h2 class="section__title">⭐ آراء العملاء</h2>
 
       <div class="grid">
-        <div class="card">
+        <div class="card hidden">
           <p>"شغل احترافي وكود نظيف جدًا"</p>
         </div>
-        <div class="card">
+        <div class="card hidden">
           <p>"التطبيق كان سريع وبدون مشاكل"</p>
         </div>
       </div>
@@ -201,7 +175,7 @@
 
     <!-- CV -->
     <section class="section shell">
-      <div class="card">
+      <div class="card hidden">
         <h2>📄 تحميل البورتفوليو</h2>
         <p>يمكنك تحميل السيرة الذاتية الخاصة بي والاطلاع على خبراتي.</p>
 
@@ -214,9 +188,9 @@
     <section id="contact" class="section shell">
       <h2 class="section__title">📩 تواصل معي</h2>
 
-      <div class="contact">
-        <a href="mailto:your@email.com">📧 your@email.com</a>
-        <a href="https://wa.me/201000000000" target="_blank">📱 واتساب</a>
+      <div class="contact hidden">
+        <a href="mailto:ahmed.mahrous1092@gmail.com">📧 ahmed.mahrous1092@gmail.com</a>
+        <a href="https://wa.me/201114009880" target="_blank">📱 واتساب</a>
         <a href="https://github.com/ahmedmahrous0023" target="_blank">💻 GitHub</a>
         <a href="#">🔗 LinkedIn</a>
       </div>
@@ -229,7 +203,70 @@
     <p>© 2026 Ahmed Mahrous — Flutter Developer</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    // Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = 0;
+      setTimeout(() => loader.style.display = 'none', 500);
+    });
+
+    // Typing Effect
+    const typingElement = document.getElementById('typing');
+    const phrases = ["أبني تطبيقات موبايل احترافية", "سريعة وقابلة للتوسع", "مع تجربة مستخدم ممتازة"];
+    let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+    function type() {
+      if (i >= phrases.length) i = 0;
+      const fullPhrase = phrases[i];
+      if (isDeleting) currentPhrase.pop();
+      else currentPhrase.push(fullPhrase[j++]);
+      typingElement.textContent = currentPhrase.join('');
+      if (!isDeleting && j === fullPhrase.length) { isDeleting = true; setTimeout(type, 1000); return; }
+      if (isDeleting && currentPhrase.length === 0) { isDeleting = false; i++; j = 0; }
+      setTimeout(type, isDeleting ? 50 : 120);
+    }
+    type();
+
+    // Scroll Animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else counter.innerText = target;
+      };
+      updateCount();
+    });
+
+    // Custom Cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.top = e.clientY + 'px';
+      cursor.style.left = e.clientX + 'px';
+    });
+
+    // Language Switch
+    const translations = {
+      en: { heroLead: "I help turn your idea into a real app using Clean Architecture and Firebase/Supabase with professional UX." },
+      ar: { heroLead: "أساعدك في تحويل فكرتك إلى تطبيق حقيقي باستخدام Clean Architecture و Firebase / Supabase مع تجربة مستخدم احترافية." }
+    };
+    document.getElementById('lang-ar').addEventListener('click', () => {
+      document.querySelector('[data-i18n="heroLead"]').textContent = translations.ar.heroLead;
+    });
+    document.getElementById('lang-en').addEventListener('click', () => {
+      document.querySelector('[data-i18n="heroLead"]').textContent = translations.en.heroLead;
+    });
+  </script>
 
 </body>
 </html>
