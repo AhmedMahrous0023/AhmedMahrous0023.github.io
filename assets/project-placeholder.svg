@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="E9'JF) 'DE41H9">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121826"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="16" fill="url(#bg)"/>
+  <rect x="48" y="40" width="704" height="370" rx="12" fill="#1a2233" stroke="rgba(0,217,245,0.25)" stroke-width="2"/>
+  <rect x="72" y="64" width="120" height="14" rx="4" fill="#00f5a0" opacity="0.35"/>
+  <rect x="72" y="96" width="656" height="10" rx="3" fill="#fff" opacity="0.08"/>
+  <rect x="72" y="118" width="520" height="10" rx="3" fill="#fff" opacity="0.06"/>
+  <rect x="72" y="160" width="200" height="120" rx="8" fill="#00d9f5" opacity="0.12"/>
+  <rect x="292" y="160" width="200" height="120" rx="8" fill="#00f5a0" opacity="0.1"/>
+  <rect x="512" y="160" width="200" height="120" rx="8" fill="#fff" opacity="0.06"/>
+  <text x="400" y="360" text-anchor="middle" fill="#6b7280" font-family="Cairo, system-ui, sans-serif" font-size="22">#6A DB7) 4'4) DDE41H9</text>
+</svg>
