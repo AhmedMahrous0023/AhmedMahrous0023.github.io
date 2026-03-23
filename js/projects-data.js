@@ -28,7 +28,7 @@
       },
     },
     {
-      image: "assets/project-placeholder.svg",
+      image: "assets/projects/meknaz/1.png",
       badgePlay: false,
       ar: {
         name: "Meknaz",
